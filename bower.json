@@ -1,0 +1,17 @@
+{
+  "name": "travel_app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "serhiy <serhiypavlov33@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
