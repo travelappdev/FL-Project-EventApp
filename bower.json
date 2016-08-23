@@ -3,7 +3,10 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "serhiy <serhiypavlov33@gmail.com>"
+    "Serhiy <serhiypavlov33@gmail.com>",
+    "Rostik <mail>",
+    "Yaroslav <mail>",
+    "Tanya <mail>"
   ],
   "license": "ISC",
   "homepage": "",
@@ -13,5 +16,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
 }
