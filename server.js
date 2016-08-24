@@ -1,13 +1,26 @@
 'use strict';
 
-let express  = require('express'),
-    app      = express(),
-    port     = +process.env.PORT || 8000,
-    path     = require('path'),
-    mongoose = require('mongoose');
+const express  = require('express');
+const app      = express();
+const port     = +process.env.PORT || 8000;
+const path     = require('path');
+const mongoose = require('mongoose');
 
 
 
+
+
+// connect to our database
+mongoose.connect('mongodb://localhost:27017/travelApp_db');
+
+
+let User = require('./db/userSchema');
+let Event = require('./db/eventSchema');
+
+
+
+
+// directory with production files
 app.use(express.static(__dirname + '/public'));
 
 
