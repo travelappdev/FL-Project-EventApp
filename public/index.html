@@ -6,20 +6,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base href='/'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
 
   <title>index</title>
 
   <script src="../bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 </head>
 
 
-<body>
-  <header>
-    <h1>main page</h1>
-  </header>
+  <body>
+    <header>
+      <h1>main page</h1>
+    </header>
 
-  <footer></footer>
-</body>
 
+     <div ng-app="mainApp" ng-controller="mainCtrl">
+       {{myname}}
+      <!-- CONTAINER FOR OUR ROUTES -->
+        <main>
+          <div id="content-views">
+            <div ng-view></div>
+          </div>
+        </main>
+      </div>
+
+
+    <footer></footer>
+  </body>
+
+
+  <script src="../dev/js/app.js"></script>
+  <script src="../dev/js/app.routes.js"></script>
 
 </html>

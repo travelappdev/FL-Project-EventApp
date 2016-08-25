@@ -21,7 +21,7 @@ let Event = require('./db/eventSchema');
 
 
 // directory with production files
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
 
 
 // configure our app to handle CORS requests
@@ -40,6 +40,32 @@ app.use(function(req, res, next) {
 app.get('/', function(req, res) {
   res.sendFile(path.join(`${__dirname}/public/index.html`));
 });
+
+
+app.get('/about', function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+app.get('/event', function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+app.get('/home', function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+app.get('/event_manage', function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+app.get('/profile', function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+
+
+
+
 
 
 
