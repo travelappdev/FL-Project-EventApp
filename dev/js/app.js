@@ -26,7 +26,7 @@ angular.module('mainApp', ['router'])
   })
 
 
-  .controller('profileCtrl', function() {
+  .controller('profileCtrl', function($scope) {
     $scope.myname = 'profile';
   })
 

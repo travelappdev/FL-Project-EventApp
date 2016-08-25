@@ -42,6 +42,8 @@ app.get('/', function(req, res) {
 });
 
 
+// send index for all pages
+// will fix it later
 app.get('/about', function(req, res) {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
