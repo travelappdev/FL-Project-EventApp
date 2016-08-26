@@ -1,5 +1,3 @@
-
-
 angular.module('mainApp', ['router'])
   .controller('mainCtrl', function($scope) {
     $scope.myname = 'main';
