@@ -1,4 +1,2 @@
-body {
-  background-color: #40d47e;
-  color: #fbfcfc;
-}
+.event_description,.event_photo{float:left;display:inline-block}#event{width:90%;height:40rem;background-color:#fff;margin:2rem auto;border-radius:15px}.event_photo{width:40%;height:400px}.event_photo img{margin:25px;width:350px;height:350px;border-radius:10px}.event_description{height:400px;width:60%}*{padding:0;margin:0;box-sizing:border-box}body{background-color:#40d47e;color:#fbfcfc}body h1{color:#a66bbe}
+/*# sourceMappingURL=style.css.map */

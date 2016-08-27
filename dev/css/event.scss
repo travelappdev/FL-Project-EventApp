@@ -1,0 +1,38 @@
+// variables
+
+$event_background: #fff;
+
+#event {
+  width: 90%;
+  height: 40rem;
+  background-color: $event_background;
+  margin: 2rem auto;
+  border-radius: 15px;
+}
+
+
+.event_photo {
+
+  float: left;
+  display: inline-block;
+  width: 40%;
+  height: 400px;
+
+
+  img {
+    margin: 25px;
+     width: 350px;
+     height: 350px;
+     border-radius: 10px;
+  }
+}
+
+
+.event_description {
+
+  float: left;
+  display: inline-block;
+  height: 400px;
+  width: 60%;
+
+}
