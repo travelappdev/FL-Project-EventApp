@@ -1,0 +1,82 @@
+// variables
+
+$event_background: #fff;
+
+#event {
+  width: 90%;
+  height: auto;
+  background-color: $event_background;
+  margin: 2rem auto;
+  border-radius: 15px;
+}
+
+
+.event_photo {
+
+
+  img {
+    margin: 20px 10px;
+     width: 400px;
+     height: 400px;
+     border-radius: 5px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+//
+.event_description {
+  padding: 10px;
+  border-radius: 5px;
+  margin:  0 10px;
+  background-color: #019875;
+  width: 400px;
+  height: 20rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  h2 {
+    margin: 0.5rem 0 1rem;
+    font-size: 19px;
+  }
+}
+
+.event_members {
+
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #777;
+  height: 15rem;
+  width: 96%;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+.member_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.event_member {
+  width: 100px;
+  height: 100px;
+  border: 1px solid blueviolet;
+  margin: 0.5rem 1.5rem 0 0;
+}
+
+
+.event_info {
+
+}
+
+
+.events_similar {
+  height: 20rem;
+  width: 96%;
+  margin: 0 auto 2rem;
+  background-color: violet;
+}

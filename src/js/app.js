@@ -2,7 +2,7 @@ angular.module('mainApp', ['router'])
   .controller('mainCtrl', function($scope) {
     $scope.myname = 'main';
   })
-
+ 
 
   .controller('generalCtrl', function($scope) {
     $scope.myname = 'general';

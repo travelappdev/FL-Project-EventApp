@@ -1,5 +1,6 @@
 'use strict';
 
+
 const gulp          = require('gulp');
 const htmlmin       = require('gulp-htmlmin');
 const cssmin        = require('gulp-cssmin');
@@ -11,19 +12,23 @@ const jslint        = require('gulp-jslint');
 const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
 const livereload    = require('gulp-livereload');
+const gulpIf        = require('gulp-if');
+const del           = require('del');
+const cached        = require('gulp-cached');
+const remember      = require('gulp-remember');
+const path          = require('path');
 
 
+// will add sourcemaps only in development version
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-// Sass compile (gulp-ruby-sass)
-// Autoprefixer (gulp-autoprefixer)
-// Minify CSS (gulp-cssnano)
-// JSHint (gulp-jshint)
-// Concatenation (gulp-concat)
+
+// jslint
 // Compress images (gulp-imagemin)
-// LiveReload (gulp-livereload)
 // Caching of images so only changed images are compressed (gulp-cache)
 // Notify of changes (gulp-notify)
-// Clean files for a clean build (del)
+
+// *** angular-tamplatecache ***
 
 
 
@@ -32,15 +37,33 @@ const livereload    = require('gulp-livereload');
 
 
 // The default task
-gulp.task('default', ['watch']);
+gulp.task('default', ['styles', 'scripts', 'watch']);
 
 
 // Rerun the task when a file changes
-gulp.task('watch', function() {
+
+
+gulp.task('watch', () => {
   livereload.listen();
-  gulp.watch('dev/css/**/*.scss', ['apply_css']);
-  gulp.watch('dev/css/**/*.css', ['apply_css']);
+  
+  gulp.watch('src/css/**/*.{scss,css}', ['styles']).on('unlink', (filepath) => {
+    remember.forget('styles', path.resolve(filepath));
+  });
+
+  gulp.watch('src/js/**/*.js', ['scripts']).on('unlink', (filepath) => {
+    remember.forget('scripts', path.resolve(filepath));;
+  });
+
 });
+
+
+
+// task will delete everything from public folder
+
+
+// gulp.task('clean', () => {
+//   del('public');
+// });
 
 
 
@@ -49,14 +72,16 @@ gulp.task('watch', function() {
 
 
 
-gulp.task('apply_css', () => {
-  return gulp.src(['dev/css/**/*.scss', 'dev/css/**/*.css'])
+gulp.task('styles', () => {
+  return gulp.src('src/css/**/*.{scss,css}')
+    .pipe(cached('styles'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.init())
+    .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(autoprefixer())
+    .pipe(remember('styles'))
     .pipe(concat('style.css'))
     .pipe(cssmin())
-    .pipe(sourcemaps.write('.'))
+    .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
     .pipe(gulp.dest('public/css'))
     .pipe(livereload());
 });
@@ -67,27 +92,21 @@ gulp.task('apply_css', () => {
 /*        *******  JAVASCRIPT TASKS  *******           */
 
 
-// still don't understand why it doesn't works
 
-
-// gulp.task('lint', function () {
-//     return gulp.src('dev/js/**/*.js')
-//             .pipe(jslint({ /* this object represents the JSLint directives being passed down */ }))
-//             .pipe(jslint.reporter('dev/js/**/*.js'));
-// });
-
-
-// apply concat and babel for js files
-
-gulp.task('apply_js', () => {
-    return gulp.src('dev/js/**/*.js')
-        .pipe(concat('bundle.js'))
+gulp.task('scripts', () => {
+    return gulp.src('src/js/**/*.js')
+        .pipe(cached('scripts'))
+        .pipe(gulpIf(isDevelopment, sourcemaps.init()))
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(remember('scripts'))
+        .pipe(concat('bundle.js'))
+        .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
         //.pipe(uglify()) should do sth for angular files
         .pipe(gulp.dest('public/js'));
 });
+
 
 
 // gulp.task('htmlmin', function() {
