@@ -17,6 +17,7 @@ const del           = require('del');
 const cached        = require('gulp-cached');
 const remember      = require('gulp-remember');
 const path          = require('path');
+const templateCache = require('gulp-angular-templatecache');
 
 
 // will add sourcemaps only in development version
@@ -28,16 +29,21 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'develop
 // Caching of images so only changed images are compressed (gulp-cache)
 // Notify of changes (gulp-notify)
 
-// *** angular-tamplatecache ***
-
 
 
 
 /*          *******  GENERAL TASKS  *******               */
 
 
-// The default task
-gulp.task('default', ['styles', 'scripts', 'watch']);
+// default task
+gulp.task('default', [
+
+  'templates',
+  'styles',
+  'scripts',
+  'watch'
+
+]);
 
 
 // Rerun the task when a file changes
@@ -45,7 +51,7 @@ gulp.task('default', ['styles', 'scripts', 'watch']);
 
 gulp.task('watch', () => {
   livereload.listen();
-  
+
   gulp.watch('src/css/**/*.{scss,css}', ['styles']).on('unlink', (filepath) => {
     remember.forget('styles', path.resolve(filepath));
   });
@@ -53,6 +59,8 @@ gulp.task('watch', () => {
   gulp.watch('src/js/**/*.js', ['scripts']).on('unlink', (filepath) => {
     remember.forget('scripts', path.resolve(filepath));;
   });
+
+  gulp.watch('src/templates/**/*.html', ['templates']);
 
 });
 
@@ -64,6 +72,21 @@ gulp.task('watch', () => {
 // gulp.task('clean', () => {
 //   del('public');
 // });
+
+
+/*          *******  HTML TEMPLATES TASKS  *******            */
+
+
+
+
+gulp.task('templates', function () {
+  return gulp.src('src/templates/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(templateCache({
+      module: 'mainApp'
+    }))
+    .pipe(gulp.dest('public/js'));
+});
 
 
 
@@ -101,7 +124,7 @@ gulp.task('scripts', () => {
             presets: ['es2015']
         }))
         .pipe(remember('scripts'))
-        .pipe(concat('bundle.js'))
+        .pipe(concat('app.js'))
         .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
         //.pipe(uglify()) should do sth for angular files
         .pipe(gulp.dest('public/js'));
@@ -109,8 +132,11 @@ gulp.task('scripts', () => {
 
 
 
-// gulp.task('htmlmin', function() {
-//   return gulp.src('/public/**/*.html')
-//     .pipe(htmlmin({collapseWhitespace: true}))
-//     .pipe(gulp.dest('dist'));
-// });
+/*            *******  ASSETS TASKS  *******             */
+
+
+
+//
+//
+//
+//
