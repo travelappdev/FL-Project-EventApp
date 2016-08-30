@@ -34,9 +34,12 @@ angular.module('router', ['ngRoute'])
     .when('/event_manage', {
       templateUrl: 'public/pages/event_manage.html',
       controller: 'event_manageCtrl'
+    })
+
+    .otherwise({
+      templateUrl: 'public/pages/404.html',
+      controller: 'errorCtrl'
     });
-
-
 
 
   // set our app up to have pretty URLS

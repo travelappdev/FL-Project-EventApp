@@ -2,7 +2,7 @@ angular.module('mainApp', ['router'])
   .controller('mainCtrl', function($scope) {
     $scope.myname = 'main';
   })
- 
+
 
   .controller('generalCtrl', function($scope) {
     $scope.myname = 'general';
@@ -30,4 +30,8 @@ angular.module('mainApp', ['router'])
 
   .controller('event_manageCtrl', function($scope) {
     $scope.myname = 'event manage';
+  })
+
+  .controller('errorCtrl', function($scope) {
+    $scope.myname = 'about';
   });
