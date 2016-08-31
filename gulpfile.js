@@ -18,6 +18,7 @@ const cached        = require('gulp-cached');
 const remember      = require('gulp-remember');
 const path          = require('path');
 const templateCache = require('gulp-angular-templatecache');
+const minify        = require('gulp-minify');
 
 
 // will add sourcemaps only in development version
@@ -116,6 +117,7 @@ gulp.task('styles', () => {
 
 
 
+
 gulp.task('scripts', () => {
     return gulp.src('src/js/**/*.js')
         .pipe(cached('scripts'))
@@ -125,8 +127,9 @@ gulp.task('scripts', () => {
         }))
         .pipe(remember('scripts'))
         .pipe(concat('app.js'))
-        .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
-        //.pipe(uglify()) should do sth for angular files
+        //.pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
+        //.pipe(uglify())
+        .pipe(minify())
         .pipe(gulp.dest('public/js'));
 });
 

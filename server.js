@@ -6,14 +6,14 @@ const port         = +process.env.PORT || 8000;
 const path         = require('path');
 const mongoose     = require('mongoose');
 const morgan       = require('morgan');
-const bodyParser   = require('body-parser');
+const bodyParser   = require('body-parser'); // parsing middleware
 const http         = require('http');
 
 
 
 
 // connect to our database
-mongoose.connect('mongodb://localhost:27017/travelApp_db');
+mongoose.connect('mongodb://localhost:27017/appdb');
 
 
 let User = require('./db/userSchema');
@@ -76,21 +76,22 @@ app
 
   .get('/404', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
-  })
-
-  .get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + "/public/index.html"));
-});
+  });
 
 
-
+//   .get('*', function(req, res) {
+//   res.sendFile(path.join(__dirname + "/public/index.html"));
+// });
 
 
 
 
 
 
-// API router
+
+
+
+//API router
 
 var apiRouter = express.Router();
 
@@ -105,6 +106,55 @@ apiRouter.route('/test')
   //
   // });
 
+
+
+
+apiRouter.route('/users')
+
+  // create a user (accessed at POST http://localhost:8080/api/users)
+  .post(function(req, res) {
+    // create a new instance of the User model
+    var user = new User();
+    // set the users information (comes from the request)
+    user.email = req.body.email;
+    user.password = req.body.password;
+    user.fullname = req.body.fullname;
+    // user.age = req.body.age;
+    // user.phone = req.body.phone;
+    // user.homeTown = req.body.homeTown;
+
+
+    // save the user and check for errors
+    user.save(function(err) {
+      if (err) {
+       // duplicate entry
+       if (err.code == 11000)
+         return res.json({ success: false, message: 'A user with that username already exists. '});
+       else
+         return res.send(err);
+       }
+       res.json({ message: 'User created!' });
+    });
+  })
+
+  .get(function(req, res) {
+    // res.sendFile(path.join(`${__dirname}/db/randomUsers.json`))
+    User.find(function(err, users) {
+      if(err) res.send(err);
+      res.json(users);
+    });
+  });
+
+
+apiRouter.route('/users/:fullname')
+  .get(function(req, res) {
+
+    User.findOne({ 'fullname': req.params.fullname }, function (err, user) {
+      if (err) res.send(err);
+      // return that user
+      res.json(user);
+    })
+  });
 
 
 // test route to make sure everything is working

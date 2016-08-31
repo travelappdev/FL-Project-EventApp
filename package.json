@@ -32,6 +32,7 @@
     "gulp-jshint": "^2.0.1",
     "gulp-jslint": "^1.0.4",
     "gulp-livereload": "^3.8.1",
+    "gulp-minify": "0.0.14",
     "gulp-remember": "^0.3.1",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",

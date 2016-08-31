@@ -1,4 +1,5 @@
 angular.module('mainApp', ['router'])
+
   .controller('mainCtrl', function($scope) {
     $scope.myname = 'main';
   })
@@ -9,7 +10,7 @@ angular.module('mainApp', ['router'])
   })
 
 
-  .controller('aboutCtrl', function($scope) {
+  .controller('aboutCtrl',function($scope) {
     $scope.myname = 'about';
   })
 
