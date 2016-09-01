@@ -106,9 +106,9 @@ apiRouter.route('/users')
     user.email = req.body.email;
     user.password = req.body.password;
     user.fullname = req.body.fullname;
-    // user.age = req.body.age;
-    // user.phone = req.body.phone;
-    // user.homeTown = req.body.homeTown;
+    user.age = req.body.age;
+    user.phone = req.body.phone;
+    user.homeTown = req.body.homeTown;
 
 
     // save the user and check for errors
@@ -144,8 +144,9 @@ apiRouter.route('/users/:fullname')
   });
 
 
+
+
 // test route to make sure everything is working
-// accessed at GET http://localhost:8080/api
 apiRouter.get('/', function(req, res) {
   res.json({ message: 'Welcome to our api!' });
 });
