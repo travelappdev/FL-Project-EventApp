@@ -74,9 +74,12 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
-  .get('/404', function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  });
+
+// ??? should be 404 error
+  .on( 'error', function( error ){
+     console.log( "Error: \n" + error.message );
+     console.log( error.stack );
+   });
 
 
 //   .get('*', function(req, res) {
@@ -95,23 +98,51 @@ app
 
 var apiRouter = express.Router();
 
-apiRouter.route('/test')
 
-  // accessed at GET http://localhost:8080/api/users)
-  .get(function(req, res) {
-    res.sendFile(path.join(`${__dirname}/public/js/data/test.json`));
+// EVENTS ROUTE
+
+apiRouter.route('/events')
+
+.post(function(req, res) {
+  // create a new instance of the Event model
+  var event = new Event();
+
+  event.name = req.body.name;
+  event.place = req.body.place;
+  event.date = req.body.date;
+  event.time = req.body.time;
+  event.type = req.body.type;
+  event.payment = req.body.payment;
+  event.description = req.body.description;
+
+
+  // save the user and check for errors
+  event.save(function(err) {
+    if (err) {
+     // duplicate entry
+     if (err.code == 11000)
+       return res.json({ success: false, message: 'A user with that username already exists. '});
+     else
+       return res.send(err);
+     }
+     res.json({ message: 'Event created!' });
   });
+})
 
-  // .post(function(req, res) {
-  //
-  // });
+.get(function(req, res) {
+  // res.sendFile(path.join(`${__dirname}/db/randomUsers.json`))
+  Event.find(function(err, events) {
+    if(err) res.send(err);
+    res.json(events);
+  });
+});
 
 
 
+// USERS ROUTE
 
 apiRouter.route('/users')
 
-  // create a user (accessed at POST http://localhost:8080/api/users)
   .post(function(req, res) {
     // create a new instance of the User model
     var user = new User();
@@ -119,9 +150,9 @@ apiRouter.route('/users')
     user.email = req.body.email;
     user.password = req.body.password;
     user.fullname = req.body.fullname;
-    // user.age = req.body.age;
-    // user.phone = req.body.phone;
-    // user.homeTown = req.body.homeTown;
+    user.age = req.body.age;
+    user.phone = req.body.phone;
+    user.homeTown = req.body.homeTown;
 
 
     // save the user and check for errors
@@ -146,10 +177,19 @@ apiRouter.route('/users')
   });
 
 
-apiRouter.route('/users/:fullname')
+
+//SHOULD BE FIXED
+
+
+apiRouter.route('/users/:email/:password')
   .get(function(req, res) {
 
-    User.findOne({ 'fullname': req.params.fullname }, function (err, user) {
+    User.findOne({
+
+      'email': req.params.email,
+      'password': req.params.password
+
+    }, function (err, user) {
       if (err) res.send(err);
       // return that user
       res.json(user);
@@ -157,8 +197,9 @@ apiRouter.route('/users/:fullname')
   });
 
 
+
+
 // test route to make sure everything is working
-// accessed at GET http://localhost:8080/api
 apiRouter.get('/', function(req, res) {
   res.json({ message: 'Welcome to our api!' });
 });
@@ -180,29 +221,3 @@ http
   });
 
 console.log(`Server is running on port ${port}`);
-
-
-
-// // as server.js
-// var http = require('http');
-// var express = require('express');
-// var app = express();
-//
-// app
-//     .use(express.static('public'))
-//     .get('/home/login', function (req, res) {
-//         console.log('Login request');
-//         res.status(200).send('Login from server.');
-//     })
-//     .all('/*', function ( req, res ) {
-//         console.log('All');
-//         res
-//             .status( 200 )
-//             .set( { 'content-type': 'text/html; charset=utf-8' } )
-//             .sendfile('public/index.html' );
-//     })
-//     .on( 'error', function( error ){
-//        console.log( "Error: \n" + error.message );
-//        console.log( error.stack );
-//     });
-//

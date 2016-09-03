@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 const EventSchema = new Schema({
   name: String,
   place: String,
-  date: Date,
+  date: String,
   time: Number,
   type: String,
-  payment: Number,
+  payment: String,
   description: String
 });
 
