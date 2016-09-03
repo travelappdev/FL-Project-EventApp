@@ -74,9 +74,12 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
-  .get('/404', function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  });
+
+// ??? should be 404 error
+  .on( 'error', function( error ){
+     console.log( "Error: \n" + error.message );
+     console.log( error.stack );
+   });
 
 
 //   .get('*', function(req, res) {
@@ -96,6 +99,47 @@ app
 var apiRouter = express.Router();
 
 
+// EVENTS ROUTE
+
+apiRouter.route('/events')
+
+.post(function(req, res) {
+  // create a new instance of the Event model
+  var event = new Event();
+
+  event.name = req.body.name;
+  event.place = req.body.place;
+  event.date = req.body.date;
+  event.time = req.body.time;
+  event.type = req.body.type;
+  event.payment = req.body.payment;
+  event.description = req.body.description;
+
+
+  // save the user and check for errors
+  event.save(function(err) {
+    if (err) {
+     // duplicate entry
+     if (err.code == 11000)
+       return res.json({ success: false, message: 'A user with that username already exists. '});
+     else
+       return res.send(err);
+     }
+     res.json({ message: 'Event created!' });
+  });
+})
+
+.get(function(req, res) {
+  // res.sendFile(path.join(`${__dirname}/db/randomUsers.json`))
+  Event.find(function(err, events) {
+    if(err) res.send(err);
+    res.json(events);
+  });
+});
+
+
+
+// USERS ROUTE
 
 apiRouter.route('/users')
 
@@ -133,10 +177,19 @@ apiRouter.route('/users')
   });
 
 
-apiRouter.route('/users/:fullname')
+
+//SHOULD BE FIXED
+
+
+apiRouter.route('/users/:email/:password')
   .get(function(req, res) {
 
-    User.findOne({ 'fullname': req.params.fullname }, function (err, user) {
+    User.findOne({
+
+      'email': req.params.email,
+      'password': req.params.password
+
+    }, function (err, user) {
       if (err) res.send(err);
       // return that user
       res.json(user);
@@ -168,29 +221,3 @@ http
   });
 
 console.log(`Server is running on port ${port}`);
-
-
-
-// // as server.js
-// var http = require('http');
-// var express = require('express');
-// var app = express();
-//
-// app
-//     .use(express.static('public'))
-//     .get('/home/login', function (req, res) {
-//         console.log('Login request');
-//         res.status(200).send('Login from server.');
-//     })
-//     .all('/*', function ( req, res ) {
-//         console.log('All');
-//         res
-//             .status( 200 )
-//             .set( { 'content-type': 'text/html; charset=utf-8' } )
-//             .sendfile('public/index.html' );
-//     })
-//     .on( 'error', function( error ){
-//        console.log( "Error: \n" + error.message );
-//        console.log( error.stack );
-//     });
-//
