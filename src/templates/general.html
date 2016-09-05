@@ -25,11 +25,13 @@
 
 
             <h2>Top Events</h2>
+
             <div class="g_top-events">
 
               <div class="g_event" ng-repeat="event in events">
-
-                <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+                <a href="http://localhost:8000/event">
+                  <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+                </a>
 
                 <div class="g_event-content">
                   <h3>{{event.name}}</h3>
@@ -43,7 +45,7 @@
       <div class="container-fluid visible-lg responsive-devices">
         <div class="row">
           <h2>Keep in touch in all devices</h2>
-          <img class="img-responsive" src="images/responsive_web_design.png" alt="">
+          <img class="img-responsive g_resp-img" src="http://benstewart.net/wp-content/uploads/2012/12/1442274_71263819.jpg" alt="">
         </div>
       </div>
 
