@@ -1,0 +1,92 @@
+a {
+  cursor: pointer;
+}
+
+// dimensions should be fixed
+
+.g_photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 65rem;
+}
+
+.g_main-photo {
+  z-index: 0;
+  position: absolute;
+  height: 65rem;
+  width: 100%;
+
+	background-image:  url('https://static.pexels.com/photos/119730/pexels-photo-119730.jpeg');
+  background-size: 100% 65rem;
+  background-blend-mode: darken;
+}
+
+.g_get-started .btn {
+  background-color: transparent;
+}
+
+.g_main-content {
+  text-align: center;
+  color: #fff;
+  width: 50%;
+  height: auto;
+  left: 25%;
+  bottom: 8rem;
+  position: absolute;
+  z-index: 1;
+
+  p {
+    margin-bottom: 12rem;
+  }
+}
+
+// .g_main-item {
+//   z-index: 1;
+//   text-transform: uppercase;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   text-align: center;
+//   color: red;
+//   margin-top: 25vh;
+//
+//   h1,p {
+//     color: #fff;
+//   }
+// }
+
+.g_top-events {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding-top: 2rem;
+}
+
+.g_event {
+  background-color: #fff;
+  width: 25%;
+  margin-left: 2rem;
+  height: 30rem;
+  border: 1px solid #999;
+  margin-bottom: 2rem;
+}
+
+.g_event:nth-child(1+2n) {
+  margin-left: 0;
+}
+
+.g_event-image {
+  width: 100%;
+  height: 16rem;
+}
+
+.g_event-content {
+  padding: 5px;
+}
+
+.g_resp-img {
+  width: 60%;
+  height: 40rem;
+}

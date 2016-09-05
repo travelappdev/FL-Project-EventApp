@@ -90,10 +90,6 @@ app
 
 
 
-
-
-
-
 //API router
 
 var apiRouter = express.Router();
@@ -130,12 +126,71 @@ apiRouter.route('/events')
 })
 
 .get(function(req, res) {
-  // res.sendFile(path.join(`${__dirname}/db/randomUsers.json`))
-  Event.find(function(err, events) {
-    if(err) res.send(err);
-    res.json(events);
-  });
+
+  Event
+    .find({})
+    .exec(function(err,events) {
+      if(err) res.send(err);
+      res.json(events);
+    });
 });
+
+
+// GET TOP EVENTS
+
+apiRouter.route('/topEvents')
+  .get(function(req, res) {
+    
+    Event
+      .find({})
+      .limit(20)
+      //.sort({ occupation: -1 }) -- should be fixed
+      .exec(function(err, events) {
+        if(err) res.send(err);
+        res.json(events);
+      })
+
+
+
+
+// Get single event
+
+apiRouter.route('/events/:name')
+  .get(function(req, res) {
+    Event.findOne({
+      'name': req.params.name
+     }, function (err, event) {
+      if (err) res.send(err);
+      // return that user
+      res.json(event);
+    });
+  })
+
+
+  // method is used to update an event
+  .put(function(req, res) {
+    Event.findOneAndUpdate({
+      'name': req.params.name
+    }, {$set: {name: req.body.description} },
+       {upsert: true}, // creates field if not exists
+
+       function(err, event) {
+         if(err) res.send(err)
+         res.json({message: 'Event updated!'});
+       });
+  })
+
+
+  .delete(function(req, res) {
+    Event.findOneAndRemove({
+      'name': req.params.name
+    }, function(err, event) {
+      if(err) res.send(err);
+      res.json({message: 'Event deleted!'});
+    });
+  });
+
+
 
 
 
@@ -181,7 +236,7 @@ apiRouter.route('/users')
 //SHOULD BE FIXED
 
 
-apiRouter.route('/users/:email/:password')
+apiRouter.route('/users/:email/:password') // body parser is responsible for theese parameters
   .get(function(req, res) {
 
     User.findOne({
@@ -193,7 +248,7 @@ apiRouter.route('/users/:email/:password')
       if (err) res.send(err);
       // return that user
       res.json(user);
-    })
+    });
   });
 
 
