@@ -1,4 +1,50 @@
+
 <div id="home">
-  <h1>home</h1>
-  {{home}}
+  <div class="g_photo-wrapper">
+    <div class="g_main-photo"></div>
+    <div class="g_main-content">
+
+      <h1>Some main text</h1>
+      <p>Some less important text and bla bla bla about something bla bla about something</p>
+
+      <div class="g_get-started" ng-click="showSignUpForm()">
+        <a class="btn btn-hover">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="h_search-wrapper">
+    <div class="h_search">
+      <label>
+        <input type="text" placeholder="search" ng-model="searchEvent" />
+      </label>
+
+    </div>
+
+    <div class="h_filters">
+      <h2>Filters</h2>
+    </div>
+  </div>
+
+
+
+    <h2>All Events</h2>
+
+    <div class="g_top-events">
+
+      <div class="g_event" ng-repeat="event in events">
+        <a href="http://localhost:8000/event">
+          <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+        </a>
+
+        <div class="g_event-content">
+          <h3>{{event.name}}</h3>
+          <p>{{event.description}}</p>
+        </div>
+      </div>
+
+    </div>
+
+
 </div>

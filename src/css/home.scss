@@ -1,0 +1,22 @@
+// variables
+
+$search_block: #999;
+
+
+.h_search-wrapper {
+  width: 100%;
+  height: 20rem;
+  background-color: $search_block;
+  display: flex;
+  flex-direction: row;
+}
+
+.h_search {
+  width: 50%;
+  height: 20rem;
+  border-right: 1px solid #000;
+}
+
+.h_filters {
+  
+}

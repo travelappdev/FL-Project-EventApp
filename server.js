@@ -138,7 +138,7 @@ apiRouter.route('/events')
 
 // GET TOP EVENTS
 
-apiRouter.route('/topEvents')
+apiRouter.route('/topevents')
   .get(function(req, res) {
 
     Event

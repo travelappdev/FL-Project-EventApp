@@ -1,9 +1,9 @@
 angular.module('mainApp', ['router'])
 
-  .controller('mainCtrl', function($scope) {
+  .controller('mainCtrl', function($scope, $location) {
 
     $scope.showLoginForm = function() {
-      alert('login');
+      $location.url('/home');
     };
 
   })
@@ -20,11 +20,6 @@ angular.module('mainApp', ['router'])
       .then(function(response) {
         $scope.events = angular.fromJson(response.data);
       });
-
-
-    // console.log(angular.element('#topEvents'));
-      // .html(`<p style="color:red;">${$scope.users}</p>`);
-
 
   })
 
@@ -54,8 +49,14 @@ angular.module('mainApp', ['router'])
   })
 
 
-  .controller('homeCtrl', function($scope) {
-    $scope.myname = 'home';
+  .controller('homeCtrl', function($scope, $http) {
+
+    $http.get('http://localhost:8000/api/topevents')
+      .then(function(response) {
+        $scope.events = angular.fromJson(response.data);
+    });
+
+
   })
 
 
