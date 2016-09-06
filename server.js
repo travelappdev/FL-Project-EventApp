@@ -140,7 +140,7 @@ apiRouter.route('/events')
 
 apiRouter.route('/topEvents')
   .get(function(req, res) {
-    
+
     Event
       .find({})
       .limit(20)
@@ -149,6 +149,7 @@ apiRouter.route('/topEvents')
         if(err) res.send(err);
         res.json(events);
       })
+  });
 
 
 
