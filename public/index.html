@@ -18,8 +18,10 @@
 
   <script src="../bower_components/angular/angular.min.js"></script>
   <script src="../bower_components/angular-route/angular-route.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../public/css/style.css" />
+
 </head>
 
 
@@ -32,7 +34,7 @@
           </a>
         </div>
         <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2">
-          <a class="btn btn-hover">
+          <a class="btn btn-hover" ng-click="showLoginForm()">
              <span>Log in </span>
           </a>
         </div>
@@ -46,21 +48,24 @@
       <!-- CONTAINER FOR OUR ROUTES -->
         <main>
             <div ng-view></div>
-
         </main>
 
 
       <footer class="footer">
         <div class="container-fluid">
           <div class="ftr-wrap">
-              <div class="row ftr-links">
-                     <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Faq</a></div>
-                     <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">About us</a></div>
-                     <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Find us</a></div>
-              </div>
+            <div class="row ftr-links">
+               <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Faq</a></div>
+               <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">About us</a></div>
+               <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Find us</a></div>
+            </div>
           </div>
         </div>
       </footer>
+
+
+      <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
 
     <script src="../public/js/app.js"></script>
     <script src="../public/js/templates.js"></script>
