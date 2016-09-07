@@ -1,7 +1,10 @@
 // inject ngRoute for all our routing needs
-angular.module('router', ['ngRoute'])
+
+// TODO $state
+
+angular.module('router', ['ngRoute']) // ui-router allow to maintain old browsers
   // configure our routes
-  .config(function($routeProvider, $locationProvider) {
+  .config(function($routeProvider, $locationProvider) { // providers
 
     $routeProvider
 
