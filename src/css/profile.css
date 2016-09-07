@@ -4,12 +4,17 @@ body{
 	height: 100%;
 }
 
+#profile {
+	margin-top: 150px;
+	height: 1270px;
+}
+
 .wrapper{
 	margin: 1%;
 	position: absolute;
 	background: white;
 	width: 98%;
-	height: auto; 
+	height: auto;
 	border-radius: 10px;
 }
 
@@ -84,7 +89,7 @@ body{
 	width: 90%;
 }
 
-.user-info span::after{ 
+.user-info span::after{
     content: url('edit.png');
 }
 
@@ -255,12 +260,12 @@ textarea{
 
    #main-photo{
    width: 40%;
- } 
+ }
 
   .snip1493:first-child{
     margin-right: 10%;
   }
-} 
+}
 
 @media (max-width: 1000px) {
   .glyphicon{

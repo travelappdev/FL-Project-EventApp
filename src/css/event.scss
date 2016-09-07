@@ -3,10 +3,11 @@
 $event_background: #fff;
 
 #event {
+  // margin-top: 150px;
   width: 90%;
   height: auto;
   background-color: $event_background;
-  margin: 2rem auto;
+  margin: 150px auto 2rem;
   border-radius: 15px;
 }
 
