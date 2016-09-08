@@ -1,0 +1,168 @@
+@font-face {
+    font-family: "SegoeUIRegular";
+    src: url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot");
+    src: url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
+    url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUIBold";
+    src: url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot");
+    src: url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+    url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.well{
+	margin-bottom: 0 !important;
+	padding: 45px !important;
+}
+::-webkit-input-placeholder {
+
+    color: white;
+}
+
+@media screen and (max-width: 425px) {
+	.picture{
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.custom-title{
+	
+	text-align: center;
+	color: #252539;
+	font-family: SegoeUIBold;
+}
+
+.form-control{
+	border-radius:none;
+	border:none;	
+}
+
+.add-image{
+	border-radius: 10px;
+	display:inline-block;
+	width: 306px;
+	height: 318px;
+}
+
+.picture{
+	padding:0 !important;
+	display: inline-block;
+	text-align: center;
+	background-color: white;
+	color: #253939;
+	border:2px dashed #253939;
+	border-radius: 10px;
+	padding-left: 0;
+	width: 310px !important;
+	height: 322px !important;
+	margin-right: 25px;
+}
+
+
+.file-upload {
+	cursor: pointer;
+	font-family: SegoeUIRegular;
+	background-color: #252539;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: white;
+	border: none;
+	width: 190px;
+	padding: 5px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right:0;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.file-upload input.file-input {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 20px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor:pointer;
+}
+.upload_title{
+	font-family: SegoeUIRegular;
+	margin-top: 50%;
+}
+
+.file-upload:hover {
+	background-color: #3C3C5B;
+}
+
+.properties_block{
+	float: right;
+	padding: 0 !important;
+}
+
+.property{
+	font-family: SegoeUIRegular;
+	padding: 15px 10px;
+	margin-top: 10px;
+	width: 100%;
+	border: none;
+	color: #253939;
+}
+
+
+.event_description{
+	background-color: #252539;
+	color: white;
+	border: none;
+	margin: 10px 0 0 0;
+	resize: none;
+}
+
+.save_btn{
+	font-size: 20px;
+	font-family: SegoeUIBold;
+	color: white;
+	background-color: #EFCE4A;
+	border: none;
+	border-bottom: 2px solid #FFCC00;
+	padding: 10px 0;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.save_btn:active, .save_btn:visited, .save_btn:focus, .upload_btn:active,
+.upload_btn:visited, .upload_btn:focus{
+	outline: none;
+	-webkit-appearance:none; 
+}
+
+.save_btn:hover {
+	background-color: #F1D870;
+	border-color: #EFCE4A;
+}
+
+.save_btn:active {
+	border-bottom: none;
+	border-top: 2px solid #EFCE4A;
+}
+
+.btn_wrap{
+	float: right;
+	padding: 0;
+}
+
+.block-wrap{
+	margin-top: 25px;
+}
