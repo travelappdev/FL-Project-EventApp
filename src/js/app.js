@@ -1,32 +1,45 @@
-angular.module('mainApp', ['router', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ui.bootstrap', 'date.picker', 'time.picker'])
-
-  .controller('mainCtrl', function($scope, $location) {
+angular.module('mainApp', ['router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])//, 'date.picker', 'time.picker'
+  .controller('mainCtrl', function($scope, $location, $http) {
 
     $scope.showLoginForm = function() {
       $location.url('/home');
     };
 
+
+    $scope.user_regist = {};
+
+    $scope.submitForm = function ()
+    {
+      console.log($scope.user_regist)
+      // http({
+      // 	method: 'POST',
+      // 	url: '/app/users',
+      // 	data: sc.user_regist,
+      // 	//headers:  {}
+      // });
+    };
+
   })
 
 
-  .controller('generalCtrl', function($scope, $http, $uibModal) {
+  .controller('generalCtrl',['$scope', '$http', '$uibModal', '$sce', function (sc, $http, uibModal, sce){
 
-    $scope.showSignUpForm = function() {
+    sc.showSignUpForm = function() {
       alert('signup');
     };
 
 
     $http.get('http://localhost:8000/api/events')
       .then(function(response) {
-        $scope.events = angular.fromJson(response.data);
+        sc.events = angular.fromJson(response.data);
       });
 
 
 
 
-      $scope.animationsEnabled = true;
+      sc.animationsEnabled = true;
 
-      $scope.event = {
+      sc.event = {
         name: "name",
         place: "place",
         payment: "type",
@@ -38,7 +51,7 @@ angular.module('mainApp', ['router', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ui.b
 
       var modalInstance;
 
-      $scope.open = function (url, size, controller)
+      sc.open = function (url, size, controller)
       {
 
         modalInstance = uibModal.open({
@@ -58,15 +71,14 @@ angular.module('mainApp', ['router', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ui.b
         //   });
         // };
 
-        $scope.toggleAnimation = function () {
+        sc.toggleAnimation = function () {
           this.animationsEnabled = !this.animationsEnabled;
         };
       };
 
 
 
-
-  })
+  }])
 
 
       //

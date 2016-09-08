@@ -29,6 +29,11 @@ angular.module('router', ['ngRoute']) // ui-router allow to maintain old browser
       controller: 'aboutCtrl'
     })
 
+    .when('/registration', {
+      templateUrl: 'registration.html',
+      controller: 'generalCtrl'
+    })
+
     .when('/profile', {
       templateUrl: 'profile.html',
       controller: 'profileCtrl'

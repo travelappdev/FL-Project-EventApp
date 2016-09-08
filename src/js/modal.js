@@ -27,7 +27,7 @@ app.controller('Ctrl', ['$scope', '$uibModal', '$sce', function (sc, uibModal, s
       sc: sc,
       size: size
     });
-   
+
     // sc.openComponentModal = function () {
     //   var modalInstance = uibModal.open({
     //   animation: this.animationsEnabled,
@@ -42,11 +42,11 @@ app.controller('Ctrl', ['$scope', '$uibModal', '$sce', function (sc, uibModal, s
 
 }])
 
-.controller('EventController', ['$scope', 'multipartForm', function (sc, multipartForm, $uibModalInstance, event) 
+.controller('EventController', ['$scope', 'multipartForm', function (sc, multipartForm, $uibModalInstance, event)
 {
   sc.event = event;
   console.log(sc.event);
-  sc.submit = function () 
+  sc.submit = function ()
   {
       // console.log(multipartForm);
       var uploadUrl = '/upload';
@@ -109,7 +109,7 @@ app.controller('Ctrl', ['$scope', '$uibModal', '$sce', function (sc, uibModal, s
     opened: false
   };
 
-  sc.openDatePicker = function() 
+  sc.openDatePicker = function()
   {
     sc.popup.opened = true;
   };
@@ -119,8 +119,8 @@ app.controller('Ctrl', ['$scope', '$uibModal', '$sce', function (sc, uibModal, s
   //     return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
   //   };
   //   $scope.minDate = new Date();
-  //   $scope.$watch('dt.value', function(newValue) { 
-  //     if (newValue) $scope.required.timestamp = Math.floor(newValue.getTime() / 1000); 
+  //   $scope.$watch('dt.value', function(newValue) {
+  //     if (newValue) $scope.required.timestamp = Math.floor(newValue.getTime() / 1000);
   //     console.log('timestamp: ', $scope.required.timestamp, '/ dt: ', newValue);
   //   });
 
