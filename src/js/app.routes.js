@@ -10,37 +10,37 @@ angular.module('router', ['ngRoute']) // ui-router allow to maintain old browser
 
     // route for the home page
     .when('/', {
-      templateUrl : 'public/pages/general.html',
+      templateUrl : 'general.html',
       controller : 'generalCtrl'
     })
 
     .when('/event', {
-      templateUrl : 'public/pages/event.html',
+      templateUrl : 'event.html',
       controller : 'eventCtrl'
     })
 
     .when('/home', {
-      templateUrl : 'public/pages/home.html',
+      templateUrl : 'home.html',
       controller : 'homeCtrl'
     })
 
     .when('/about', {
-      templateUrl: 'public/pages/about.html',
+      templateUrl: 'about.html',
       controller: 'aboutCtrl'
     })
 
     .when('/profile', {
-      templateUrl: 'public/pages/profile.html',
+      templateUrl: 'profile.html',
       controller: 'profileCtrl'
     })
 
     .when('/event_manage', {
-      templateUrl: 'public/pages/event_manage.html',
+      templateUrl: 'event_manage.html',
       controller: 'event_manageCtrl'
     })
 
     .otherwise({
-      templateUrl: 'public/pages/404.html',
+      templateUrl: '404.html',
       controller: 'errorCtrl'
     });
 

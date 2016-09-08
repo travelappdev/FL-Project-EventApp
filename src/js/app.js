@@ -1,4 +1,4 @@
-angular.module('mainApp', ['router'])
+angular.module('mainApp', ['router', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ui.bootstrap', 'date.picker', 'time.picker'])
 
   .controller('mainCtrl', function($scope, $location) {
 
@@ -9,7 +9,7 @@ angular.module('mainApp', ['router'])
   })
 
 
-  .controller('generalCtrl', function($scope, $http) {
+  .controller('generalCtrl', function($scope, $http, $uibModal) {
 
     $scope.showSignUpForm = function() {
       alert('signup');
@@ -20,6 +20,51 @@ angular.module('mainApp', ['router'])
       .then(function(response) {
         $scope.events = angular.fromJson(response.data);
       });
+
+
+
+
+      $scope.animationsEnabled = true;
+
+      $scope.event = {
+        name: "name",
+        place: "place",
+        payment: "type",
+        dt: "date",
+        time: "time",
+        description: "text",
+        image: ""
+      };
+
+      var modalInstance;
+
+      $scope.open = function (url, size, controller)
+      {
+
+        modalInstance = uibModal.open({
+          animation: this.animationsEnabled,
+          ariaLabelledBy: 'modal-title',
+          ariaDescribedBy: 'modal-body',
+          templateUrl: sce.trustAsResourceUrl(url),
+          controller: controller,
+          sc: sc,
+          size: size
+        });
+
+        // sc.openComponentModal = function () {
+        //   var modalInstance = uibModal.open({
+        //   animation: this.animationsEnabled,
+        //   component: 'modalComponent'
+        //   });
+        // };
+
+        $scope.toggleAnimation = function () {
+          this.animationsEnabled = !this.animationsEnabled;
+        };
+      };
+
+
+
 
   })
 
