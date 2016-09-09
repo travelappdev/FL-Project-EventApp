@@ -1,59 +1,64 @@
 // variables
+body {
+  overflow-x: hidden;
+}
 
 $event_background: #fff;
-
+$dark: #253938;
 #event {
   // margin-top: 150px;
   width: 90%;
   height: auto;
   background-color: $event_background;
   margin: 150px auto 2rem;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 
+
+.row {
+  padding: 10px;
+}
 .event_photo {
-
-
+  padding: 10px;
   img {
-    margin: 20px 10px;
-     width: 400px;
-     height: 400px;
-     border-radius: 5px;
+       width: 750px;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
 
+
 //
 .event_description {
-  padding: 10px;
-  border-radius: 5px;
-  margin:  0 10px;
-  background-color: #019875;
-  width: 400px;
+  width: 750px;
+  padding: 15px;
+  margin-top: 20px;
+  color: white;
+  background-color: $dark;
   height: 20rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+
+  .event_description_social {
+  top:50%;
+  left:50%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+
+  }
 
   h2 {
     margin: 0.5rem 0 1rem;
-    font-size: 19px;
-  }
 }
 
 .event_members {
-
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #eee;
-  color: #777;
+  color: black;
   height: 15rem;
   width: 96%;
   margin: 2rem auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
   h3 {
     margin: 0;
-    font-size: 16px;
   }
 }
 
@@ -63,21 +68,87 @@ $event_background: #fff;
 }
 
 .event_member {
-  width: 100px;
-  height: 100px;
-  border: 1px solid blueviolet;
-  margin: 0.5rem 1.5rem 0 0;
+
+img {
+  padding: 10px 15px;
+  width: 150px;
+}
 }
 
 
 .event_info {
+  h1 {
+    text-align: center;
+  }
 
+  .event_weather {
+    h2 {
+      text-align: center;
+    }
+  }
 }
+
 
 
 .events_similar {
   height: 20rem;
   width: 96%;
   margin: 0 auto 2rem;
-  background-color: violet;
+
+  hr {
+    color:  black;
+  }
+}
+
+.event_info_name {
+  text-align: center;
+ }
+
+.event_chr {
+  border-bottom: 1px solid black;
+  max-width: 650px;
+  padding: 15px 0;
+}
+
+i {
+
+  border-radius: 50%
+}
+
+.fa {
+  padding: 15px 20px;
+  color: white;
+}
+
+.icon-zoom .fa:hover, .social-icons.icon-zoom .fa:active {
+ 	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+.fa-facebook {
+  background-color:#3C599F;
+}
+
+.fa-twitter {
+  background-color:#32CCFE;
+}
+
+.fa-google-plus {
+  background-color:#CF3D2E;
+}
+
+.fa-pinterest {
+  background-color:#CC2127;
+}
+
+
+.event_author {
+  padding: 50px 0;
+  img {
+    width: 100px;
+  }
 }
