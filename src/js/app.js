@@ -29,7 +29,7 @@ angular.module('mainApp', ['router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
     };
 
 
-    $http.get('http://localhost:8000/api/events')
+    $http.get('/api/events')
       .then(function(response) {
         sc.events = angular.fromJson(response.data);
       });

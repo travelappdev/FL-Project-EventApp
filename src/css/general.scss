@@ -7,17 +7,17 @@ a {
 .g_photo-wrapper {
   position: relative;
   width: 100%;
-  height: 65rem;
+  height: 100vh;
 }
 
 .g_main-photo {
   z-index: 0;
   position: absolute;
-  height: 65rem;
+  height: 100vh;
   width: 100%;
 
-	background-image:  url('https://static.pexels.com/photos/119730/pexels-photo-119730.jpeg');
-  background-size: 100% 65rem;
+  background-image: url('http://localhost:8000/src/assets/road.jpeg');
+  background-size: 100% 100vh;
   background-blend-mode: darken;
 }
 
