@@ -55,6 +55,11 @@ a {
 //   }
 // }
 
+.g_event-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
 .g_top-events {
    width: 100%;
    display: flex;
@@ -68,7 +73,8 @@ a {
   background-color: #fff;
   width: 25%;
   margin-left: 2rem;
-  height: 30rem;
+  padding: 5px;
+  height: 28rem;
   border: 1px solid #999;
   margin-bottom: 2rem;
 }
@@ -84,9 +90,18 @@ a {
 
 .g_event-content {
   padding: 5px;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.g_resp-wrapper {
+  width: 100%;
+  height: auto;
 }
 
 .g_resp-img {
   width: 60%;
-  height: 40rem;
+  height: 76vh;
 }
