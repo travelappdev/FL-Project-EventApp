@@ -62,10 +62,6 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
-  .get('/registration', function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  })
-
   .get('/home', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
@@ -158,13 +154,12 @@ apiRouter.route('/topevents')
 
 
 
-// Get single event
+// Get single event by id
 
-apiRouter.route('/events/:name')
+apiRouter.route('/events/:event_id')
+
   .get(function(req, res) {
-    Event.findOne({
-      'name': req.params.name
-     }, function (err, event) {
+    Event.findById(req.params.event_id, function(err, event) {
       if (err) res.send(err);
       // return that user
       res.json(event);
@@ -209,10 +204,8 @@ apiRouter.route('/users')
     // set the users information (comes from the request)
     user.email = req.body.email;
     user.password = req.body.password;
-    user.fullname = req.body.fullname;
-    user.age = req.body.age;
-    user.phone = req.body.phone;
-    user.homeTown = req.body.homeTown;
+    user.username = req.body.username;
+
 
 
     // save the user and check for errors
@@ -255,6 +248,18 @@ apiRouter.route('/users/:email/:password') // body parser is responsible for the
       res.json(user);
     });
   });
+
+
+// Should be applied
+
+  apiRouter.route('/users/:user_id')
+    .get(function(req, res) {
+      User.findById(req.params.user_id, function(err, user) {
+        if (err) res.send(err);
+        // return that user
+        res.json(user);
+      });
+    });
 
 
 

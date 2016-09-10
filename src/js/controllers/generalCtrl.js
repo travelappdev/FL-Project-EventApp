@@ -1,11 +1,13 @@
 angular.module('mainApp')
 .controller('generalCtrl',['$scope', '$http', '$uibModal', '$sce', function (sc, $http, uibModal, sce){
 
+  sc.errorMsg = '';
+
 
 // download top events
 // should be fixed
 
-  $http.get('/api/events')
+  $http.get('/api/topevents')
     .then(function(response) {
       sc.events = angular.fromJson(response.data);
     });
@@ -13,11 +15,18 @@ angular.module('mainApp')
 // post user data on server
 
   sc.postData = function() {
-    $http.post('http://localhost:8000/api/users/', {
-      "email": sc.user_email,
-      "fullname": sc.user_fullname,
-      "password": sc.user_password
-    });
+    if(sc.user_password === sc.user_repassword) {
+      $http.post('http://localhost:8000/api/users/', {
+        "email": sc.user_email,
+        "username": sc.user_name,
+        "password": sc.user_password
+      });
+    } else {
+      sc.errorMsg = 'Confirmation failed!';
+      sc.user_password = '';
+      sc.user_repassword = '';
+    }
+
   }
 
 

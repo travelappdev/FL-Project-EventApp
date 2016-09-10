@@ -5,20 +5,6 @@ angular.module('mainApp', ['router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
   })
 
 
-  .controller('homeCtrl', function($scope, $http) {
-
-    $http.get('http://localhost:8000/api/topevents')
-      .then(function(response) {
-        $scope.events = angular.fromJson(response.data);
-    });
-
-
-  })
-
-  .controller('profileCtrl', function($scope) {
-    $scope.myname = 'profile';
-  })
-
   .controller('event_manageCtrl', function($scope) {
     $scope.myname = 'event manage';
   })
