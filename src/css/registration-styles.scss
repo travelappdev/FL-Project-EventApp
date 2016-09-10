@@ -42,7 +42,7 @@ $darkblue: #253939;
 }
 
 .field{
-	font-family: SegoeUIBold; 
+	font-family: SegoeUIBold;
 	padding: 15px 10px;
 	margin-top: 15px;
 	width: 100%;
@@ -58,16 +58,16 @@ $darkblue: #253939;
 
 .separator{
 
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid $darkgrey; 
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid $darkgrey;
    line-height: 0.1em;
-   margin: 25px 0 20px; 
+   margin: 25px 0 20px;
 }
 
 .interrupt-text{
 	font-family: SegoeUIBold;
-	background: white; 
+	background: white;
 	color: $darkgrey;
     padding:0 10px;
 }
@@ -100,4 +100,9 @@ $darkblue: #253939;
 
 .recover-pass:hover {
 	text-decoration: underline;
+}
+
+.errorMsg {
+  color: red;
+  font-size: 18px;
 }

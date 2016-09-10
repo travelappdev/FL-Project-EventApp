@@ -1,9 +1,29 @@
 angular.module('mainApp')
   .controller('mainCtrl', function($scope, $location, $http) {
 
-  $scope.showLoginForm = function() {
+
+ // Check the url
+
+  $scope.showLogin = function() {
+    return location.pathname === '/';
+  }
+
+
+
+  // Button events
+
+
+  $scope.visitHome = function() {
     $location.url('/home');
   };
+
+  $scope.logout = function() {
+    $location.url('/');
+  }
+
+  $scope.visitProfile = function() {
+    $location.url('/profile');
+  }
 
 
   $scope.user_regist = {};

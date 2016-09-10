@@ -11,11 +11,11 @@
   				<input type="password" placeholder="Confirm password" class="field" required ng-model="user_regist.repassword"> -->
 
 
-          <input type="text" placeholder="Username" class="field" required ng-model="user_fullname">
+          <input type="text" placeholder="Username" class="field" required ng-model="user_name">
     				<input type="email" placeholder="Email address" class="field" required ng-model="user_email">
     				<input type="password" placeholder="Password" class="field" required ng-model="user_password">
     				<input type="password" placeholder="Confirm password" class="field" required ng-model="user_repassword">
-
+            <div class="errorMsg"><span>{{errorMsg}}</span></div>
 
 				<button type="submit" ng-click="postData()" class="save_btn submit-btn">Submit</button>
 
