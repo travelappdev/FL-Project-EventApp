@@ -39,7 +39,7 @@ angular.module('mainApp')
       dt: "date",
       time: "time",
       description: "text",
-      image: ""
+      file: ""
     };
 
     var modalInstance;
@@ -57,16 +57,14 @@ angular.module('mainApp')
         size: size
       });
 
-      // sc.openComponentModal = function () {
-      //   var modalInstance = uibModal.open({
-      //   animation: this.animationsEnabled,
-      //   component: 'modalComponent'
-      //   });
-      // };
-
-      sc.toggleAnimation = function () {
-        this.animationsEnabled = !this.animationsEnabled;
+      sc.openComponentModal = function () {
+        var modalInstance = uibModal.open({
+        animation: this.animationsEnabled,
+        component: 'modalComponent'
+        });
       };
+
+
     };
 
 

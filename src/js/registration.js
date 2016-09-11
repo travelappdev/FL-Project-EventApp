@@ -1,4 +1,4 @@
-app.controller('RegistController',[ '$scope', '$http', function (sc, http)
+angular.module('mainApp').controller('RegistController',[ '$scope', '$http', function (sc, http)
 {
 	sc.user_regist = {};
 

@@ -1,5 +1,5 @@
 
-<div id="home">
+<div id="home" ng-controller="generalCtrl">
   <div class="g_photo-wrapper">
     <div class="g_main-photo"></div>
     <div class="g_main-content">
@@ -7,8 +7,8 @@
       <h1>Some main text</h1>
       <p>Some less important text and bla bla bla about something bla bla about something</p>
 
-      <div class="g_get-started" ng-click="showSignUpForm()">
-        <a class="btn btn-hover">Get Started</a>
+      <div class="g_get-started" ng-click="open('../src/templates/adding_event.html', 'lg', 'EventController')">
+        <a class="btn btn-hover">Add new event</a>
       </div>
 
     </div>
@@ -34,7 +34,7 @@
     <div class="g_top-events">
 
       <div class="g_event" ng-repeat="event in events | filter: searchEvent">
-        <a ng-href="/event/{{event._id}}">
+        <a href="http://localhost:8000/event">
           <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
         </a>
 
