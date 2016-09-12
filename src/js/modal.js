@@ -1,8 +1,7 @@
 angular.module('mainApp')
 .controller('EventController', ['$scope', 'multipartForm', '$uibModalInstance', function (sc, multipartForm, uibModalInstance)
 {
-  sc.submit = function ()
-  {
+  sc.submit = function () {
       var uploadUrl = '/upload';
       multipartForm.post(uploadUrl, sc.event);
       uibModalInstance.close();
@@ -17,7 +16,7 @@ angular.module('mainApp')
     mstep: [1, 5, 10, 15, 25, 30]
   };
 
-  
+
   sc.update = function() {
     var d = new Date();
     d.setHours( 14 );
