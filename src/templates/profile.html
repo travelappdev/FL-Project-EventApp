@@ -4,12 +4,12 @@
 				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="profile-photo" id="p_main-photo">
 
 				<div class="p_user-info col-md-3 col-xs-12">
-					<p id="p_name">Name Surname</p>
-          <span><input readonly="createProfile" type="text" id="sex" value="Sex:"></span>
-					<span><input readonly="createProfile" type="text" id="age" value="Age:"></span>
-					<span><input readonly="createProfile" type="text" id="town" value="Hometown:"></span>
-					<span><input readonly="createProfile" type="mail" id="mail" value="Email:"></span>
-					<span><input readonly="createProfile" type="phone" id="phone" value="Phone:"></span>
+					<p id="p_name">{{getCookie("username")}}</p>
+          <span><input readonly="createProfile" type="text" id="sex" value='Sex: {{getCookie("email")}}'></span>
+					<span><input readonly="createProfile" type="text" id="age" value='Age: {{getCookie("age")}}'></span>
+					<span><input readonly="createProfile" type="text" id="town" value='Hometown: {{getCookie("homeTown")}}'></span>
+					<span><input readonly="createProfile" type="mail" id="mail" value='Email: {{getCookie("email")}}'></span>
+					<span><input readonly="createProfile" type="phone" id="phone" value='Phone: {{getCookie("phone")}}'></span>
 				</div>
 
 				<div class="p_description col-md-4">

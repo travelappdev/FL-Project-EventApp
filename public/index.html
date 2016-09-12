@@ -42,7 +42,7 @@
           </a>
         </div>
         <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="showLogin()">
-          <a class="btn btn-hover" ng-click="visitHome()">
+          <a class="btn btn-hover" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">
              <span>Log in</span>
           </a>
         </div>
@@ -56,6 +56,12 @@
         <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
           <a class="btn btn-hover" ng-click="visitProfile()">
              <span>My profile</span>
+          </a>
+        </div>
+
+        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+          <a class="btn btn-hover" ng-click="visitHome()">
+             <span>Home</span>
           </a>
         </div>
 

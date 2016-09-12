@@ -1,23 +1,23 @@
 <div class="modal-header header-block">
-	<h2 class="modal-title custom-title">New event</h2> 
+	<h2 class="modal-title custom-title">New event</h2>
 	<img src="./src/assets/close.png" alt="" class="close-btn" ng-click="close()">
 </div>
 
 <div id="modal-body">
 	<div class="container-fluid well">
-		<form class="form-vertical" role="form"" id="event-form" name="event-form" required ng-submit="submit()">
+		<form class="form-vertical" role="form" id="event-form" name="event-form" required ng-submit="submit()">
   			<div class="row">
-  			
+
 				<div class="picture img-responsive col-md-3 col-xs-9">
- 
+
 					<img class="add-image">
 					<h2 class="upload_title">Choose photo</h2>
-					<button class="file-upload">            
+					<button class="file-upload">
   						<input type="file" class="file-input" accept="image/*" onchange="readURL(this)"  name="image"file-model="event.file">Upload photo
   					</button>
 
 				</div>
-				
+
 				<div class=" properties_block col-md-7 col-sm-12 col-xs-12">
 					<div>
 						<input type="text" name="name" placeholder="Type event name here ..." class="property" required ng-model="event.name" name="name"/>
@@ -30,7 +30,7 @@
 					</div>
 					<div>
 						<input type="text" name="type" placeholder="Choose event type ..." class="date-wrap"  ng-model="event.type" data-toggle="collapse" data-target="#categories" required/>
-						
+
 						<div class="collapse" id="categories">
 							<label class="category-it">
 						      <input value="Concert" type="radio" ng-model="event.type">Concert
@@ -61,7 +61,7 @@
 			</div>
 			<div class="block-wrap row">
 				<textarea class="event_description-area col-md-7 col-xs-12 col-sm-7" placeholder="Enter event description here ..." rows="8" cols="10" maxlength="150" ng-model="event.description" name="description"></textarea>
-				
+
 				<div class="btn_wrap col-xs-12 col-sm-3">
 					<button type="submit" class="save_btn " ng-disabled="event-form.$invalid" ng-class="{ 'disabled': event-form.$invalid }" >Save</button>
 				</div>
@@ -71,4 +71,3 @@
 		</form>
 	</div>
 </div>
-			 
