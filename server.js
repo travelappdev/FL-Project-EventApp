@@ -13,7 +13,7 @@ const http         = require('http');
 
 
 // connect to our database
-mongoose.connect('mongodb://localhost:27017/appdb');
+//mongoose.connect('mongodb://localhost:27017/appdb');
 
 
 let User = require('./db/userSchema');
