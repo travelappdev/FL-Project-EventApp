@@ -25,26 +25,46 @@ window.fbAsyncInit = function() {
 
 function fbLogin() {
 
+    loginType = 'fb';
     FB.login(function(response) {
+        
         if (response.status === "connected") {
-            console.log("We are connected");
+            FB.api('/me', 'GET', {
+                    fields: 'first_name,last_name,id,picture.width(300).height(300)'
+                },
+                function(response) {
+                    console.log(response.id);
+                    console.log(response.first_name);
+                    console.log(response.last_name);
+                    console.log(response.picture.data.url);
+                })
         } else if (response.status === "not_authorized") {
-            console.log("We are not logged in.");
+            console.log("You are not logged in.");
         } else {
             console.log("You are not in facebook.");
         }
-    }, {scope: 'email'});
+    });
 
 }
 
-function getInfo(){
+function fbGetInfo() {
 
-    FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(300).height(300)'}, 
-        function(response){
-        console.log(response.id);
-        console.log(response.first_name);
-        console.log(response.last_name);
-        console.log(response.picture.data.url);
+    FB.api('/me', 'GET', {
+            fields: 'first_name,last_name,id,picture.width(300).height(300)'
+        },
+        function(response) {
+            console.log(response.id);
+            console.log(response.first_name);
+            console.log(response.last_name);
+            console.log(response.picture.data.url);
+        })
+
+}
+
+function fbLogout() {
+    FB.logout(function(response) {
+        console.log('FB user logged out');
+        renderButton();
+        loginType = 'simple';
     })
-
 }

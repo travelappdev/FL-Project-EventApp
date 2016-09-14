@@ -10,7 +10,7 @@
   <base href='/'>
 
   <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-  <meta name="google-signin-client_id" content="828555280883-4266e7ooogfnkn37cl4qvqtq0movhf52.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="828555280883-gnki4fgfl5p1lss9froaa6u8n77bld8j.apps.googleusercontent.com">
 
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -38,7 +38,6 @@
 
   <body>
 
-	<script src="../src/js/fb_login.js"></script>
 
 
     <header>
@@ -59,9 +58,9 @@
   	
   			<ul class="dropdown-menu">
  			    <li><div id="gSignIn" ng-click="visitHome()"></div></li>
-			    <li><a href="#" onclick="fbLogin()" ng-click="visitHome()">Facebook login</a></li>
+			    <li><a href="#" onclick="fbLogin()" ng-click="visitHome()"><img id="fb_l" src="http://8txb81fmsytmpvkp2gk1z8y2.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/login-fb.png" alt=""></a></li>
 			    <li role="separator" class="divider"></li>
-			    <li><a href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Log in</a></li>
+			    <li><a id="s_log" href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Log in</a></li>
 			</ul>
 	
 			</div>
@@ -70,7 +69,7 @@
 
         <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
           <a class="btn btn-hover" ng-click="logout()">
-             <span onclick="signOut()">Log out</span>
+             <span>Log out</span>
           </a>
         </div>
 

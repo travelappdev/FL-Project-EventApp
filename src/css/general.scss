@@ -105,3 +105,24 @@ a {
   width: 60%;
   height: 76vh;
 }
+
+.dropdown-menu{
+  padding: 10px;
+}
+
+#fb_l{
+  margin-left: -20px;
+  margin-top: 6px;
+  width: 133%;
+  height: 40px;
+}
+
+#fb_l:hover, #s_log:hover{
+  box-shadow: 1px 1px 5px #22F;
+}
+
+#s_log{
+  font-weight: bold;
+  margin-top: -6px;
+  height: 35px;
+}
