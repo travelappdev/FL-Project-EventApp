@@ -62,9 +62,11 @@ function fbGetInfo() {
 }
 
 function fbLogout() {
+
     FB.logout(function(response) {
         console.log('FB user logged out');
         renderButton();
-        loginType = 'simple';
+        loginType = 'none';
     })
+
 }

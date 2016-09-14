@@ -7,6 +7,7 @@ function onSuccess(googleUser) {
 	console.log('Name: ' + profile.getName());
 	console.log('Image URL: ' + profile.getImageUrl());
 	console.log('Email: ' + profile.getEmail());
+
 }
 
 function onFailure(error) {
@@ -34,7 +35,7 @@ function gSignout() {
     auth2.signOut().then(function () {
         console.log("Google User signed out");
         renderButton();
-        loginType = 'simple';
+        loginType = 'none';
     });
 
 }
