@@ -42,13 +42,15 @@ $darkblue: #253939;
 }
 
 .field{
-	font-family: SegoeUIBold;
+	font-family: SegoeUIRegular;
 	padding: 15px 10px;
 	margin-top: 15px;
 	width: 100%;
 	color: $darkblue;
-	border: 1px solid $darkgrey;
+	border: 1px solid $lightgrey;
 	border-radius: 5px;
+	font-size: 16px;
+	letter-spacing: 3px;
 }
 
 .submit-btn{
@@ -106,3 +108,4 @@ $darkblue: #253939;
   color: red;
   font-size: 18px;
 }
+

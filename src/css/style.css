@@ -10,6 +10,9 @@
   background: transparent;
   border: none;
   z-index: 1;
+  overflow-y:hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {
@@ -57,7 +60,8 @@
 }
 
 .header-item {
-  padding: 40px;
+  float:right;
+  padding-top: 25px;
 }
 
 

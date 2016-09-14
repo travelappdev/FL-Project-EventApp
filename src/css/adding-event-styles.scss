@@ -1,19 +1,19 @@
 @font-face {
     font-family: "SegoeUIRegular";
-    src: url("../src/assets/fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot");
-    src: url("../src/assets/fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
-    url("../src/assets/fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
-    url("../src/assets/fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+    src: url("./fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot");
+    src: url("./fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
+    url("./fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: "SegoeUIBold";
-    src: url("./src/assets/fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot");
-    src: url("./src/assets/fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
-    url("./src/assets/fonts/SegoeUI/SegoeUIBold/SegoeUIBold.woff") format("woff"),
-    url("./src/assets/fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+    src: url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot");
+    src: url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+    url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
@@ -200,9 +200,8 @@
 	cursor:pointer;
 }
 
-.glyphicon {
-   font-size: 14px!important;
-   position: relative!important;
+.glyphicon{
+	overflow-y: hidden;
 }
 
 .btn-link{
@@ -221,3 +220,4 @@
 .datepick{
 	margin-top: 25px;
 }
+

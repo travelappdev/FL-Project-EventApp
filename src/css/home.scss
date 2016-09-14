@@ -1,12 +1,12 @@
 // variables
 
-$search_block: #999;
-
+$darkblue: #373746;
 
 .h_search-wrapper {
   width: 100%;
   height: 20rem;
-  background-color: $search_block;
+  background-color: $darkblue;
+  opacity: 0.5;
   display: flex;
   flex-direction: row;
 }
@@ -19,4 +19,9 @@ $search_block: #999;
 
 .h_filters {
   
+}
+
+
+.results-wrap{
+	background-color: white;
 }
