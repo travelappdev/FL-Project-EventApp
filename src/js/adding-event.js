@@ -27,6 +27,7 @@ function readURLProfile(input) {
                
 
         };
+        $('.upload_title').attr('style','display:none');
         reader.readAsDataURL(input.files[0]);
     }
 }

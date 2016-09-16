@@ -14,19 +14,13 @@
     </div>
   </div>
 
-  <div class="h_search-wrapper">     
-      <div class="h_search">
-        <label>
-          <input type="text" placeholder="search" ng-model="searchEvent" />
-        </label>
-
-      </div>
-
-      <div class="h_filters">
-        <h2>Filters</h2>
-      </div>
-
+  <div class="row">
+    <div  class="search-wrapper">
+        <input type="text" placeholder="Search here..." required="">
+        <button type="submit">Search</button>
+    </div>
   </div>
+
 
 
   <div class="results-wrap">
@@ -40,10 +34,14 @@
             <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
           </a>
 
-          <div class="g_event-content">
-            <h3>{{event.name}}</h3>
-            <p>{{event.description}}</p>
-          </div>
+      <div class="g_event" ng-repeat="event in events | filter: searchEvent">
+        <a ng-href="/event/{{event._id}}">
+          <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+        </a>
+
+        <div class="g_event-content">
+          <h3>{{event.name}}</h3>
+          <p>{{event.description}}</p>
         </div>
       </div>
   </div>

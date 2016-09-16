@@ -28,6 +28,31 @@
     color: white;
 }
 
+
+@media screen and (max-width: 390px) {
+	.well{
+		padding: 5px!important;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.main-header{
+		font-size: 200%!important;
+	}
+
+	.sub-header{
+		font-size: 16px!important;
+	}
+
+	.btn-hover{
+		padding: 0 15px!important;
+	}
+
+	.btn{
+		font-size: 14px!important;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	.picture{
 		display: block;
@@ -155,9 +180,8 @@
 	font-size: 20px;
 	font-family: SegoeUIBold;
 	color: white;
-	background-color: #EFCE4A;
+	background-color: #2ecc71;;
 	border: none;
-	border-bottom: 2px solid #FFCC00;
 	padding: 10px 0;
 	width: 100%;
 	margin-top: 10px;
@@ -169,15 +193,6 @@
 	-webkit-appearance:none; 
 }
 
-.save_btn:hover {
-	background-color: #F1D870;
-	border-color: #EFCE4A;
-}
-
-.save_btn:active {
-	border-bottom: none;
-	border-top: 2px solid #EFCE4A;
-}
 
 .btn_wrap{
 	float: right;
@@ -195,9 +210,24 @@
 	background-color: white;
 }
 
+
+
+
 .close-btn{
-	float: right;
+	right: 25px;
+    top: 25px;
+    position: absolute;
 	cursor:pointer;
+}
+
+.close-btn:hover, .close-btn:focus, close-btn:active {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+}
+
+.save_btn:hover, .save_btn:focus, .save_btn:active {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
 }
 
 .glyphicon{
@@ -219,5 +249,43 @@
 
 .datepick{
 	margin-top: 25px;
+}
+
+
+////////////////////////////
+input[type=radio].radio{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.radio-text{
+	margin-left: 25px;
+	color: blue;
+
+}
+
+input[type=radio].radio + label.radio-label{
+    border: none;
+    border-radius: 50%;
+    display:block;
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    background-repeat: no-repeat;
+    font-size:15px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #2de1a8;
+}
+
+input[type=radio].radio:checked + label.radio-label{
+	border: 5px solid rgba(45, 225, 170, 0.5);
+	//background: blue;
 }
 

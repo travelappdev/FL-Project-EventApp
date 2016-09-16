@@ -2,35 +2,35 @@
   <div class="p_wrapper container-fluid ">
 			<div class="info row">
 			
-				<div class="picture img-responsive col-md-3 col-xs-9 user-picture">
+				<div class="picture img-responsive col-md-3 col-xs-9 col-sm-3 user-picture">
 	 
-						<img class="add-image">
+						<img class="add-image picture-area">
 						<h2 class="upload_title">Choose photo</h2>
 						<button class="file-upload">            
-	  						<input type="file" class="file-input" accept="image/*" onchange=""  name="image"file-model="">Upload photo
+	  						<input type="file" class="file-input" accept="image/*" onchange="readURLProfile(this)"  name="image"file-model="">Upload photo
 	  					</button>
 				</div>
 
-				<div class="p_user-info col-md-5 col-sm-7 col-xs-12  ">
-					<p id="p_name">Name Surname</p>
-          			<span><input readonly="createProfile" type="text" id="sex" value="Sex:"></span>
-					<span><input readonly="createProfile" type="text" id="age" value="Age:"></span>
-					<span><input readonly="createProfile" type="text" id="town" value="Hometown:"></span>
-					<span><input readonly="createProfile" type="mail" id="mail" value="Email:"></span>
-					<span><input readonly="createProfile" type="phone" id="phone" value="Phone:"></span>
+				<div class="p_user-info col-md-7 col-sm-12 col-xs-12  ">
+					<p id="p_name">{{getCookie("username")}}gfj jjjk</p>
+          <span><input readonly="createProfile" type="text" id="sex" value='Sex: {{getCookie("email")}}'></span>
+					<span><input readonly="createProfile" type="text" id="age" value='Age: {{getCookie("age")}}'></span>
+					<span><input readonly="createProfile" type="text" id="town" value='Hometown: {{getCookie("homeTown")}}'></span>
+					<span><input readonly="createProfile" type="mail" id="mail" value='Email: {{getCookie("email")}}'></span>
+					<span><input readonly="createProfile" type="phone" id="phone" value='Phone: {{getCookie("phone")}}'></span>
 				</div>
 
-				<div class="p_description col-md-4">
-					<p id="p_fewords">Few words about myself</p>
-					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="">
-					<textarea name="" id="" cols="45" rows="5" class="text-block"></textarea>
+<!-- 				<div class="p_description col-lg-5 col-md-4 col-sm-12 col-xs-12">
+					<p id="p_fewords">Few words about myself</p> -->
+<!-- 					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt=""> -->
+<!-- 					<textarea name="" id="" cols="40" rows="6" class="text-block"></textarea>
 				</div>
 
-				<div class="p_interests col-md-4">
-					<p id="p_interests">I'm interested in:</p>
-					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="">
-					<textarea name="" id="" cols="45" rows="5" class="text-block"></textarea>
-				</div>
+				<div class="p_interests col-lg-5 col-md-4 col-sm-12 col-xs-12">
+					<p id="p_interests">I'm interested in:</p> -->
+			<!-- 		<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt=""> -->
+<!-- 					<textarea name="" id="" cols="40" rows="6" class="text-block"></textarea>
+				</div> -->
 
 			</div>
 
@@ -44,7 +44,7 @@
 						<figure class="snip">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
 							<figcaption>
-							<div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+							<div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
 							<h3>The World Ended Yesterday</h3>
 							<p>
 								You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
@@ -56,7 +56,7 @@
 						<figure class="snip middle">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
 							<figcaption>
-							<div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+							<div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
 							<h3>An Abstract Post Heading</h3>
 							<p>
 								Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
@@ -68,7 +68,7 @@
 						<figure class="snip last">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
 							<figcaption>
-							<div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+							<div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
 							<h3>Down with this sort of thing</h3>
 							<p>
 								I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
@@ -90,9 +90,9 @@
 						<figure class="snip">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
 							<figcaption>
-							<div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+							<div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
 							<h3>The World Ended Yesterday</h3>
-							<p>
+							<p class="prev_description">
 								You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
 							</p>
 							</figcaption>
@@ -102,9 +102,9 @@
 						<figure class="snip middle">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
 							<figcaption>
-							<div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+							<div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
 							<h3>An Abstract Post Heading</h3>
-							<p>
+							<p class="prev_description">
 								Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
 							</p>
 							</figcaption>
@@ -114,9 +114,9 @@
 						<figure class="snip last">
 							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
 							<figcaption>
-							<div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+							<div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
 							<h3>Down with this sort of thing</h3>
-							<p>
+							<p class="prev_description">
 								I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
 							</p>
 							</figcaption>

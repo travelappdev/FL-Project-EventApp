@@ -1,8 +1,15 @@
-<div class="modal-header text-center" ng-app="myApp" ng-controller="generalCtrl">
-            <h3 class="modal-title reg-title" id="modal-title">Registration</h3>
-</div>
-<div id="modal-body" class="regist">
-	<div class="container-fluid">
+<!-- <div class="modal-header text-center" ng-app="myApp" ng-controller="generalCtrl">
+            
+</div> -->
+<div id="modal-body" ng-app="myApp" ng-controller="generalCtrl">
+	    <div class="inner-container">
+    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+<!--       <source src="src/assets/Blue.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> -->
+      <source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?random=1" type="video/webm">
+    </video>
+	<div class="container-fluid form-content">
+		<h3 class="reg-title" id="modal-title">Registration</h3>
+		<img src="./src/assets/cancel.png" alt="" class="close-btn" ng-click="close()">
 		<form action="" class=" form-vertical" role="form" ng-submit="submitForm()">
   			<div class="row inner-wrap">
 				<!-- <input type="text" placeholder="Username" class="field" required ng-model="user_regist.name">
@@ -19,14 +26,14 @@
 
 				<button type="submit" ng-click="postData()" class="save_btn submit-btn">Submit</button>
 
-				<div class="separator">
+<!-- 				<div class="separator">
 					<span class="interrupt-text">OR</span>
 				</div>
 
 				<div class="auto-registr text-center">
 					<div class="google-registr"></div>
 					<div class="facebook-registr"></div>
-				</div>
+				</div> -->
   			</div>
 		</form>
 	</div>
