@@ -129,7 +129,6 @@ apiRouter.route('/events')
 
   Event
     .find({})
-    .limit(1000)
     .exec(function(err,events) {
       if(err) res.send(err);
       res.json(events);
