@@ -1,15 +1,16 @@
-<div class="modal-header text-center">
+<div class="modal-header text-center" ng-app="myApp" ng-controller="mainCtrl">
             <h3 class="modal-title reg-title" id="modal-title">Simple Log in</h3>
 </div>
 <div id="modal-body">
 	<div class="container-fluid">
 		<form action="" class=" form-vertical" role="form" ng-submit="submitForm()">
+        <!-- ng-submit="submitForm()" -->
   			<div class="row inner-wrap">
 
-  				<input type="email" placeholder="Email address" class="field" required ng-model="user_login.name">
-  				<input type="password" placeholder="Password" class="field" required ng-model="user_login.password">
-				
-				<button type="submit" class="save_btn submit-btn">Lets Go</button>
+  				<input type="email" placeholder="Email address" class="field" required ng-model="email">
+  				<input type="password" placeholder="Password" class="field" required ng-model="password">
+
+				<button type="submit" class="save_btn submit-btn" ng-click="getUser()">Lets Go</button>
 				<p class="text-center recover-pass">Forgot your password?</p>
 	 		</div>
 		</form>

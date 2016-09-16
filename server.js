@@ -62,10 +62,6 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
-  .get('/registration', function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  })
-
   .get('/home', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
@@ -105,19 +101,19 @@ apiRouter.route('/events')
 
 .post(function(req, res) {
   // create a new instance of the Event model
-  var event = new Event();
+  var ev = new Event();
 
-  event.name = req.body.name;
-  event.place = req.body.place;
-  event.date = req.body.date;
-  event.time = req.body.time;
-  event.type = req.body.type;
-  event.payment = req.body.payment;
-  event.description = req.body.description;
+  ev.name = req.body.name;
+  ev.place = req.body.place;
+  ev.date = req.body.date;
+  ev.time = req.body.time;
+  ev.type = req.body.type;
+  ev.payment = req.body.payment;
+  ev.description = req.body.description;
 
 
   // save the user and check for errors
-  event.save(function(err) {
+  ev.save(function(err) {
     if (err) {
      // duplicate entry
      if (err.code == 11000)
@@ -147,7 +143,7 @@ apiRouter.route('/topevents')
 
     Event
       .find({})
-      .limit(20)
+      .limit(6)
       //.sort({ occupation: -1 }) -- should be fixed
       .exec(function(err, events) {
         if(err) res.send(err);
@@ -158,13 +154,12 @@ apiRouter.route('/topevents')
 
 
 
-// Get single event
+// Get single event by id
 
-apiRouter.route('/events/:name')
+apiRouter.route('/events/:event_id')
+
   .get(function(req, res) {
-    Event.findOne({
-      'name': req.params.name
-     }, function (err, event) {
+    Event.findById(req.params.event_id, function(err, event) {
       if (err) res.send(err);
       // return that user
       res.json(event);
@@ -209,10 +204,8 @@ apiRouter.route('/users')
     // set the users information (comes from the request)
     user.email = req.body.email;
     user.password = req.body.password;
-    user.fullname = req.body.fullname;
-    user.age = req.body.age;
-    user.phone = req.body.phone;
-    user.homeTown = req.body.homeTown;
+    user.username = req.body.username;
+
 
 
     // save the user and check for errors
@@ -241,20 +234,52 @@ apiRouter.route('/users')
 //SHOULD BE FIXED
 
 
-apiRouter.route('/users/:email/:password') // body parser is responsible for theese parameters
+apiRouter.route('/users/:email') // body parser is responsible for theese parameters
   .get(function(req, res) {
 
     User.findOne({
 
-      'email': req.params.email,
-      'password': req.params.password
+      'email': req.params.email
 
     }, function (err, user) {
       if (err) res.send(err);
       // return that user
       res.json(user);
     });
-  });
+  })
+
+
+  .put(function(req, res) {
+    Event.findOneAndUpdate({
+      'email': req.params.email
+
+    }, {$set: {
+      username: req.params.username,
+      age: req.params.age,
+      gende: req.params.gender,
+      phone: req.params.phone,
+      homeTown: req.params.homeTown,
+      interests: req.params.interests
+    } },
+       {upsert: true}, // creates field if not exists
+
+       function(err, event) {
+         if(err) res.send(err)
+         res.json({message: 'Event updated!'});
+       });
+  })
+
+
+// Should be applied
+
+  // apiRouter.route('/users/:user_id')
+  //   .get(function(req, res) {
+  //     User.findById(req.params.user_id, function(err, user) {
+  //       if (err) res.send(err);
+  //       // return that user
+  //       res.json(user);
+  //     });
+  //   });
 
 
 

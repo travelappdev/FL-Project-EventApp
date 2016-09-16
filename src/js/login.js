@@ -1,9 +1,7 @@
-angular.module('mainApp').controller('LoginController',[ '$scope', '$http', function (sc, http)
-{
+angular.module('mainApp').controller('LoginController',[ '$scope', '$http', function (sc, http) {
 	sc.user_login = {};
 
-	sc.submitForm = function ()
-	{
+	sc.submitForm = function ()	{
 		console.log(sc.user_login);
 		// http({
 		// 	method: 'POST',

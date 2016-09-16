@@ -1,0 +1,73 @@
+<div class="modal-header header-block">
+	<h2 class="modal-title custom-title">New event</h2>
+	<img src="./src/assets/close.png" alt="" class="close-btn" ng-click="close()">
+</div>
+
+<div id="modal-body">
+	<div class="container-fluid well">
+		<form class="form-vertical" role="form" id="event-form" name="event-form" required ng-submit="submit()">
+  			<div class="row">
+
+				<div class="picture img-responsive col-md-3 col-xs-9">
+
+					<img class="add-image">
+					<h2 class="upload_title">Choose photo</h2>
+					<button class="file-upload">
+  						<input type="file" class="file-input" accept="image/*" onchange="readURL(this)"  name="image"file-model="event.file">Upload photo
+  					</button>
+
+				</div>
+
+				<div class=" properties_block col-md-7 col-sm-12 col-xs-12">
+					<div>
+						<input type="text" name="name" placeholder="Type event name here ..." class="property" required ng-model="event.name" name="name"/>
+					</div>
+					<div>
+						<input type="text" name="place" placeholder="Type event place here ..." class="property" required ng-model="event.place" name="place"/>
+					</div>
+					<div>
+						<input type="text" name="payment" placeholder="Type payment type ..." class="property" required ng-model="event.payment" name="payment"/>
+					</div>
+					<div>
+						<input type="text" name="type" placeholder="Choose event type ..." class="date-wrap"  ng-model="event.type" data-toggle="collapse" data-target="#categories" required/>
+
+						<div class="collapse" id="categories">
+							<label class="category-it">
+						      <input value="Concert" type="radio" ng-model="event.type">Concert
+						    </label>
+						    <label class="category-it">
+						      <input value="Classes" type="radio" ng-model="event.type">Classes
+						    </label>
+						    <label class="category-it">
+						      <input value="Master class" type="radio" checked="checked" ng-model="event.type">Master class
+						    </label>
+						    <label class="category-it">
+						      <input value="Trip" type="radio" ng-model="event.type">Trip
+						    </label>
+						</div>
+					</div>
+					<div>
+	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" ng-model="event.dt" required/>
+
+						<div class="collapse" id="date">
+							<div uib-datepicker ng-model="event.dt" class="datepick" datepicker-options="options" show-weeks="false"></div>
+						</div>
+					</div>
+					<div>
+						<div uib-timepicker ng-model="event.time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required>></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="block-wrap row">
+				<textarea class="event_description-area col-md-7 col-xs-12 col-sm-7" placeholder="Enter event description here ..." rows="8" cols="10" maxlength="150" ng-model="event.description" name="description"></textarea>
+
+				<div class="btn_wrap col-xs-12 col-sm-3">
+					<button type="submit" class="save_btn " ng-disabled="event-form.$invalid" ng-class="{ 'disabled': event-form.$invalid }" >Save</button>
+				</div>
+
+			</div>
+
+		</form>
+	</div>
+</div>

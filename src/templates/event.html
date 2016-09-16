@@ -14,16 +14,16 @@
             <a class="social" href="#"><i class="fa fa-2x fa-pinterest" aria-hidden="true"></i></a>
           </div>
           <h2>Event description:</h2>
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem, aperiam autem. Quam, ipsum. Natus enim quia velit est repudiandae.</span>
+          <span>{{event.description}}</span>
         </div>
       </div>
 
       <div class="event_info col-xs-12 col-sm-12 col-md-6 col-lg-5">
-        <h2 class="event_info_name">Wine degustation</h2>
-          <p class="event_chr">Place: Yankee Stadium</p>
-          <p class="event_chr">Time: 22:00</p>
-          <p class="event_chr">Date: October 23</p>
-          <p class="event_chr">Payment: 10 USD</p>
+        <h2 class="event_info_name">Username: {{event.name}}</h2>
+          <p class="event_chr">Place: {{event.place}}</p>
+          <p class="event_chr">Time: {{event.time}}</p>
+          <p class="event_chr">Date: {{event.date}}</p>
+          <p class="event_chr">Payment: {{event.payment}}</p>
           <br/><br/>
           <div class="event_weather">
             <h2>Check weather: <span>Temperature</span></h2>

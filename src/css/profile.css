@@ -48,9 +48,14 @@ body{
 	width: 90%;
 }
 
-.p_user-info span::after{
+/*.p_user-info span::after{
     content: url('http://findicons.com/files/icons/2226/matte_basic/16/edit.png');
+}*/
+
+.p_user-info img, .p_interests img, .p_description img {
+	cursor: pointer;
 }
+
 
 #p_fewords, #p_interests{
   margin: auto;
@@ -243,7 +248,7 @@ textarea{
 
      #main-photo{
    width: 44%;
- } 
+ }
 }
 
 @media (max-width: 870px) {

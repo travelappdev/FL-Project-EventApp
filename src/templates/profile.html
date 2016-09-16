@@ -4,28 +4,48 @@
 				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="profile-photo" id="p_main-photo">
 
 				<div class="p_user-info col-md-3 col-xs-12">
-					<p id="p_name">Name Surname</p>
-					<span><input type="text" id="sex" value="Sex:"></span>
-					<span><input type="text" id="age" value="Age:"></span>
-					<span><input type="text" id="town" value="Hometown:"></span>
-					<span><input type="mail" id="mail" value="Email:"></span>
-					<span><input type="phone" id="phone" value="Phone:"></span>
+					<p id="p_name">{{getCookie("username")}}</p>
+
+          <span>
+            <input readonly type="text" id="gender" value='Gender: {{getCookie("gender")}}' ng-model="gender">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('sex')" alt="" >
+          </span>
+
+					<span>
+            <input readonly type="text" id="age" value='Age: {{getCookie("age")}}' ng-model="age">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('age')" alt="">
+          </span>
+
+          <span>
+            <input readonly type="text" id="town" value='Hometown: {{getCookie("homeTown")}}' ng-model="homeTown">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('town')" alt="">
+          </span>
+
+          <span>
+            <input readonly type="mail" id="email" value='Email: {{getCookie("email")}}'>
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('email')" alt="">
+          </span>
+
+          <span>
+            <input readonly type="phone" id="phone" value='Phone: {{getCookie("phone")}}' ng-model="phone">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('phone')" alt="">
+          </span>
 				</div>
 
 				<div class="p_description col-md-4">
 					<p id="p_fewords">Few words about myself</p>
-					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="">
-					<textarea name="" id="" cols="45" rows="5"></textarea>
+					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('about_me')" alt="">
+					<textarea readonly name="" id="about_me" cols="45" rows="5"></textarea>
 				</div>
 
 				<div class="p_interests col-md-4">
 					<p id="p_interests">I'm interested in:</p>
-					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="">
-					<textarea name="" id="" cols="45" rows="5"></textarea>
+					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('interests')" alt="">
+					<textarea ng-model="interests" readonly name="" id="interests" cols="45" rows="5"></textarea>
 				</div>
 
 			</div>
-			
+
 			<div class="p_events-info">
 				<div class="created col-md-12 col-xs-12">
 					<h2><b>Created events:</b></h2>
@@ -114,7 +134,7 @@
 							</figcaption>
 							<a href="#"></a>
 						</figure>
-						
+
 						<span class="glyphicon glyphicon-menu-right"></span>
 					</div>
 				</div>
