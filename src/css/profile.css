@@ -91,9 +91,14 @@ body{
 	width: 94%;
 }
 
-.p_user-info span::after{
+/*.p_user-info span::after{
     content: url('../img/pencil.png');
+}*/
+
+.p_user-info img, .p_interests img, .p_description img {
+	cursor: pointer;
 }
+
 
 #p_fewords, #p_interests{
   margin: auto;
@@ -341,7 +346,7 @@ figure.snip.hover button {
 
      #main-photo{
    width: 44%;
- } 
+ }
 }
 
 @media screen and (max-width: 870px) {
