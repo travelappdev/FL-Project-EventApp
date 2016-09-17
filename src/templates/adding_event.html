@@ -1,13 +1,9 @@
-<div class="modal-header">
-	<div class="header-block">
-		<h2 class="modal-title custom-title">New event</h2>
-		<img src="./src/assets/close.png" alt="" class="close-btn" ng-click="close()">
-	</div>
+<div class="modal-header header-block">
+	<h2 class="modal-title custom-title">New event</h2>
+	<img src="./src/assets/close.png" alt="" class="close-btn" ng-click="close()">
 </div>
 
 <div id="modal-body">
-<div class="inner-container">
-
 	<div class="container-fluid well">
 		<form class="form-vertical" role="form" id="event-form" name="event-form" required ng-submit="submit()">
   			<div class="row">
@@ -36,59 +32,18 @@
 						<input type="text" name="type" placeholder="Choose event type ..." class="date-wrap"  ng-model="event.type" data-toggle="collapse" data-target="#categories" required/>
 
 						<div class="collapse" id="categories">
-							<input type="radio" class="radio" id="arts" ng-model="event.type" value="Arts">
-							<label for="arts" class="radio-label"><span class="radio-text">Arts</span></label>
-
-							<input type="radio" class="radio" id="classes" ng-model="event.type" value="Classess">
-							<label for="classes" class="radio-label"><span class="radio-text">Classes</span></label>
-
-							<input type="radio" class="radio" id="concert" ng-model="event.type" value="Concert">
-							<label for="concert" class="radio-label"><span class="radio-text">Concert</span></label>
-
-							<input type="radio" class="radio" id="food" ng-model="event.type" value="Food &amp; drink">
-							<label for="food" class="radio-label"><span class="radio-text">Food &amp; drink</span></label>
-
-							<input type="radio" class="radio" id="master" ng-model="event.type" value="Master class">
-							<label for="master" class="radio-label"><span class="radio-text">Master class</span></label>
-
-							<input type="radio" class="radio" id="music" ng-model="event.type" value="Music">
-							<label for="music" class="radio-label"><span class="radio-text">Music</span></label>
-
-							<input type="radio" class="radio" id="party" ng-model="event.type" value="Party">
-							<label for="party" class="radio-label"><span class="radio-text">Party</span></label>
-
-							<input type="radio" class="radio" id="sport" ng-model="event.type" value="Sports &amp; Wellness">
-							<label for="sport" class="radio-label"><span class="radio-text">Sports &amp; Wellness</span></label>
-							
-							<input type="radio" class="radio" id="trip" ng-model="event.type" value="Trip">
-							<label for="trip" class="radio-label"><span class="radio-text">Trip</span></label>
-<!-- 							<label class="category-it radio-label" for="arts">
-						      <input id="arts" value="Arts" type="radio" ng-model="event.type" class="radio">Arts
+							<label class="category-it">
+						      <input value="Concert" type="radio" ng-model="event.type">Concert
 						    </label>
-						    <label class="category-it radio-label" for="classes">
-						      <input id="classes" value="Classes" type="radio" ng-model="event.type" class="radio">Classes
+						    <label class="category-it">
+						      <input value="Classes" type="radio" ng-model="event.type">Classes
 						    </label>
-							<label class="category-it radio-label" for="concert">
-						      <input id="concert" value="Concert" type="radio" ng-model="event.type" class="radio">Concert
+						    <label class="category-it">
+						      <input value="Master class" type="radio" checked="checked" ng-model="event.type">Master class
 						    </label>
-						    <label class="category-it radio-label" for="food">
-						      <input id="food" value="Food &amp; drink" type="radio" ng-model="event.type" class="radio">Food &amp; drink
+						    <label class="category-it">
+						      <input value="Trip" type="radio" ng-model="event.type">Trip
 						    </label>
-						    <label class="category-it radio-label" for="master">
-						      <input id="master" value="Master class" type="radio" ng-model="event.type" class="radio">Master class
-						    </label>
-						    <label class="category-it radio-label" for="music">
-						      <input id="music" value="Music" type="radio" ng-model="event.type" class="radio">Music
-						    </label>
-						    <label class="category-it radio-label" for="party">
-						      <input id="party" value="Party" type="radio" ng-model="event.type" class="radio">Party
-						    </label>
-						    <label class="category-it radio-label" for="sport">
-						      <input id="sport" value="Sports &amp; Wellness" type="radio" ng-model="event.type" class="radio">Sports &amp; Wellness
-						    </label>
-						    <label class="category-it radio-label" for="trip">
-						      <input id="trip" value="Trip" type="radio" ng-model="event.type" class="radio">Trip
-						    </label> -->
 						</div>
 					</div>
 					<div>
