@@ -1,18 +1,18 @@
 <div id="profile">
   <div class="p_wrapper container-fluid ">
 			<div class="info row">
-			
+
 				<div class="picture img-responsive col-md-3 col-xs-9 col-sm-3 user-picture">
-	 
+
 						<img class="add-image picture-area">
 						<h2 class="upload_title">Choose photo</h2>
-						<button class="file-upload">            
+						<button class="file-upload">
 	  						<input type="file" class="file-input" accept="image/*" onchange="readURLProfile(this)"  name="image"file-model="">Upload photo
 	  					</button>
 				</div>
 
 				<div class="p_user-info col-md-7 col-sm-12 col-xs-12  ">
-					<p id="p_name">{{getCookie("username")}}gfj jjjk</p>
+					<p id="p_name">{{getCookie("username")}}</p>
 
           <span>
             <input readonly type="text" id="gender" value='Gender: {{getCookie("gender")}}' ng-model="gender">
@@ -39,18 +39,6 @@
             <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('phone')" alt="">
           </span>
 				</div>
-
-<!-- 				<div class="p_description col-lg-5 col-md-4 col-sm-12 col-xs-12">
-					<p id="p_fewords">Few words about myself</p> -->
-<!-- 					<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt=""> -->
-<!-- 					<textarea name="" id="" cols="40" rows="6" class="text-block"></textarea>
-				</div>
-
-				<div class="p_interests col-lg-5 col-md-4 col-sm-12 col-xs-12">
-					<p id="p_interests">I'm interested in:</p> -->
-			<!-- 		<img class="ePng" src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt=""> -->
-<!-- 					<textarea name="" id="" cols="40" rows="6" class="text-block"></textarea>
-				</div> -->
 
 			</div>
 
