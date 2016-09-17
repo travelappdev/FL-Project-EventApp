@@ -18,4 +18,3 @@ angular.module('mainApp').service('multipartForm', ['$http', function ($http) {
 		});
 	}
 }]);
-// uploadUrl
