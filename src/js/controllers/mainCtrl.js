@@ -15,7 +15,7 @@ angular.module('mainApp')
 
 
      sc.visitHome = function() {
-       $location.url('/home');
+       $location.url('/home'); 
      };
 
      sc.logout = function() {
@@ -27,9 +27,10 @@ angular.module('mainApp')
        document.cookie = "phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "homeTown=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
-       loginType === 'g' ? gSignout() 
-       : loginType === 'fb' ? fbLogout() 
-       : loginType='none';
+       loginType === 'fb' ? fbLogout() : 1;
+
+       gSignout();
+
        
        $location.url('/');
 

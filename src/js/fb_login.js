@@ -8,6 +8,7 @@ window.fbAsyncInit = function() {
 
 };
 
+
 (function(d, s, id) {
 
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -19,16 +20,19 @@ window.fbAsyncInit = function() {
     js = d.createElement(s);
     js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
+    fjs.parentNode.insertBefore(js, fjs); 
 
 }(document, 'script', 'facebook-jssdk'));
+
+
 
 function fbLogin() {
 
     loginType = 'fb';
     FB.login(function(response) {
-        
+
         if (response.status === "connected") {
+      
             FB.api('/me', 'GET', {
                     fields: 'first_name,last_name,id,picture.width(300).height(300)'
                 },
@@ -43,9 +47,10 @@ function fbLogin() {
         } else {
             console.log("You are not in facebook.");
         }
+    
     });
-
 }
+
 
 function fbGetInfo() {
 
@@ -61,12 +66,33 @@ function fbGetInfo() {
 
 }
 
+
 function fbLogout() {
 
     FB.logout(function(response) {
+    
         console.log('FB user logged out');
-        renderButton();
+        
         loginType = 'none';
+    
     })
 
 }
+
+
+function shareFB(name, picture, caption, description) {
+    
+    FB.ui({
+        method: 'feed',
+        name: "Search Google",
+        link: "",
+        picture: "https://www.google.co.uk/images/srpr/logo11w.png",
+        caption: "The world's most popular search engine"
+    }, function(error) {
+
+        alert(JSON.stringify(error, undefined, 2));
+
+    });
+
+}
+

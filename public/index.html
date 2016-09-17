@@ -1,119 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="en"  ng-app="mainApp" ng-controller="mainCtrl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="google-signin-client_id" content="828555280883-gnki4fgfl5p1lss9froaa6u8n77bld8j.apps.googleusercontent.com">
+        
+        <script src="https://apis.google.com/js/api:client.js"></script>
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <base href='/'>
-
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-  <meta name="google-signin-client_id" content="828555280883-gnki4fgfl5p1lss9froaa6u8n77bld8j.apps.googleusercontent.com">
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
-    </script>
-    <![endif]-->
-
-  <title>index</title>
-
-
-  <script src="../node_modules/angular/angular.min.js"></script>
-  <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
-  <script src="../node_modules/angular-touch/angular-touch.min.js"></script>
-  <script src="../node_modules/angular-route/angular-route.min.js"></script>
-  <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap.min.js"></script>
-  <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.min.js"></script>
-
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../public/css/style.css" />
-
-</head>
-
-
-  <body>
-
-
-
-    <header>
-      <nav class="navbar navbar-default header">
-        <div class="navbar-header header-item col-xs-6 col-sm-4 col-md-6 col-lg-2">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="">
-          </a>
-        </div>
+        <base href='/'>
+        
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+        
+        <title>index</title>
+        
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="../node_modules/angular-touch/angular-touch.min.js"></script>
+        <script src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap.min.js"></script>
+        <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.min.js"></script>
+        
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../public/css/style.css" />
     
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="showLogin()">
-	
-			<div class="btn-group">
-
-  				<button type="button" class="btn btn-hover dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    				Log in <span class="caret"></span>
-  				</button>
-  	
-  			<ul class="dropdown-menu">
- 			    <li><div id="gSignIn" ng-click="visitHome()"></div></li>
-			    <li><a href="#" onclick="fbLogin()" ng-click="visitHome()"><img id="fb_l" src="http://8txb81fmsytmpvkp2gk1z8y2.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/login-fb.png" alt=""></a></li>
-			    <li role="separator" class="divider"></li>
-			    <li><a id="s_log" href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Log in</a></li>
-			</ul>
-	
-			</div>
-    
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="logout()">
-             <span>Log out</span>
-          </a>
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="visitProfile()">
-             <span>My profile</span>
-          </a>
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="visitHome()">
-             <span>Home</span>
-          </a>
-        </div>
-
-      </nav>
-    </header>
-
-
-
-
-      <!-- CONTAINER FOR OUR ROUTES -->
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default header">
+                <div class="navbar-header header-item col-xs-6 col-sm-4 col-md-6 col-lg-2">
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="">
+                    </a>
+                </div>
+                
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="showLogin()">
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-hover dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign in <span class="caret"></span>
+                        </button>
+                        
+                        <ul class="dropdown-menu">
+                            <li><a href="#" ng-click="visitHome()"><img id="g_l" src="https://m.indoorfinders.com/img/btn_google_signin.png" alt="gLog"></a></li>
+                            <li><a href="#" onclick="fbLogin()" ng-click="visitHome()"><img id="fb_l" src="https://www.hungryroot.com/public/img/facebook-login-button.png" alt=""></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="s_log" href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Sign in</a></li>
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+        
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="logout()">
+                        <span>Log out</span>
+                    </a>
+                </div>
+        
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="visitProfile()">
+                        <span onclick="shareFB('Event name', 'http://8txb81fmsytmpvkp2gk1z8y2.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/login-fb.png', 'Event capture', 'Event description')">My profile</span>
+                    </a>
+                </div>
+        
+                <div id="share" class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="visitHome()">
+                        <span>Home</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- CONTAINER FOR OUR ROUTES -->
+        
         <main>
-            <div ng-view></div>
+        <div ng-view></div>
         </main>
-
-
-
-
+        
         <footer class="footer">
-          <div class="container-fluid">
-            <div class="ftr-wrap">
-              <div class="row ftr-links">
-                 <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Faq</a></div>
-                 <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">About us</a></div>
-                 <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Find us</a></div>
-              </div>
+            <div class="container-fluid">
+                <div class="ftr-wrap">
+                    <div class="row ftr-links">
+                        <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Faq</a></div>
+                        <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">About us</a></div>
+                        <div class="col-sm-12 col-md-12 col-lg-4"><a class="links" href="#">Find us</a></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </footer>
-
-
-    <script src="../public/js/app.js"></script>
-    <script src="../public/js/templates.js"></script>
-  </body>
-
+        
+        <script src="../public/js/app.js"></script>
+        <script src="../public/js/templates.js"></script>
+    </body>
 </html>
