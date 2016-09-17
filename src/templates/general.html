@@ -19,24 +19,15 @@
     </div>
   </section>
 
-  <!-- <div class="main-wrapper container-fluid">
-    <div class="g_main-item">
-
-    </div>
-  </div> -->
-
-
       <!-- OUR CONTAINER FOR TOP EVENTS -->
       <!-- should be fixed and updated -->
 
       <section class="g_event-wrapper">
-            <div class="event-header-wrap">
-              <h1 class="events-header">Top Events</h1>
-              <p class="sub-header">Check most popular events</p>
-            </div>
+        <div class="event-header-wrap">
+          <h1 class="events-header">Top Events</h1>
+          <p class="sub-header">Check most popular events</p>
+        </div>
             <div class="g_top-events">
-
-            <div class="events-wrap">
 
               <div class="g_event" ng-repeat="event in events">
                 <a ng-href='/event/{{event._id}}'>
@@ -47,24 +38,21 @@
                   <h3>{{event.name}}</h3>
                   <p>{{event.description}}</p>
                 </div>
-
-
               </div>
-            </div>
 
           </div>
         </section>
 
-<section class="g_resp-wrapper">
-      <div class="container-fluid visible-lg responsive-devices">
-        <div class="row">
-          <h2 class="devices-header">Keep in touch in all devices</h2>
-          <img class="img-responsive g_resp-img" src="http://localhost:8000/src/assets/responsive-devices.svg" alt="">
-<!--           <img class="img-responsive g_resp-img" src="http://localhost:8000/src/assets/tablet.svg" alt="">
-          <img class="img-responsive g_resp-img" src="http://localhost:8000/src/assets/smartphone.svg" alt=""> -->
-        </div>
-      </div>
+
+        <section class="g_resp-wrapper">
+              <div class="container-fluid visible-lg responsive-devices">
+                <div class="row">
+                  <h2 class="devices-header">Keep in touch in all devices</h2>
+                  <img class="img-responsive g_resp-img" src="http://localhost:8000/src/assets/responsive-devices.svg" alt="">
+                </div>
+              </div>
 
 
-</section>
+        </section>
+
 </div>
