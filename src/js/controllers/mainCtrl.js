@@ -15,18 +15,25 @@ angular.module('mainApp')
 
 
      sc.visitHome = function() {
-       $location.url('/home');
+       $location.url('/home'); 
      };
 
      sc.logout = function() {
+        
        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "age=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "homeTown=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-       document.cookie = "gender=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+       document.cookie = "gender=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+       loginType === 'fb' ? fbLogout() : 1;
+
+       gSignout();
+
        $location.url('/');
+
      }
 
      sc.visitProfile = function() {

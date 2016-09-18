@@ -424,3 +424,34 @@ $brand-primary: #617D8A;
   from { opacity: 0; transform: translateX(-25px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+.dropdown-menu{
+  width: 125%;
+  padding: 5px;
+  opacity: 0.9;
+/*   margin-right:-205px;
+margin-top:-58px; */
+}
+
+#fb_l, #g_l{
+  margin-left: -20px;
+  width: 135%;
+}
+
+#fb_l{
+  height: 42px;
+}
+
+#fb_l:hover, #g_l:hover, #s_log:hover{
+  box-shadow: 1px 1px 8px #222;
+  transition: 0.15s;
+}
+
+#s_log{
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  height: 35px;
+}
+
+

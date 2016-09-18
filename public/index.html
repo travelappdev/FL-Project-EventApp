@@ -1,20 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en"  ng-app="mainApp" ng-controller="mainCtrl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="google-signin-client_id" content="828555280883-gnki4fgfl5p1lss9froaa6u8n77bld8j.apps.googleusercontent.com">
+        
+        <script src="https://apis.google.com/js/api:client.js"></script>
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <base href='/'>
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
-    </script>
-    <![endif]-->
-
-  <title>JoinE</title>
+        <base href='/'>
+        
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+        
+        <title>JoinE</title>
 
 
   <script src="../node_modules/angular/angular.min.js"></script>
@@ -37,118 +38,62 @@
 </head>
 
 
-  <body>
+    <body>
+        <header>
+            <nav class="navbar navbar-default header">
+                <div class="logo-block">
+                   <a href="#">
+                    <img alt="Brand" src="./src/assets/joinE.png" class="logo">
+                    <span class="logo-text">JoinE</span>
 
-    <header>
-      <nav class="navbar navbar-default header">
-        <div class="logo-block">
-          <a href="#">
-            <img alt="Brand" src="./src/assets/joinE.png" class="logo">
-            <span class="logo-text">JoinE</span>
+                   </a>
+                </div>
+                
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="showLogin()">
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-hover dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign in <span class="caret"></span>
+                        </button>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="#" ng-click="visitHome()"><img id="g_l" src="https://m.indoorfinders.com/img/btn_google_signin.png" alt="gLog"></a></li>
 
-          </a>
-        </div>
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="showLogin()">
-          <a class="btn btn-hover" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">
-             <span>Log in</span>
-          </a>
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="logout()">
-             <span>Log out</span>
-          </a>
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="visitProfile()">
-             <span>My profile</span>
-          </a>
-        </div>
-
-        <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
-          <a class="btn btn-hover" ng-click="visitHome()">
-             <span>Home</span>
-          </a>
-        </div>
-
-      </nav>
-    </header>
-
-
-
-
-    <!--
-    <header class="header-wrap">
-
-      <nav class=" header">
-
-
-
-        <div class="menu">
-
-
-          <ul class="nav navbar-nav">
-              <div ng-if="showLogin()" class="menu-it">
-                <a class="btn btn-hover" ng-click="visitHome()">
-                   <span class="login-btn">Log in</span>
-                </a>
-              </div>
-
-            <div>
-              <li>
-                  <a class="btn btn-hover sub-menu" ng-click="visitHome()" ng-if="!showLogin()">
-                     <span class="menu-btn">Home</span>
-                  </a>
-                </li>
-</div>
-
-            <div>
-              <li>
-              <a class="btn btn-hover sub-menu" ng-click="visitProfile()" ng-if="!showLogin()">
-                <span class="menu-btn">My profile</span>
-              </a>
-              </li>
-            </div>
-
-            <div>
-              <li>
-                  <a class="btn btn-hover sub-menu" ng-click="logout()" ng-if="!showLogin()">
-                     <span class="menu-btn">Log out</span>
-                  </a>
-              </li>
-
-
-        </div>
-        </ul>
-      </nav> -->
-
-          <!-- Navigation for small screens -->
-    <!-- <nav class="cd-stretchy-nav" ng-if="!showLogin()">
-
-      <a class="cd-nav-trigger"href="#0"> <span class="cd-nav-trigger-icon"></span>   </a>
-
-      <ul>
-
-        <li class="menu-it "><a href="#0" ng-click="visitHome()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-home"></span></a></li>
-        <li class="menu-it "><a href="#0" ng-click="visitProfile()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-user"></span></a></li>
-        <li class="menu-it "><a href="#0" ng-click="logout()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-log-out"></span></a></li>
-
-      </ul>
-
-      <span aria-hidden="true" class="stretchy-nav-bg"></span>
-
-    </nav>
-    </header> -->
-
-
-
-
-      <!-- CONTAINER FOR OUR ROUTES -->
-
-
-
-
+                            <li><a href="#" onclick="fbLogin()" ng-click="visitHome()"><img id="fb_l" src="https://www.hungryroot.com/public/img/facebook-login-button.png" alt=""></a></li>
+                            
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a id="s_log" href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Sign in</a></li>
+                        
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+        
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="logout()">
+                        <span>Log out</span>
+                    </a>
+                </div>
+        
+                <div class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="visitProfile()">
+                        <span>My profile</span>
+                    </a>
+                </div>
+        
+                <div id="share" class="navbar-right header-item col-xs-3 col-sm-3 col-md-3 col-lg-2" ng-if="!showLogin()">
+                    <a class="btn btn-hover" ng-click="visitHome()">
+                        <span>Home</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- CONTAINER FOR OUR ROUTES -->
+        
     <div ng-view class="main-block">
 
     </div>
