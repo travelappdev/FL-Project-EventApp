@@ -2,7 +2,7 @@ angular.module('mainApp')
 .controller('EventController', ['$scope', 'multipartForm', '$uibModalInstance', function (sc, multipartForm, uibModalInstance)
 {
   sc.submit = function () {
-      var uploadUrl = '/upload';
+      var uploadUrl = '/api/events';
       multipartForm.post(uploadUrl, sc.event);
       uibModalInstance.close();
   };

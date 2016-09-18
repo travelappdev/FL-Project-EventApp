@@ -4,8 +4,8 @@
     <div class="g_main-photo"></div>
     <div class="g_main-content">
 
-      <h1>Some main text</h1>
-      <p>Some less important text and bla bla bla about something bla bla about something</p>
+      <h1 class="main-header">Dive in with us and joinE</h1>
+      <p class="sub-header">FINDING YOUR BEST TIME</p>
 
       <div class="g_get-started" ng-click="open('../src/templates/adding_event.html', 'lg', 'EventController')">
         <a class="btn btn-hover">Add new event</a>
@@ -14,31 +14,41 @@
     </div>
   </div>
 
-  <div class="row">
-    <div  class="search-wrapper">
-      <input type="text" placeholder="Search here..." required="">
-      <button type="submit">Search</button>
-  </div>
-    </div>
 
 
+    <div class="row">
+      <div class="search-wrapper">
 
-    <h2>All Events</h2>
+        <label>
+          <input type="text" placeholder="Search here..." ng-model="searchEvent" />
+        </label>
 
-    <div class="g_top-events">
-
-      <div class="g_event" ng-repeat="event in events | filter: searchEvent">
-        <a ng-href="/event/{{event._id}}">
-          <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
-        </a>
-
-        <div class="g_event-content">
-          <h3>{{event.name}}</h3>
-          <p>{{event.description}}</p>
-        </div>
       </div>
-
     </div>
 
 
+
+  <div class="results-wrap">
+
+    <h2 class="devices-header">All Events</h2>
+
+      <div class="g_top-events">
+
+        <div class="g_top-events">
+
+          <div class="g_event" ng-repeat="event in events | filter: searchEvent">
+            <a ng-href="/event/{{event._id}}">
+              <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+            </a>
+
+            <div class="g_event-content">
+              <h3>{{event.name}}</h3>
+              <p>{{event.description}}</p>
+            </div>
+          </div>
+
+        </div>
+
+
+  </div>
 </div>

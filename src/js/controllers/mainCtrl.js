@@ -26,12 +26,12 @@ angular.module('mainApp')
        document.cookie = "age=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "homeTown=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "gender=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
        loginType === 'fb' ? fbLogout() : 1;
 
        gSignout();
 
-       
        $location.url('/');
 
      }
@@ -49,7 +49,7 @@ angular.module('mainApp')
   // get user data from server
 
     sc.getUser = function() {
-      $http.get(`/api/users/${sc.email}/${sc.password}`)
+      $http.get(`/api/users/${sc.email}`)
         .then(function(response) {
           document.cookie = `email=${response.data.email}`;
           document.cookie = `password=${response.data.password}`;
@@ -57,6 +57,7 @@ angular.module('mainApp')
           document.cookie = `age=${response.data.age}`;
           document.cookie = `phone=${response.data.phone}`;
           document.cookie = `homeTown=${response.data.homeTown}`;
+          document.cookie = `gender=${response.data.gender}`;
 
         });
       $location.url('/home');
@@ -77,13 +78,16 @@ angular.module('mainApp')
           controller: controller,
           sc: sc,
           size: size
+
         });
 
         sc.openComponentModal = function () {
+
           var modalInstance = uibModal.open({
           animation: this.animationsEnabled,
           component: 'modalComponent'
           });
+
         };
 
 
