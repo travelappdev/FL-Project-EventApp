@@ -26,7 +26,7 @@
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap.min.js"></script>
   <script src="../node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.min.js"></script>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
@@ -37,10 +37,26 @@
 </head>
 
 
-  <body>
+<body>
+      <nav class="cd-stretchy-nav" ng-if="!showLogin()">
+
+        <a class="cd-nav-trigger"href="#0"> <span class="cd-nav-trigger-icon"></span>   </a>
+        
+        <ul>
+
+          <li><a href="#0" ng-click="visitHome()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-home"></span></a></li>
+          <li><a href="#0" ng-click="visitProfile()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-user"></span></a></li>
+          <li><a href="#0" ng-click="logout()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-log-out"></span></a></li>
+
+        </ul>
+
+        <span aria-hidden="true" class="stretchy-nav-bg"></span>
+
+      </nav>
+  
     <header class="header-wrap">
 
-      <nav class=" header">
+      <nav class="header">
         <div class="logo-block">
           <a href="#">
             <img alt="Brand" src="./src/assets/joinE.png" class="logo">
@@ -48,18 +64,65 @@
             
           </a>
         </div>
+        
+
+        <div class="menu-it" ng-if="showLogin()">
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-hover dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign in <span class="caret"></span>
+                        </button>
+                        
+                        <ul class="dropdown-menu sigin-list">
+                            
+                            <li><a href="#" ng-click="visitHome()"><img id="g_l" src="https://m.indoorfinders.com/img/btn_google_signin.png" alt="gLog"></a></li>
+
+                            <li><a href="#" onclick="fbLogin()" ng-click="visitHome()"><img id="fb_l" src="https://www.hungryroot.com/public/img/facebook-login-button.png" alt=""></a></li>
+                            
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a id="s_log" href="#" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">Simple Sign in</a></li>
+                        </ul>
+                    </div>
+        </div>
+        
+        <div class="menu navbar-nav">
+          <div class="sub-menu" ng-if="!showLogin()">
+            <a class="btn btn-hover " ng-click="logout()">
+                <span>Log out</span>
+            </a>
+          </div>
+        
+          <div class="sub-menu" ng-if="!showLogin()">
+            <a class="btn btn-hover" ng-click="visitProfile()">
+                <span>My profile</span>
+            </a>
+          </div>
+        
+          <div id="share" class="sub-menu" ng-if="!showLogin()">
+            <a class="btn btn-hover" ng-click="visitHome()">
+                <span>Home</span>
+            </a>
+          </div>
+        </div>
+                
 
 
-        <div class="menu">
-          
-              <div ng-if="showLogin()" class="menu-it">
-                <a class="btn btn-hover" ng-click="open('../src/templates/login.html', 'md', 'mainCtrl')">
-                   <span class="login-btn">Log in</span>
-                </a>
-              </div>
+        <!-- <div class="menu">
 
-            <ul class="nav navbar-nav">
-              <li>
+        <div class="menu-it" ng-if="showLogin()">
+          <a class="btn btn-hover" ng-click="open('../src/templates/login.html', 'sm', 'mainCtrl')">
+             <span class="login-btn">Log in</span>
+          </a>
+        </div>
+
+        <ul class="nav navbar-nav"> -->
+<!--                       <li class="menu-it" ng-if="showLogin()">
+          <a class="btn btn-hover" ng-click="open('../src/templates/login.html', 'sm', 'mainCtrl')">
+             <span class="login-btn">Log in</span>
+          </a>
+        </li> -->
+             <!--  <li>
                   <a class="btn btn-hover sub-menu" ng-click="logout()" ng-if="!showLogin()">
                      <span class="menu-btn">Log out</span>
                   </a>
@@ -75,25 +138,10 @@
                   </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
       </nav>
 
           <!-- Navigation for small screens -->
-    <nav class="cd-stretchy-nav" ng-if="!showLogin()">
-
-      <a class="cd-nav-trigger"href="#0"> <span class="cd-nav-trigger-icon"></span>   </a>
-      
-      <ul>
-
-        <li class="menu-it "><a href="#0" ng-click="visitHome()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-home"></span></a></li>
-        <li class="menu-it "><a href="#0" ng-click="visitProfile()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-user"></span></a></li>
-        <li class="menu-it "><a href="#0" ng-click="logout()" ng-if="!showLogin()"><span class="cd-stretchy-nav-icon glyphicon glyphicon-log-out"></span></a></li>
-
-      </ul>
-
-      <span aria-hidden="true" class="stretchy-nav-bg"></span>
-
-    </nav>
     </header>
 
 
@@ -104,14 +152,12 @@
 
 
 
-    <div ng-view class="main-block">
-      
-    </div>
+    <div ng-view class="main-block"></div>
 
 
 
       <div class="footer-wrap">
-        
+
           <footer class="footer">
             <div class="container-fluid">
               <div class="ftr-wrap">

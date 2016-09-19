@@ -9,17 +9,13 @@
 }
 
 .footer {
-	/*position: absolute;*/
-  /*left: 0;
-	bottom: 0;
-	/*top: 100%;*/
 	background: #373746;
-	height: auto;
+
 	width: 100%;
 	display: flex;
 	flex-direction: column;
  	justify-content: center;
-  margin-top: 25px;
+  padding: 15px 0;
 }
 
 .footer .container {

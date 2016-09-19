@@ -1,17 +1,24 @@
-<div class="modal-header text-center" ng-app="myApp" ng-controller="mainCtrl">
-            <h3 class="modal-title reg-title" id="modal-title">Simple Log in</h3>
-</div>
 <div id="modal-body">
-	<div class="container-fluid">
+
+	<div class="inner-container">
+	    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+	      <source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?random=1" type="video/webm">
+	    </video>
+	</div>
+
+	<div class="container-fluid form-content">
+
+		<h3 class="modal-title reg-title" id="modal-title">Simple Log in</h3>
+		<img src="./src/assets/cancel.png" alt="" class="close-btn" ng-click="close()">
+
 		<form action="" class=" form-vertical" role="form" ng-submit="submitForm()">
-        <!-- ng-submit="submitForm()" -->
+
   			<div class="row inner-wrap">
 
   				<input type="email" placeholder="Email address" class="field" required ng-model="email">
   				<input type="password" placeholder="Password" class="field" required ng-model="password">
 
 				<button type="submit" class="save_btn submit-btn" ng-click="getUser()">Lets Go</button>
-				<p class="text-center recover-pass">Forgot your password?</p>
 	 		</div>
 		</form>
 	</div>

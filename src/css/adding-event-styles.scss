@@ -18,6 +18,9 @@
     font-weight: normal;
 }
 
+$darkblue: #373746;
+$lightgreen: #2de1a8;
+
 .well{
 	margin-bottom:0 !important;
 	padding: 45px !important;
@@ -176,6 +179,10 @@
 	display:block;
 }
 
+#categories{
+	margin-top: 25px;
+}
+
 .save_btn{
 	font-size: 20px;
 	font-family: SegoeUIBold;
@@ -266,8 +273,7 @@ input[type=radio].radio{
 
 .radio-text{
 	margin-left: 25px;
-	color: blue;
-
+	color: $darkblue;
 }
 
 input[type=radio].radio + label.radio-label{
@@ -281,11 +287,10 @@ input[type=radio].radio + label.radio-label{
     font-size:15px;
     vertical-align: middle;
     cursor: pointer;
-    background-color: #2de1a8;
+    border: 1px solid $darkblue;
 }
 
 input[type=radio].radio:checked + label.radio-label{
-	border: 5px solid rgba(45, 225, 170, 0.5);
-	//background: blue;
+	border: 2px solid $lightgreen;
 }
 

@@ -15,8 +15,11 @@
 
 $darkblue: #373746;
 
-phota {
-  cursor: pointer;
+@media (min-width: 768px)
+{
+ .modal-dialog {
+      margin: 100px auto;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -79,11 +82,6 @@ a:-webkit-any-link {
   height: 100vh;
 
 }
-.footer-wrap{
-  display:block;
-  width: 100%;
-
-}
 
 .g_main-photo {
   z-index: 0;
@@ -118,16 +116,19 @@ a:-webkit-any-link {
 .g_event-wrapper {
   display: block;
   width: 100%;
-  height: 100vh;
+  height: auto;
+
 }
 
-.g_top-events {
+.g_block {
    width: 100%;
+   background-color: white;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   justify-content: center;
+   justify-content: space-around;
    padding-top: 2rem;
+   padding-bottom: 25px;
 }
 
 .g_event {
@@ -185,13 +186,13 @@ a:-webkit-any-link {
 }
 
 .main-block{
-  display: block;
+    min-height: calc(100vh - 70px);
 }
 
 .main-header{
   font-family: Oswald, sans-serif;
   font-size: 500%;
-  text-shadow: 1px 1px 1px #00b4ff;
+  text-shadow: 1px 1px 2px #043136;
 }
 
 .sub-header{
@@ -199,7 +200,7 @@ a:-webkit-any-link {
   font-size: 24px;
   color: white;
   text-align: center;
-  text-shadow: 1px 1px 1px #00b4ff;
+  text-shadow: 1px 1px 2px #043136;
 }
 
 .login-btn{
@@ -212,20 +213,16 @@ a:-webkit-any-link {
   font-family: "SegoeUIBold";
   font-size: 54px;
   text-align: center;
+  text-shadow: 1px 1px 2px #043136;
 }
 
 .sub-menu{
   font-family: Oswald;
+  display: inline-block;
 }
 
 h1, h2{
     overflow-y: hidden;
-}
-
-.events-wrap{
-  background-color: #ECF0F1;
-  width: 100%;
-  opacity: 0.5;
 }
 
 .devices-header{
@@ -239,39 +236,38 @@ h1, h2{
   float:right;
 }
 
-
 ///////////////////Hamburger menu////////////////////
-$brand-primary: #617D8A;
-
 .cd-stretchy-nav {
   position: fixed;
-  z-index: 2;
-  top: 40px;
+  z-index: 50;
+  top: 30px;
   right: 5%;
 
   .stretchy-nav-bg {
     /* this is the stretching navigation background */
     position: absolute;
-    z-index: 1;
+    z-index: 49;
     top: 0;
     right: 0;
     width: 60px;
     height: 60px;
     border-radius: 30px;
-    background: $brand-primary;
+    background: $darkblue;
     box-shadow: 0 1px 4px rgba(#000, .2);
     transition: height .2s, box-shadow .2s;
   }
 
   &.nav-is-visible .stretchy-nav-bg {
     height: 100%;
-    box-shadow: 0 6px 30px rgba(#000, .2);
+    -webkit-box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
+    box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
   }
 }
 
 .cd-nav-trigger {
   position: absolute;
-  z-index: 3;
+  z-index: 51;
   top: 0;
   right: 0;
   height: 60px;
@@ -342,7 +338,7 @@ $brand-primary: #617D8A;
 
 .cd-stretchy-nav ul {
   position: relative;
-  z-index: 2;
+  z-index: 50;
   padding: 60px 0 0;
   visibility: hidden;
   transition: visibility .3s;
@@ -414,7 +410,6 @@ $brand-primary: #617D8A;
 
 }
 
-
 @keyframes scaleIn {
   from { transform: translateY(-50%) scale(0); }
   to { transform: translateY(-50%) scale(1); }
@@ -423,4 +418,154 @@ $brand-primary: #617D8A;
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(-25px); }
   to { opacity: 1; transform: translateX(0); }
+}
+
+
+.how-it-works{
+  position:relative;
+  background-color: white;
+  width: 100%;
+
+  .how-header{
+    font-family: 'SegoeUIBold';
+    font-size: 300%;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 0;
+  }
+
+  .how-it-pictures{
+    vertical-align: middle;
+    position: relative;
+    text-align:center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #D1C4E9;
+    margin-bottom: 15px;
+
+    .how-icons{
+      position: absolute;
+      right:0; left:0; top:0; bottom:0;
+      margin: auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .icon-wrap{
+      border: 5px double white;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      margin: auto;
+      display: block;
+      top: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+  }
+
+  .feature-title{
+    text-align: center;
+    font-family: Oswald;
+  }
+
+  .feature-description{
+    font-family: 'SegoeUIRegular';
+    text-align: center;
+   }
+}
+
+.community{
+    text-align: center;
+    background-color: white;
+
+    .community-header{
+      font-family: 'SegoeUIBold';
+      font-size: 300%;
+      padding-top: 15px;
+      margin-top: 0;
+    }
+
+    .community-description{
+      font-family: 'SegoeUIRegular';
+      display: block;
+
+    }
+
+    .user-event{
+
+      display: inline-block;
+
+      .single-user{
+
+        .user-event-pic{
+          
+          width: 225px;
+          height: 125px;
+          margin-bottom: 70px;
+
+          .com-user-photo{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-top: 75px;
+          }
+        }
+
+        .conference{
+          background-image: url('../img/people-coffee-meeting.jpg');
+        }
+
+        .party{
+          background-image: url('../img/ded.jpg');
+        }
+
+        .concert{
+          background-image: url('../img/concert.jpg');
+        }
+
+        .classes{
+          background-image: url('../img/meeting.jpg');
+        }
+      }
+    }
+}
+
+.parallax-how{
+
+    background-image: url("../img/exhibition.jpg");
+
+}
+
+.parallax-community{
+
+    background-image: url("../img/sports.jpg");
+
+}
+
+.parallax-end{
+
+    background-image: url("../img/rest.jpg");
+
+    
+}
+
+.parallax{
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41), inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
+    -moz-box-shadow:    inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
+    box-shadow:         inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
 }

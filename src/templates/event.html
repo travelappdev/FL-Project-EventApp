@@ -1,77 +1,121 @@
-<div id="event" class="container">
+<div id="event">
+  <div class="p_wrapper">
+    <h1 class="event-heading">{{event.name}}</h1>
 
+      <div class="picture-wrap">
+        <div class="event-picture"></div>
 
-    <div class="row ">
+            
+      </div>
 
-      <div class="event_photo col-xs-12 col-sm-12 col-md-6 col-lg-7">
-        <img class="img-responsive" src="https://static.pexels.com/photos/4224/restaurant-person-people-hand.jpg" alt="your_event_photo" />
+      <div class="col-md-2 subscribe ">
+          <div class="save_btn subscribe-btn subscribe-btn-effect"><span>Subscribe</span></div>
+      </div>
 
-        <div class="img-responsive event_description">
-          <div class="event_social pull-right social-icons icon-zoom">
-            <a class="social" href="#"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-            <a class="social" href="#"><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
-            <a class="social" href="#"><i class="fa fa-2x fa-google-plus" aria-hidden="true"></i></a>
-            <a class="social" href="#"><i class="fa fa-2x fa-pinterest" aria-hidden="true"></i></a>
-          </div>
-          <h2>Event description:</h2>
-          <span>{{event.description}}</span>
+      <div class="author-area">
+        <img src="src/assets/nick.jpg" alt="Event creator" class="event_author">
+        <p class="author-name">Author: Nick Burn</p>
+      </div>
+      
+        <div class="row info-event">
+
+            <textarea class="custom-description col-lg-4 col-md-4 col-sm-11 col-xs-11" placeholder="Enter event description here ..." rows="9" cols="10" maxlength="150" ng-model="event.description" name="description">{{event.description}}</textarea>
+
+            <div class="p_user-info event-properties col-lg-4 col-md-4 col-sm-11 col-xs-11">
+
+              <span>
+                <input readonly type="text"  placeholder="Place" value="{{event.place}}">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Time" value="{{event.time}}">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Date" value="{{event.date}}">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Type" value="{{event.type}}">
+              </span>
+
+              <span>
+                <input readonly type="phone" placeholder="Phone" value="{{event.payment}}">
+              </span>
+            </div>
+          
+            <div class="weather col-lg-3 col-md-3 col-sm-3 col-xs-11">
+              <h2>Check weather:</h2>
+            </div>
+
         </div>
-      </div>
+        
+        <div class="row">
+          <h4 class="event-members">Members:</h4>
+          <hr class="separator">
 
-      <div class="event_info col-xs-12 col-sm-12 col-md-6 col-lg-5">
-        <h2 class="event_info_name">Username: {{event.name}}</h2>
-          <p class="event_chr">Place: {{event.place}}</p>
-          <p class="event_chr">Time: {{event.time}}</p>
-          <p class="event_chr">Date: {{event.date}}</p>
-          <p class="event_chr">Payment: {{event.payment}}</p>
-          <br/><br/>
-          <div class="event_weather">
-            <h2>Check weather: <span>Temperature</span></h2>
-          </div>
-
-          <div class="event_author">
-            <p>Autor: Nick Burn</p>
-            <img src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Preppy-icon.png" alt="Event creator" class="img-responsive">
-          </div>
-
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="event_members">
-        <h4>Event members:</h4>
-        <div class="member_wrapper">
-          <div class="event_member">
-            <a href="#"><img class="img-responsive" src="http://lorempixel.com/400/200/" alt="Member"></a>
-          </div>
-          <div class="event_member">
-            <a href="#"><img class="img-responsive" src="http://lorempixel.com/400/200/" alt="Member"></a>
-          </div>
-          <div class="event_member">
-            <a href="#"><img class="img-responsive" src="http://lorempixel.com/400/200/" alt="Member"></a>
-          </div>
-          <div class="event_member">
-            <a href="#"><img class="img-responsive" src="http://lorempixel.com/400/200/" alt="Member"></a>
-          </div>
-          <div class="event_member">
-            <a href="#"><img class="img-responsive" src="http://lorempixel.com/400/200/" alt="Member"></a>
+          <div class="candidat">
+            <img src="src/assets/gloria.jpg" alt="" class="candidat-photo">
           </div>
         </div>
+        
+        <div class="row">
+          <h3 class="events_similar">Similar events:</h3>
+          <hr class="separator">
 
-      </div>
-    </div>
+            <div class="figures">
+              <figure class="snip">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
+                <figcaption>
+                <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                <h3>The World Ended Yesterday</h3>
+                <p>
+                  You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
 
+              <figure class="snip middle">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+                <figcaption>
+                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+                <h3>An Abstract Post Heading</h3>
+                <p>
+                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+              
+              <figure class="snip middle">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+                <figcaption>
+                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+                <h3>An Abstract Post Heading</h3>
+                <p>
+                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+    
+              <figure class="snip last">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
+                <figcaption>
+                <div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
+                <h3>Down with this sort of thing</h3>
+                <p>
+                  I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>
+          </div>
 
-    <div class="row">
+        </div>
 
-      <div class="events_similar">
-        <h3>Similar events:</h3>
-        <hr>
-      </div>
-
-    </div>
-
-
-
+  </div>
 </div>
+

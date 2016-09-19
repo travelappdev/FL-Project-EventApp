@@ -29,21 +29,65 @@
 
       <div class="g_top-events">
 
-        <div class="g_event" ng-repeat="event in events | filter: searchEvent">
+<!--         <div class="g_event" ng-repeat="event in events | filter: searchEvent">
           <a href="http://localhost:8000/event">
             <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
-          </a>
+          </a> -->
+          <div ng-controller="PagerDemoCtrl">
+                <table class="table">
+                  <tr ng-repeat="row in data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                    <td>{{row.name}}</td>
+                    <td>{{row.id}}</td>
+                  </tr>
+                </table>
+            View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
 
-      <div class="g_event" ng-repeat="event in events | filter: searchEvent">
-        <a ng-href="/event/{{event._id}}">
-          <img class="g_event-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
-        </a>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+                <pre>The selected page no: {{currentPage}}</pre>
+                <button class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>
 
-        <div class="g_event-content">
-          <h3>{{event.name}}</h3>
-          <p>{{event.description}}</p>
-        </div>
+                <hr />
+                <h4>Pager</h4>
+                <pager total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage"></pager>
+
+                <hr />
+                <h4>Limit the maximum visible buttons</h4>
+                <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="itemsPerPage"></pagination>
+                <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></pagination>
+                <pre>Page: {{currentPage}} / {{numPages}}</pre>
+              </div>
+
+      <div ng-repeat="event in events | filter: searchEvent">
+          <div ng-repeat="event in events">
+<!--               <figure class="snip">
+                <div class="image">
+                  <a ng-href='/event/{{event._id}}'>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+                  </a>
+                </div>
+                <figcaption>
+                  <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                  <h3>{{event.name}}</h3>
+                  <p>{{event.description}}</p>
+                </figcaption>
+              </figure> -->
+          <!-- </div> -->
+          <figure class="snip">
+              <div class="image">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+              <figcaption>
+              <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+              <h3>{{event.name}}</h3>
+              <p>
+                {{event.description}}
+              </p>
+              </figcaption>
+              <a ng-href='/event/{{event._id}}'></a>
+          </figure>
+          </div>
       </div>
+
+
   </div>
 
 
