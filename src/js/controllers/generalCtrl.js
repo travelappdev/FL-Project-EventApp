@@ -27,11 +27,8 @@ angular.module('mainApp')
       sc.user_repassword = '';
     }
 
-  };
+  }
 
-  // sc.close = function () {
-  //   uibModalInstance.close();
-  // };
 
     sc.animationsEnabled = true;
 

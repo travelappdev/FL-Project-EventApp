@@ -11,7 +11,8 @@ const UserSchema = new Schema({
   gender: String,
   phone: Number,
   homeTown: String,
-  interests: String
+  interests: String,
+  subscribed: Array
 });
 
 

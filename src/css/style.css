@@ -8,7 +8,6 @@
   background: transparent;
   border: none;
   z-index: 5;
-  overflow-y:hidden;
   display: flex;
   justify-content: space-between;
 }
