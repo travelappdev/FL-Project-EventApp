@@ -25,6 +25,8 @@ angular.module('mainApp')
        document.cookie = "age=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "homeTown=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       loginType === 'fb' ? fbLogout() : 1;
+       gSignout();
        $location.url('/');
      }
 

@@ -569,3 +569,94 @@ h1, h2{
     -moz-box-shadow:    inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
     box-shadow:         inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
 }
+
+
+// External logging 
+
+.dropdown-menu.options{
+  position: relative;
+  width: 25%;
+  padding: 5px;
+  opacity: 0.9;
+  margin-top: 65px;
+  margin-right: -140px;
+}
+
+#fb_l, #g_l{
+  margin-left: -20px;
+  width: 135%;
+}
+
+#fb_l{
+  height: 42px;
+}
+
+#fb_l:hover, #g_l:hover, #s_log:hover{
+  box-shadow: 1px 1px 8px #222;
+  transition: 0.15s;
+}
+
+#s_log{
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  height: 35px;
+}
+
+
+//Top Events
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 100%;
+ height: 600px;
+  margin-right: 40px;
+  background: #8C8;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+  counter-increment: gallery-cell;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  figure {
+  flex-grow: 1;
+  margin-left: 7%;
+  margin-right: 7%;
+  width: 18%;
+
+    figcaption{
+    margin: -10px;
+    margin-bottom: -20px;
+    }
+
+  }
+
+}
+
+.flickity-viewport {
+  transition: height 0.2s;
+}
+
+/* cell number
+.gallery-cell:before {
+  display: none;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+ */
