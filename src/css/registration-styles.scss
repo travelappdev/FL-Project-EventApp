@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "SegoeUIRegular";
+    src: url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot");
+    src: url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
+    url("../fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUIBold";
+    src: url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot");
+    src: url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+    url("../fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+$lightgrey: #f6f6f6;
+$darkgrey: #B5B0AE;
+$darkblue: #253939;
+$error-red: #CF000F;
+
+::-webkit-input-placeholder {
+
+    color: $darkgrey;
+}
+
+.modal-header{
+	font-family: SegoeUIRegular;
+  background-color: $lightgrey;
+}
+
+.modal-content{
+	border: none;
+	overflow: hidden;
+  background: transparent;
+}
+
+.row{
+  margin-left: 0;
+}
+
+.reg-title{
+	color: white;
+	text-align: center;
+}
+
+.inner-wrap{
+	padding: 15px 35px;
+}
+
+.field{
+	font-family: SegoeUIRegular;
+	padding: 15px 10px;
+	margin-top: 15px;
+	width: 100%;
+	color: white;;
+	border: none;
+	//border: 1px solid $lightgrey;
+	//border-radius: 5px;
+	font-size: 16px;
+	background:rgba(0,0,0,0.2);
+}
+
+.submit-btn{
+	margin-top: 40px;
+}
+
+.form-content{
+	position:relative;
+	z-index: 10;
+	height:100%;
+  	width:100%;
+  	background:rgba(0,0,0,0.13);
+  	padding:30px 0px;
+  	background:rgba(0,0,0,0.13);
+
+}
+
+.inner-container{
+  width: 100%;
+  height: 100%;
+
+  top:calc(10vh - 400px);
+  left:calc(10vw - 400px);
+  overflow:hidden;
+}
+.bgvid.inner{
+  position:absolute;
+  z-index: -5;
+  top:calc(-50vh + 275px);
+  left:calc(-50vw + 200px);
+  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+  -webkit-filter:blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  filter:blur(10px);
+}
+
+
+
+.interrupt-text{
+	font-family: SegoeUIBold;
+	background: white;
+	color: $darkgrey;
+    padding:0 10px;
+}
+
+.google-registr, .facebook-registr{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+
+.google-registr:hover, .facebook-registr:hover {
+	opacity: 60%;
+}
+
+.google-registr{
+	margin-right: 10px;
+	background-image: url('../img/google.png');
+}
+
+.facebook-registr{
+	background-image: url('../img/facebook.png');
+}
+
+.recover-pass{
+	margin-top: 10px;
+	font-family: SegoeUIBold;
+	color: $darkgrey;
+}
+
+.recover-pass:hover {
+	text-decoration: underline;
+}
+
+.errorMsg {
+  color: $error-red;
+  font-family: SegoeUIRegular;
+  font-size: 18px;
+}
+
