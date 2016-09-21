@@ -57,6 +57,12 @@ app
   .get('/about', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
+  
+    /* FAQ route  */
+    // .when('/faq', {
+    //   templateUrl : 'faq.html',
+    //   controller: 'faqCtlr'
+    // })
 
   .get('/event/:name', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
