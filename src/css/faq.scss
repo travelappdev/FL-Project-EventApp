@@ -1,0 +1,67 @@
+#faq {
+	margin-top: 200px;
+
+.header {
+		margin-top: 200px;
+	}
+.header .bars {
+	height: 5px;
+	text-align: center;
+	width: 100%;
+}
+.header .bars ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+.header .bars ul li {
+	list-style: none;
+	height: 5px;
+	width: 20%;
+}
+.header .bars .cor-1 {
+	background: #ED5565;
+}
+.header .bars .cor-2 {
+	background: #f59120;
+}
+.header .bars .cor-3 {
+	background: #FCBB42;
+}
+.header .bars .cor-4 {
+	background: #94c23d;
+}
+.header .bars .cor-5 {
+	background-color: #3498db;
+}
+
+.header-title {
+  background: #373746;
+  height: 200px;
+  color: #efefef;
+	width: 100%;
+  text-align: center;
+
+	h2 {
+		padding: 70px 0;
+	}
+}
+
+.main-faq {
+	height: 85vh;
+	background: white;
+}
+
+
+
+
+/* CSS used here will be applied after bootstrap.css */
+.jumbotron{width:80%;
+	background: white;
+	margin-left:10%;max-width: 1200px;margin-left:auto; margin-right:auto;}
+.img-center {margin:0 auto;}
+.dl-horizontal dt{white-space: normal;}
+.omacenter{margin-left:auto; margin-right:auto;}
+
+
+}
