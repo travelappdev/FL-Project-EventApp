@@ -569,3 +569,37 @@ h1, h2{
     -moz-box-shadow:    inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
     box-shadow:         inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
 }
+
+/* 
+.signin-btn{
+  position: relative;
+} */
+.dropdown-menu.options{
+  position: relative;
+  width: 25%;
+  padding: 5px;
+  opacity: 0.9;
+  margin-top: 65px;
+  margin-right: -140px;
+}
+
+#fb_l, #g_l{
+  margin-left: -20px;
+  width: 135%;
+}
+
+#fb_l{
+  height: 42px;
+}
+
+#fb_l:hover, #g_l:hover, #s_log:hover{
+  box-shadow: 1px 1px 8px #222;
+  transition: 0.15s;
+}
+
+#s_log{
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  height: 35px;
+}
