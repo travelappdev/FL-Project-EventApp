@@ -11,128 +11,105 @@
 	  					</button>
 				</div>
 
+
 				<div class="p_user-info col-md-7 col-sm-12 col-xs-12  ">
 					<p id="p_name">{{getCookie("username")}}</p>
 
           <span>
-            <input readonly type="text" id="gender" value='Gender: {{getCookie("gender")}}' ng-model="gender">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('sex')" alt="" >
+            <input readonly type="text" id="gender" placeholder="Gender:" ng-model="gender">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('gender')" alt="" >
           </span>
 
 					<span>
-            <input readonly type="text" id="age" value='Age: {{getCookie("age")}}' ng-model="age">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('age')" alt="">
+            <input readonly type="text" id="age" placeholder="Age:" ng-model="age">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('age')" alt="">
           </span>
 
           <span>
-            <input readonly type="text" id="town" value='Hometown: {{getCookie("homeTown")}}' ng-model="homeTown">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('town')" alt="">
+            <input readonly type="text" id="town" placeholder="Hometown:" ng-model="homeTown">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('town')" alt="">
           </span>
 
           <span>
-            <input readonly type="mail" id="email" value='Email: {{getCookie("email")}}'>
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('email')" alt="">
+            <input readonly type="mail" id="email" placeholder="Email:" >
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('email')" alt="">
           </span>
 
           <span>
-            <input readonly type="phone" id="phone" value='Phone: {{getCookie("phone")}}' ng-model="phone">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteRead('phone')" alt="">
+            <input readonly type="phone" id="phone" placeholder="Phone:" ng-model="phone">
+            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('phone')" alt="">
           </span>
 				</div>
 
 			</div>
+
+
 
 			<div class="p_events-info">
 				<div class="created col-md-12 col-xs-12">
 					<h2 class="p-title">Created events:</h2>
 					<hr>
 
-					<div class="figures">
-						<span class="glyphicon glyphicon-menu-left arrow arrow-left"></span>
-						<figure class="snip">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
-							<figcaption>
-							<div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
-							<h3>The World Ended Yesterday</h3>
-							<p>
-								You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
 
-						<figure class="snip middle">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-							<figcaption>
-							<div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-							<h3>An Abstract Post Heading</h3>
-							<p>
-								Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
 
-						<figure class="snip last">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
-							<figcaption>
-							<div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
-							<h3>Down with this sort of thing</h3>
-							<p>
-								I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
+            <div class="figures">
+              <span class="glyphicon glyphicon-menu-left arrow arrow-left"></span>
 
-						<span class="glyphicon glyphicon-menu-right arrow arrow-right" ></span>
+            <!-- <div ng-repeat="cr in created">
+              <h1>{{cr.name}}</h1>
+              <p>{{cr.description}}</p>
+            </div> -->
+
+
+            <div class="g_event" ng-repeat="cr in created">
+
+                  <figure class="snip">
+                      <div class="image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+                      <figcaption>
+                        <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                        <a ng-href='/event/{{cr._id}}'><h3>{{cr.name}}</h3></a>
+                        <p>{{cr.description}}</p>
+                      </figcaption>
+                  </figure>
+             </div>
+
+
+              <span class="glyphicon glyphicon-menu-right arrow arrow-right"></span>
+
+            </div>
+
 					</div>
 				</div>
 
 				<div class="subscribed col-md-12 col-xs-12">
 					<h2 class="p-title">Subscribed events:</h2>
-					<hr>
+          <div class="figures">
+            <span class="glyphicon glyphicon-menu-left arrow arrow-left"></span>
+					  <hr>
 
-					<div class="figures">
-						<span class="glyphicon glyphicon-menu-left arrow arrow-left"></span>
-						<figure class="snip">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
-							<figcaption>
-							<div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
-							<h3>The World Ended Yesterday</h3>
-							<p class="prev_description">
-								You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
 
-						<figure class="snip middle">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-							<figcaption>
-							<div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-							<h3>An Abstract Post Heading</h3>
-							<p class="prev_description">
-								Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
+             <!-- <div ng-repeat="sub in subscr">
+               <h1>{{sub.name}}</h1>
+               <p>{{sub.description}}</p>
+             </div> -->
 
-						<figure class="snip last">
-							<div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
-							<figcaption>
-							<div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
-							<h3>Down with this sort of thing</h3>
-							<p class="prev_description">
-								I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
-							</p>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
-						<span class="glyphicon glyphicon-menu-right arrow arrow-right"></span>
 
-					</div>
+             <div class="g_event" ng-repeat="sub in subscr">
+
+                   <figure class="snip">
+                       <div class="image">
+                         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
+                       <figcaption>
+                         <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                         <a ng-href='/event/{{sub._id}}'><h3>{{sub.name}}</h3></a>
+                         <p>{{sub.description}}</p>
+                       </figcaption>
+                   </figure>
+              </div>
+
+
+						<span class="glyphicon glyphicon-menu-right arrow arrow-right" ></span>
 				</div>
 			</div>
 		</div>

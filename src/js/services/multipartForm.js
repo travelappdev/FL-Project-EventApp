@@ -1,4 +1,4 @@
-angular.module('mainApp').service('multipartForm', ['$http', function ($http) {
+angular.module('mainApp').service('multipartForm', ['$http','cookieService','$location', function ($http, cookieService, $location) {
 	this.post = function (uploadUrl, data){
 		var fd = new FormData ();
 
@@ -7,6 +7,8 @@ angular.module('mainApp').service('multipartForm', ['$http', function ($http) {
 
 			console.log(fd);
 
+			var email = cookieService.getCookie('email');
+
 		$http.post('/api/events/', {
 			name: fd.name,
 			description: fd.description,
@@ -14,7 +16,11 @@ angular.module('mainApp').service('multipartForm', ['$http', function ($http) {
 			place: fd.place,
 			type: fd.type,
 			date: fd.dt,
-			time: fd.time
+			time: fd.time,
+			creator: email
 		});
+
+		$location.url('/congratulations');
+
 	}
 }]);

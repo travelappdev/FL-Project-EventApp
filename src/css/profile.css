@@ -63,8 +63,6 @@ body{
 
 .p_user-info{
   display: inline-block;
-/*	position: relative;
-	left:35%;*/
 }
 .user-picture{
   margin-left: 25px;
@@ -133,14 +131,10 @@ body{
 }
 
 
-textarea{
+/*textarea{
 	border-radius: 5%;
 	border: 2px dashed black;
-}
-
-
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);*/
-/*@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);*/
+}*/
 
 .snip {
   font-family: 'Open Sans', Arial, sans-serif;

@@ -1,4 +1,141 @@
 <div id="event_manage">
-  <h1>event manage</h1>
-  {{myname}}
+<div class="p_wrapper">
+    <h1 class="event-heading">{{event.name}}</h1>
+
+      <div class="picture-wrap">
+        <div class="event-picture"></div>
+
+            <h2 class="entry-title">Choose photo</h2>
+            <button class="file-upload">
+                <input type="file" class="file-input" accept="image/*" onchange="readURLEvent(this)"  name="image"file-model="event.file">Upload photo
+            </button>
+      </div>
+
+      <div class="col-md-2 subscribe ">
+          <div class="save_btn subscribe-btn">Subscribe</div>
+      </div>
+
+      <div class="author-area">
+        <img src="src/assets/nick.jpg" alt="Event creator" class="event_author">
+        <p class="author-name">Author: Nick Burn</p>
+      </div>
+
+        <div class="row info-event">
+
+            <textarea class="custom-description col-lg-4 col-md-4 col-sm-11 col-xs-11" placeholder="Enter event description here ..." rows="9" cols="10" maxlength="150" ng-model="event.description" name="description">{{event.description}}</textarea>
+
+            <div class="p_user-info event-properties col-lg-4 col-md-4 col-sm-11 col-xs-11">
+
+              <span>
+                <input readonly type="text"  placeholder="Place" value="{{event.place}}">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Time" value="{{event.time}}">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Date" value="{{event.date}}">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+              </span>
+
+              <span>
+                <input readonly type="text" placeholder="Type" value="{{event.type}}">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+              </span>
+
+              <span>
+                <input readonly type="phone" placeholder="Phone" value="{{event.payment}}">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+              </span>
+            </div>
+
+            <div class="weather col-lg-3 col-md-3 col-sm-3 col-xs-11">
+              <h2>Check weather:</h2>
+            </div>
+
+        </div>
+
+        <div class="row">
+          <h4 class="event-members">Members:</h4>
+          <hr class="separator">
+
+          <div class="candidat">
+            <img src="src/assets/gloria.jpg" alt="" class="candidat-photo">
+          </div>
+        </div>
+
+        <div class="row">
+          <h4 class="candidats">Users want to be approved:</h4>
+          <hr class="separator">
+
+          <div class="candidat">
+            <div class="reject"><span class="glyphicon glyphicon-remove symb"></span></div>
+            <img src="src/assets/gloria.jpg" alt="" class="candidat-photo">
+            <div class="approve"><span class="glyphicon glyphicon-ok symb"></div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <h3 class="events_similar">Similar events:</h3>
+          <hr class="separator">
+
+            <div class="figures">
+              <figure class="snip">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
+                <figcaption>
+                <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                <h3>The World Ended Yesterday</h3>
+                <p>
+                  You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+
+              <figure class="snip middle">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+                <figcaption>
+                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+                <h3>An Abstract Post Heading</h3>
+                <p>
+                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+
+              <figure class="snip middle">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+                <figcaption>
+                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+                <h3>An Abstract Post Heading</h3>
+                <p>
+                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+
+              <figure class="snip last">
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
+                <figcaption>
+                <div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
+                <h3>Down with this sort of thing</h3>
+                <p>
+                  I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
+                </p>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+
+  </div>
 </div>

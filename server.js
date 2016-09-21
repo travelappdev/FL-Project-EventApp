@@ -13,6 +13,7 @@ const http         = require('http');
 
 
 // connect to our database
+//mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/appdb');
 
 
@@ -30,10 +31,12 @@ app.use(express.static(__dirname + '/'));
 
 
 app.use(morgan('dev'));                                         // log every request to the console
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+// app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+// app.use(bodyParser.json());                                     // parse application/json
+//app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 
@@ -66,20 +69,17 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
+  .get('/congratulations', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
+
   .get('/event_manage', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
   .get('/profile', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
-  })
-
-
-// ??? should be 404 error
-  .on( 'error', function( error ){
-     console.log( "Error: \n" + error.message );
-     console.log( error.stack );
-   });
+  });
 
 
 //   .get('*', function(req, res) {
@@ -101,19 +101,20 @@ apiRouter.route('/events')
 
 .post(function(req, res) {
   // create a new instance of the Event model
-  var ev = new Event();
+  var event = new Event();
 
-  ev.name = req.body.name;
-  ev.place = req.body.place;
-  ev.date = req.body.date;
-  ev.time = req.body.time;
-  ev.type = req.body.type;
-  ev.payment = req.body.payment;
-  ev.description = req.body.description;
+  event.name = req.body.name;
+  event.place = req.body.place;
+  event.date = req.body.date;
+  event.time = req.body.time;
+  event.type = req.body.type;
+  event.payment = req.body.payment;
+  event.description = req.body.description;
+  event.creator = req.body.creator;
 
 
-  // save the user and check for errors
-  ev.save(function(err) {
+//  save the user and check for errors
+  event.save(function(err) {
     if (err) {
      // duplicate entry
      if (err.code == 11000)
@@ -123,6 +124,7 @@ apiRouter.route('/events')
      }
      res.json({ message: 'Event created!' });
   });
+
 })
 
 .get(function(req, res) {
@@ -250,24 +252,26 @@ apiRouter.route('/users/:email') // body parser is responsible for theese parame
 
 
   .put(function(req, res) {
-    Event.findOneAndUpdate({
+    User.findOneAndUpdate({
       'email': req.params.email
 
     }, {$set: {
-      username: req.params.username,
-      age: req.params.age,
-      gende: req.params.gender,
-      phone: req.params.phone,
-      homeTown: req.params.homeTown,
-      interests: req.params.interests
+    //  username: req.params.username,
+      'age': req.body.age,
+      'gender': req.body.gender,
+      'phone': req.body.phone,
+      'homeTown': req.body.homeTown,
+      'subscribed': req.body.subscribed,
+      'createdEvents': req.body.createdEvents
+    //  interests: req.params.interests
     } },
-       {upsert: true}, // creates field if not exists
 
        function(err, event) {
          if(err) res.send(err)
          res.json({message: 'Event updated!'});
        });
   })
+
 
 
 // Should be applied
