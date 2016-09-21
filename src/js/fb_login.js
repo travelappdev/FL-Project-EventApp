@@ -37,6 +37,13 @@ function fbLogin() {
                     fields: 'first_name,last_name,id,picture.width(300).height(300)'
                 },
                 function(response) {
+
+                    /*$http.post('http://localhost:8000/api/users/', {
+                    //"email": profile.getEmail(),
+                    "username": (response.first_name + response.last_name)
+                    //"photoUrl": profile.getImageUrl()
+                    });*/
+
                     console.log(response.id);
                     console.log(response.first_name);
                     console.log(response.last_name);
