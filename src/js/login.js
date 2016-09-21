@@ -12,4 +12,3 @@ angular.module('mainApp').controller('LoginController',[ '$scope', '$http', func
 	};
 }]);
 
-var loginType = 'simple';
