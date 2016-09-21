@@ -27,6 +27,12 @@ function onSuccess(googleUser) {
 	loginType = 'g';
 	var profile = googleUser.getBasicProfile();
 
+/*	$http.post('http://localhost:8000/api/users/', {
+        "email": profile.getEmail(),
+        "username": profile.getName()
+        //"photoUrl": profile.getImageUrl()
+      });*/
+
 	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 	console.log('Name: ' + profile.getName());
 	console.log('Image URL: ' + profile.getImageUrl());
@@ -35,7 +41,7 @@ function onSuccess(googleUser) {
 }
 
 function onFailure(error) {
-	alert(JSON.stringify(error, undefined, 2));
+	//alert(JSON.stringify(error, undefined, 2));
 }
 
 
