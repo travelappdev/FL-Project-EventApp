@@ -13,7 +13,8 @@ angular.module('mainApp')
          sc.gallery_cells = modifyArr(arr);
 
       });
-      
+
+
 
     // function create array, that is suitable for carousel
 
