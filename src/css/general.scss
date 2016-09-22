@@ -606,38 +606,28 @@ h1, h2{
 
 //Top Events
 
-.gallery {
-  background: #EEE;
-
-  .gallery-cell {
-    width: 100%;
-    background: #5DBCD2;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+.carousel-indicators{
+bottom: -31px;
   
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-
-    counter-increment: gallery-cell;
-
-    padding: 20px 6%;
-    list-style: none;
-
-    figure {
-    flex-grow: 1;
-    width: 20%;
-    height: 265px;
-
-      figcaption{
-      margin: -10px;
-      }
-    }
+  li{
+    margin: 0 4px;
+  }
+  .active{
+    position: relative;
+    top: 1px;
   }
 }
+
+
+
+.snip{
+  width: 25%!important;
+
+  a{
+    margin-top: 10px;
+  }
+}
+
 
 .g_event-wrapper{
   background-color: white;
@@ -653,34 +643,4 @@ h1, h2{
   .sub-header{
     padding-bottom: 15px;
   }
-}
-
-
-
-.flickity-page-dots{
-  background-color: #FFF;
-  height: 18px;
-  bottom: -18px!important; 
-
-  li.dot{
-    margin-top: 3px;
-    background-color: #5DBCD2!important;
-  }
-
-  li.dot:hover{
-    height: 12px;
-    width: 12px;
-  }
-}
-
-.flickity-prev-next-button{
-  z-index: 20;
-}
-
-.flickity-viewport {
-  transition: height 0.2s;
-}
-
-.snip a{
-  margin-top: 10px;
 }
