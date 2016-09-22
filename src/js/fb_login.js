@@ -88,17 +88,19 @@ function fbLogout() {
 
 
 function shareFB(name, picture, caption, description) {
-    
+
     FB.ui({
         method: 'feed',
-        name: "Search Google",
-        link: "",
-        picture: "https://www.google.co.uk/images/srpr/logo11w.png",
-        caption: "The world's most popular search engine"
+        name: name,
+        link: "https://www.google.com.ua/",
+        picture: picture,
+        caption: caption,
+        description: description
     }, function(error) {
 
-        alert(JSON.stringify(error, undefined, 2));
+        console.log(JSON.stringify(error, undefined, 2));
 
     });
+
 
 }
