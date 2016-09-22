@@ -3,9 +3,87 @@ angular.module('mainApp')
 
   sc.errorMsg = '';
 
+function modifyArr(arr) {
 
-// download top events
-// should be fixed
+      var outputArr = [];
+      var i = 0;
+
+      while (i <= arr.length - 1) {
+        var obj = {
+          'events': []
+        };
+
+        for (let j = 0; j < 3; j++) {
+          if(arr[i]) obj['events'].push(arr[i]);
+          i += 1;
+        }
+        outputArr.push(obj); 
+      }
+      return outputArr;
+    }
+
+    // download top events
+    // should be fixed
+
+    var eventsArr = [{
+      name: "String1",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String2",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String2",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String3",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String4",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String5",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }, {
+      name: "String6",
+      place: "String",
+      date: "String",
+      time: "Number",
+      type: "String",
+      payment: "String",
+      description: "String"
+    }];
+
+    sc.gallery_cells = modifyArr(eventsArr);
 
   $http.get('/api/topevents')
     .then(function(response) {
