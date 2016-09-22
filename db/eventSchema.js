@@ -12,7 +12,8 @@ const EventSchema = new Schema({
   payment: String,
   description: String,
   photoURL: String,
-  creator: String
+  creator: String,
+  members: String
 });
 
 

@@ -111,6 +111,7 @@ apiRouter.route('/events')
   event.payment = req.body.payment;
   event.description = req.body.description;
   event.creator = req.body.creator;
+  event.members = req.body.members;
 
 
 //  save the user and check for errors
@@ -172,9 +173,8 @@ apiRouter.route('/events/:event_id')
   // method is used to update an event
   .put(function(req, res) {
     Event.findOneAndUpdate({
-      'name': req.params.name
-    }, {$set: {name: req.body.description} },
-       {upsert: true}, // creates field if not exists
+      '_id': req.params.event_id
+    }, {$set: {members: req.body.members} },
 
        function(err, event) {
          if(err) res.send(err)

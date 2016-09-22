@@ -4,9 +4,21 @@ angular.module('mainApp')
     let ev = location.pathname.slice(7);
     $http.get(`/api/events/${ev}`)
       .then(function(response) {
+        console.log(response.data);
         $scope.event = angular.fromJson(response.data);
       });
 
+
+    $scope.similar = [];
+    var arr = [];
+
+    $http.get('/api/events')
+      .then(function(response) {
+        response.data.forEach(elem => {
+          if($scope.event.type === elem.type && $scope.event._id !== elem._id) $scope.similar.push(elem);
+        });
+        $scope.similar = $scope.similar.slice(0,4);
+      });
 
 
 
@@ -33,6 +45,13 @@ angular.module('mainApp')
           'createdEvents': $scope.createdEvents
         //  'interests': $scope.interests
 
+        });
+
+
+        $scope.event.members += `,${$scope.email}`;
+
+        $http.put(`/api/events/${ev}`, {
+          'members': $scope.event.members
         });
 
 

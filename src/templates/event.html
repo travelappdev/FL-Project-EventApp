@@ -97,7 +97,7 @@
 
       <div class="author-area">
         <img src="src/assets/nick.jpg" alt="Event creator" class="event_author">
-        <p class="author-name">Author: Nick Burn</p>
+        <p class="author-name">{{event.creator}}</p>
       </div>
 
         <div class="row info-event">
@@ -147,7 +147,19 @@
           <hr class="separator">
 
             <div class="figures">
-              <figure class="snip">
+              <figure class="snip middle" ng-repeat="sim in similar">
+
+                 <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+
+                   <figcaption>
+                       <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+
+                          <a ng-href='/event/{{sim._id}}'><h3>{{sim.name}}</h3></a>
+
+                       <p>{{sim.description}}</p>
+                   </figcaption>
+               </figure>
+              <!-- <figure class="snip">
                 <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
                 <figcaption>
                 <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
@@ -193,7 +205,7 @@
                 </p>
                 </figcaption>
                 <a href="#"></a>
-              </figure>
+              </figure> -->
             </div>
           </div>
 

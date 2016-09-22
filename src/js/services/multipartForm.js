@@ -17,7 +17,8 @@ angular.module('mainApp').service('multipartForm', ['$http','cookieService','$lo
 			type: fd.type,
 			date: fd.dt,
 			time: fd.time,
-			creator: email
+			creator: email,
+			members: ''
 		});
 
 		$location.url('/congratulations');
