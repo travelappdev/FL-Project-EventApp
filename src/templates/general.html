@@ -33,116 +33,28 @@
             </div>
             
 
-    <div class="topEvents">
+    <div class="topEvents"> 
         <div class="gallery js-flickity"
         data-flickity-options='{ "wrapAround": true, "adaptiveHeight": true }'>
-            <div class="gallery-cell">
-               <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        
+            <div class="gallery-cell" ng-repeat="gallery_cell in gallery_cells">
+               <figure class="snip middle" ng-repeat="event in gallery_cell.events">
+                    <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
+                    <figcaption>
+                    <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
+                    <h3>{{event.name}}</h3>
+                    <p>
+                        Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                    </p>
+                    </figcaption>
+                    <a href="#"></a>
+                </figure>
             </div>
-            <div class="gallery-cell">
-                <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-            </div>
-            <div class="gallery-cell">
-                <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip middle">
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                            <figcaption>
-                            <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                            <h3>An Abstract Post Heading</h3>
-                            <p>
-                                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                            </p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-            </div>
-<!--             <div class="gallery-cell"></div>
-<div class="gallery-cell"></div> -->
+            <div class="gallery-cell"></div>
         </div>
     </div>
 
               
-          <div class="g_block">
+          <!-- <div class="g_block">
               <div ng-repeat="event in events | limitTo: 4">
                 <figure class="snip">
                     <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
@@ -156,7 +68,7 @@
                     <a href="#"></a>
                 </figure>
               </div>
-          </div>
+          </div> -->
 
       </section>
 

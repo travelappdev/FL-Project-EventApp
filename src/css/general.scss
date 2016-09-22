@@ -612,8 +612,8 @@ h1, h2{
 
 .gallery-cell {
   width: 100%;
- // height: 320px;
-  margin-right: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
   background: #8C8;
 
   display: -webkit-box;
@@ -628,7 +628,6 @@ h1, h2{
   counter-increment: gallery-cell;
 
   padding: 0;
-  margin: 0;
   list-style: none;
 
   figure {
@@ -636,25 +635,36 @@ h1, h2{
   margin-left: 5%;
   margin-right: 5%;
   width: 20%;
-  height: 230px;
+  height: 265px;
 
     figcaption{
     margin: -10px;
-    margin-bottom: -20px;
     }
   }
 }
 
-figure:hover{
-  .image{
-    display: none;
+.flickity-page-dots{
+  background-color: white;
+  height: 18px;
+  bottom: -18px!important; 
+
+  li.dot:hover{
+    height: 11px;
+    width: 11px;
+    background: #777;
   }
 }
 
-
+.flickity-prev-next-button{
+  z-index: 20;
+}
 
 .flickity-viewport {
   transition: height 0.2s;
+}
+
+.snip a{
+  margin-top: 10px;
 }
 
 /* cell number
