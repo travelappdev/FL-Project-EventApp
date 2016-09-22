@@ -28,7 +28,7 @@ angular.module('mainApp')
         var obj = { 'events': [] };
 
         for(let j = 0; j < 3; j++) {
-          obj['events'].push(arr[i]);
+          arr[i] ? obj['events'].push(arr[i]) : break;
           i += 1;
         }
         outputArr.push(obj);
