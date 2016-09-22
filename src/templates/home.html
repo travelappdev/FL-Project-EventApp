@@ -16,13 +16,29 @@
 
 
 
-    <div class="row">
-      <div  class="search-wrapper">
-        <input type="text" placeholder="Search for event" required="">
-        <button type="submit">Search</button>
+  <div class="search-section row">
+    <div class="pageWrapper">
+      <div class="pageMasthead" class="pageSection"></div>
+        <div class="pageContentArea" class="pageSection">
+          <form class="search-wrapper">
+            <input type="text" placeholder="Search for event" class="grad" required="">
+            <span class="custom-dropdown grad">
+              <select>
+                <option>Sport</option>
+                <option>Concert</option>
+                <option>Photo</option>
+                <option>Active</option>
+                <option>Other</option>
+              </select>
+            </span>
+            <input type="text" placeholder="Select date" class="txtDateRange grad" name="txtDateRange" class="inputField shortInputField dateRangeField" data-from-field="txtDateFrom" data-to-field="txtDateTo" />
+            <input type="hidden" class="txtDateFrom grad" value="" />
+            <input type="hidden" class="txtDateTo grad" value="" />
+            <button type="submit">Search</button>
+        </form>
       </div>
     </div>
-
+  </div>
 
   <div class="results-wrap">
 
