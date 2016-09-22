@@ -140,7 +140,6 @@ body{
   font-family: 'Open Sans', Arial, sans-serif;
   position: relative;
   display: inline-block;
-  float: left;
   overflow: hidden;
   margin: 10px 1%;
   min-width: 150px;
