@@ -144,7 +144,7 @@ body{
   margin: 10px 1%;
   min-width: 150px;
   max-width: 310px;
-  width: 100%;
+  width: 25%;
   background-color: #ffffff;
   color: #000000;
   text-align: left;
@@ -250,6 +250,7 @@ figure.snip.hover button {
   bottom: 0;
   position: absolute;
   z-index: 1;
+  margin-top: 10px;
 }
 
 .snip:hover:after,
