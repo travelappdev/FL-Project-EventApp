@@ -1,17 +1,18 @@
-$green: #50c56c;
-$blue: #4ec4ce;
+// Variables
+
+
+
+$darkblue: #373746;
+
+
+
+$search_block: #999;
 
 .home_explore {
   padding-bottom:  50px;
 }
 
-.search-section {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 30vh;
-  background: white;
-}
+
 
 .search_container {
   display: flex;
@@ -27,15 +28,18 @@ $blue: #4ec4ce;
   padding-top: 5px;
 }
 
+
+
+/* Form wrapper styling */
 .search-wrapper {
-  font-size: 1.55rem !important;
-  display: flex;
-  justify-content: center;
-  margin: 45px auto 50px auto;
+width: 600px;
+margin: 45px auto 50px auto;
 }
 
+/* Form text input */
 
 .search-wrapper input {
+min-width: 500px;
 height: 40px;
 padding: 10px;
 }
@@ -62,7 +66,7 @@ color: #999;
 /* Form submit button */
 .search-wrapper button {
 border: 0;
-margin-left: -19px !important;
+margin-left: -5px !important;
 padding: 0;
 cursor: pointer;
 height: 40px;
@@ -82,98 +86,46 @@ background: #c42f2f;
 outline: 0;
 }
 
-.pageWrapper {
-	background-color: transparent;;
-	form {
-		display: flex;
-		margin-top:1rem;
-		font-size:1rem;
+
+.h_block{
+
+	width: 100%;
+    background-color: white;
+
+	.page-control{
+		text-align: center;
 	}
 
-}
+	.selection-item{
+		display: block;
+		float: right;
+		margin-top: 15px;
+		color: $darkblue;
+		font-family: 'SegoeUIRegular';
+		font-size: 18px;
 
-/* Custom dropdown */
-.custom-dropdown {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
+		.amount-select{
+			margin: 0 10px;
+		}
+	}
 
-.custom-dropdown select {
-  height: 40px;
-  background: white;
-  padding: 7px;
-  font-size: inherit;
-  border: 0;
-  margin: 0;
-  width: 115px;
-  border-radius: 3px;
-  text-indent: 0.01px;
-  text-overflow: '';
-  -webkit-appearance: button; /* hide default arrow in chrome OSX */
-}
+	.results-block{
 
-.custom-dropdown::before,
-.custom-dropdown::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.custom-dropdown::after { /*  Custom dropdown arrow */
-  content: "\25BC";
-  height: 1em;
-  font-size: .625em;
-  line-height: 1;
-  right: 1.2em;
-  top: 50%;
-  margin-top: -.5em;
-}
-
-.custom-dropdown::before {
-  width: 2em;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.custom-dropdown::before {
-  background-color: white;
-  color: white;
-}
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			width: 100%;
 
 
-@mixin gradient-border($color1, $color2, $border-width, $direction) {
-  border: none;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%), linear-gradient(#{$direction}, $color1 0%, $color2 100%);
-  @if $direction == 'to right' or $direction == 'to left' {
-    @if $direction == 'to right' {
-      border-left: $border-width solid $color1;
-      border-right: $border-width solid $color2;
-    } @else {
-      border-left: $border-width solid $color2;
-      border-right: $border-width solid $color1;
-    }
-    background-position: 0 0, 0 100%;
-    background-size: 100% $border-width;
-  }
+			.result-it{
+				width: 80%;
+				margin: 25px 50px;
+			}
+	}
 
-}
+	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>	span:hover {
+		background-color: $darkblue;
+	}
 
-.grad {
-  line-height: 1.4;
-  -webkit-appearance: none;
-  @include gradient-border($green, $blue, 2px, 'to right');
-  background-color: transparent;
-  &::-webkit-input-placeholder {
-    color: #eee;
-    transition: color 0.2s ease-out;
-  }
-  &:focus {
-    outline: none;
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-  }
+
 }
