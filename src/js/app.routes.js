@@ -14,12 +14,6 @@ angular.module('router', ['ngRoute']) // ui-router allow to maintain old browser
       controller : 'generalCtrl'
     })
 
-    .when('/congratulations', {
-      templateUrl: 'congratulations.html',
-      controller: 'congrCtrl'
-    })
-
-
     .when('/event/:event_id', {
       templateUrl : 'event.html',
       controller : 'eventCtrl'

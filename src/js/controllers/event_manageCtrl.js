@@ -3,8 +3,12 @@ angular.module('mainApp')
 
     let ev = location.pathname.slice(14);
     $scope.members = [];
+    $scope.place = '';
+    $scope.author = cookieService.getCookie('username');
+    $scope.pht = cookieService.getCookie('userPhoto');
 
-$scope.place = '';
+
+
 
   $http.get(`/api/events/${ev}`)
     .then(function(response) {
@@ -16,31 +20,37 @@ $scope.place = '';
 
 
       eventService.getMembers($scope);
-      setTimeout(function(){
+      var interval = setInterval(function(){
         console.log(weather);
+        if(weather != undefined) {
+          console.log(weather);
 
-        document.getElementById('weather').innerHTML = weather.title;
+          document.getElementById('weather').innerHTML = weather.title;
 
-        // find the proper date
-        let dt = new Date($scope.event.date);
-        let val = 0;
+          // find the proper date
+          let dt = new Date($scope.event.date);
+          let val = 0;
 
-        for(let i = 0; i < 10; i++) {
-          let api_dt = new Date(weather.item.forecast[i].date);
-          console.log(api_dt);
+          for(let i = 0; i < 10; i++) {
+            let api_dt = new Date(weather.item.forecast[i].date);
+            console.log(api_dt);
 
-          if( dt.toString().substring(0,15) == api_dt.toString().substring(0,15)) {
-            // transform F into C
-            let temp = ((+weather.item.forecast[i].high - 32) / 1.8).toFixed(0);
-            document.getElementById('weather_temp').innerHTML = temp + ' <sup>o</sup>C';
-            document.getElementById('weather_status').innerHTML = weather.item.forecast[i].text;
-            val = 1;
+            if( dt.toString().substring(0,15) == api_dt.toString().substring(0,15)) {
+              // transform F into C
+              let temp = ((+weather.item.forecast[i].high - 32) / 1.8).toFixed(0);
+              document.getElementById('weather_temp').innerHTML = temp + ' <sup>o</sup>C';
+              document.getElementById('weather_status').innerHTML = weather.item.forecast[i].text;
+              val = 1;
+            }
           }
+          if(val === 0) document.getElementById('weather_temp').innerHTML = 'Cannot find weather.';
+          console.log(dt);
+          clearInterval(interval);
         }
-        if(val === 0) document.getElementById('weather_temp').innerHTML = 'Cannot find weather.';
-        console.log(dt);
 
-      }, 2000);
+
+
+      }, 200);
     });
 
 

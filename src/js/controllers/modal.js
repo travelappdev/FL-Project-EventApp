@@ -1,11 +1,12 @@
 angular.module('mainApp')
-.controller('EventController', ['$scope', 'multipartForm', '$uibModalInstance', function (sc, multipartForm, uibModalInstance) {
+.controller('EventController', ['$scope', 'multipartForm', '$uibModalInstance', 'cookieService', function (sc, multipartForm, uibModalInstance, cookieService) {
 
 
 
 
 
   sc.submit = function () {
+
       var uploadUrl = '/api/events';
       multipartForm.post(uploadUrl, sc.event);
       uibModalInstance.close();

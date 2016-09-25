@@ -73,11 +73,6 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
-  .get('/congratulations', function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  })
-
-
   .get('/profile', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   });

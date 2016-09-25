@@ -17,6 +17,12 @@ angular.module('mainApp')
       if(cookie === 'undefined' || cookie === 'null') return '';
       return cookie;
     }
+    // function get user photo
+    $http.get(`api/users/${$scope.email}`)
+      .then(function(response) {
+        $scope.userPhoto = response.data.userPhoto;
+        document.cookie = `userPhoto=${scope.userPhoto}`;
+      })
 
 
 
@@ -28,15 +34,25 @@ angular.module('mainApp')
       $scope.phone = $scope.getCookie('phone');
       $scope.homeTown = $scope.getCookie('homeTown');
       $scope.subscribed = $scope.getCookie('subscribed');
-      $scope.createdEvents = $scope.getCookie('createdEvents');
-      $scope.userPhoto = '';
+      //$scope.createdEvents = $scope.getCookie('createdEvents');
 
-
-      // function get user photo
-      $http.get(`api/users/${$scope.email}`)
+      $http.get('api/events')
         .then(function(response) {
-          $scope.userPhoto = response.data.userPhoto;
-        })
+          let line = '';
+          response.data.forEach(elem => {
+            if(elem.creator === $scope.email) {
+              line += `,${elem._id}`;
+            }
+          });
+          document.cookie = `createdEvents=${line}`;
+          $scope.createdEvents = $scope.getCookie('createdEvents');
+
+          $scope.created = eventsArr('created');
+        });
+
+        $scope.subscr = eventsArr('subscribed');
+
+
 
       function eventsArr(val) {
 
@@ -75,8 +91,7 @@ angular.module('mainApp')
         return outputArr;
       }
 
-      $scope.subscr = eventsArr('subscribed');
-      $scope.created = eventsArr('created');
+
 
 
 
