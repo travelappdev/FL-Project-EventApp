@@ -6,7 +6,7 @@
 
 
 
-<!-- <div id="modal-body">
+<div id="modal-body">
 	<div class="container-fluid well">
 		<form class="form-vertical" role="form" id="event-form" name="event-form" required ng-submit="submit()">
 
@@ -14,13 +14,33 @@
 
 				<div class="picture img-responsive col-md-3 col-xs-9">
 
-					<img class="add-image">
-					<h2 class="upload_title">Choose photo</h2>
-					<button class="file-upload">
-  						<input type="file" class="file-input" accept="image/*" onchange="readURL(this)"  name="image"file-model="event.file">Upload photo
-  					</button>
 
-				</div>
+					<img class="add-image" src="{{event.photoURL}}" />
+					<h2 class="upload_title">Choose photo</h2>
+					<div class="dropdown url-div">
+					    <button class=" dropdown-toggle file-upload" type="button" data-toggle="dropdown">Dropdown Example
+					    <span class="caret"></span></button>
+					    <div class="dropdown-menu url-div">
+					    	<label for="url">Enter photo url</label>
+					    	<input type="text"placeholder="Type photo url here ..." ng-model="event.photoURL" class="url-field" name="photoURL"/>
+					    	<!-- <button class="save_btn photo-link-btn">Upload</button> -->
+					    </div>
+					 </div>
+<!-- 					<button class="file-upload">
+  						<input type="file" class="file-input" accept="image/*" onchange="readURL(this)"  name="image"file-model="event.file">Upload photo
+  					</button> -->
+
+					</div>
+
+<!--  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div> -->
 
 				<div class=" properties_block col-md-7 col-sm-12 col-xs-12">
 					<div>
@@ -36,35 +56,14 @@
 						<input type="text" name="type" placeholder="Choose event type ..." class="date-wrap"  ng-model="event.type" data-toggle="collapse" data-target="#categories" required/>
 
 						<div class="collapse" id="categories">
-							<label class="category-it">
-						      <input value="Concert" type="radio" ng-model="event.type">Concert
-						    </label>
-						    <label class="category-it">
-						      <input value="Classes" type="radio" ng-model="event.type">Classes
-						    </label>
-						    <label class="category-it">
-						      <input value="Master class" type="radio" checked="checked" ng-model="event.type">Master class
-						    </label>
-						    <label class="category-it">
-						      <input value="Trip" type="radio" ng-model="event.type">Trip
-						    </label>
-						</div>
-					</div>
-					<div>
-	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" ng-model="event.dt" required/>
+							<input type="radio" class="radio" id="arts" ng-model="event.type" value="Arts">
+							<label for="arts" class="radio-label"><span class="radio-text">Arts</span></label>
 
-						<div class="collapse" id="date">
-							<div uib-datepicker ng-model="event.dt" class="datepick" datepicker-options="options" show-weeks="false"></div>
-						</div>
-					</div>
-					<div>
-						<div uib-timepicker ng-model="event.time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required>></div>
-					</div>
-				</div>
+							<input type="radio" class="radio" id="classes" ng-model="event.type" value="Classess">
+							<label for="classes" class="radio-label"><span class="radio-text">Classes</span></label>
 
-			</div>
-			<div class="block-wrap row">
-				<textarea class="event_description-area col-md-7 col-xs-12 col-sm-7" placeholder="Enter event description here ..." rows="8" cols="10" maxlength="150" ng-model="event.description" name="description"></textarea>
+							<input type="radio" class="radio" id="concert" ng-model="event.type" value="Concert">
+							<label for="concert" class="radio-label"><span class="radio-text">Concert</span></label>
 
 							<input type="radio" class="radio" id="conference" ng-model="event.type" value="Conference">
 							<label for="conference" class="radio-label"><span class="radio-text">Conference</span></label>
@@ -75,10 +74,11 @@
 							<input type="radio" class="radio" id="food" ng-model="event.type" value="Food &amp; drink">
 							<label for="food" class="radio-label"><span class="radio-text">Food</span></label>
 
-		</form>
-	</div>
-</div> -->
+							<input type="radio" class="radio" id="music" ng-model="event.type" value="Music">
+							<label for="music" class="radio-label"><span class="radio-text">Music</span></label>
 
+							<input type="radio" class="radio" id="party" ng-model="event.type" value="Party">
+							<label for="party" class="radio-label"><span class="radio-text">Party</span></label>
 
 							<input type="radio" class="radio" id="sport" ng-model="event.type" value="Sports &amp; Wellness">
 							<label for="sport" class="radio-label"><span class="radio-text">Sports</span></label>

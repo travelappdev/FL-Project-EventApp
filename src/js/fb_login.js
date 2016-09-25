@@ -20,7 +20,7 @@ window.fbAsyncInit = function() {
     js = d.createElement(s);
     js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs); 
+    fjs.parentNode.insertBefore(js, fjs);
 
 }(document, 'script', 'facebook-jssdk'));
 
@@ -32,29 +32,37 @@ function fbLogin() {
     FB.login(function(response) {
 
         if (response.status === "connected") {
-      
+
             FB.api('/me', 'GET', {
                     fields: 'first_name,last_name,id,picture.width(300).height(300)'
                 },
                 function(response) {
 
-                    /*$http.post('http://localhost:8000/api/users/', {
-                    //"email": profile.getEmail(),
-                    "username": (response.first_name + response.last_name)
-                    //"photoUrl": profile.getImageUrl()
-                    });*/
-
                     console.log(response.id);
                     console.log(response.first_name);
                     console.log(response.last_name);
                     console.log(response.picture.data.url);
-                })
+
+                  })
+
+
+                    //
+                    // $.post( "http://localhost:8000/api/users/", {
+                    //    email: `${response.id}`,
+                    //    username: `${response.first_name}_${response.last_name}`,
+                    //    userPhoto: `${response.picture.data.url}`
+                    //  })
+                    //  .done(function( data ) {
+                    //    console.log('data',data.username);
+                    //  }, "json");
+
+
         } else if (response.status === "not_authorized") {
             console.log("You are not logged in.");
         } else {
             console.log("You are not in facebook.");
         }
-    
+
     });
 }
 
@@ -77,11 +85,11 @@ function fbGetInfo() {
 function fbLogout() {
 
     FB.logout(function(response) {
-    
+
         console.log('FB user logged out');
-        
+
         loginType = 'none';
-    
+
     })
 
 }

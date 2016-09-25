@@ -1,8 +1,4 @@
 <div id="general">
-<!--   <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop style="width: 100%"> -->
-
-<!--       <source src="src/assets/Blue.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> -->
-  <!-- </video> -->
 
   <div class="g_photo-wrapper">
     <div class="g_main-photo ">
@@ -19,44 +15,53 @@
     </div>
   </div>
 
- <section class="g_event-wrapper">
+
+
+     <!-- OUR CONTAINER FOR TOP EVENTS -->
+      <!-- should be fixed and updated -->
+
+
+      <section class="g_event-wrapper">
 
             <div class="event-header-wrap">
               <h1 class="events-header">Top Events</h1>
-              <p class="sub-header">Check most popular events</p>
+              <p class="top-sub-header">Check most popular events</p>
             </div>
-            
 
-            <div class="topEvents"> 
-                
-                <div carousel interval="3000">
-                    <div slide ng-repeat="gallery_cell in gallery_cells" active="gallery_cell.active">
-                        
-                        <figure class="snip middle" ng-repeat="event in gallery_cell.events">
-                            
-                            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture">
-                            
-                            <figcaption>
-                            
-                                <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
-                            
-                                <h3>{{event.name}}</h3>
-                            
-                                <p>
-                                {{event.description}}
-                                </p>
-                            
-                            </figcaption>
-                            <a href="#"></a>
-                        
-                        </figure>
-                    
-                    </div>
-                </div>
-            
-            </div>
+
+    <div class="topEvents">
+
+
+      <div carousel interval="3000">
+        <div slide ng-repeat="gallery_cell in gallery_cells" active="gallery_cell.active">
+
+            <figure class="snip middle" ng-repeat="event in gallery_cell.events">
+
+                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture"></div>
+
+                <figcaption>
+
+                    <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+
+                    <h3>{{event.name}}</h3>
+
+                    <p>
+                    {{event.description}}
+                    </p>
+
+                </figcaption>
+                <a ng-href='/event/{{event._id}}'></a>
+
+            </figure>
+
+        </div>
+    </div>
 
       </section>
+
+      <div class="g_block">
+
+      </div>
 
       <div class="parallax-how parallax"></div>
 
@@ -71,7 +76,7 @@
               </div>
             </div>
             <h2 class="feature-title">Create</h2>
-            <p class="feature-description">Fill in your event details,<br/> choose your event type, and <br/>voilayour page is ready for action!</p>
+            <p class="feature-description">Fill in your event details,<br/> choose your event type, and <br/>voila - your page is ready for action!</p>
           </div>
 
           <div>
@@ -96,7 +101,7 @@
           </div>
         </div>
       </section>
-      
+
       <div class="parallax-community parallax"></div>
 
       <section class="community">
@@ -148,6 +153,6 @@
 
         </div>
       </section>
-      
+
       <div class="parallax-end parallax"></div>
 </div>

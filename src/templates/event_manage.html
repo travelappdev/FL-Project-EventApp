@@ -5,21 +5,31 @@
       <div class="picture-wrap">
         <div class="event-picture"></div>
 
-            <h2 class="entry-title">Choose photo</h2>
-            <button class="file-upload">            
-                <input type="file" class="file-input" accept="image/*" onchange="readURLEvent(this)"  name="image"file-model="event.file">Upload photo
-            </button>
-      </div>
-      
-      <div class="col-md-2 subscribe ">
-          <div class="save_btn subscribe-btn">Subscribe</div>
+            <h2 class="upload_title">Choose photo</h2>
+
+            <div class="dropdown url-div">
+
+              <button class=" dropdown-toggle file-upload" type="button" data-toggle="dropdown">Upload photo
+              <span class="caret"></span></button>
+
+              <div class="dropdown-menu url-div">
+                <label for="url">Enter photo url:</label>
+                <input type="text" class="url-field" ng-model="new_photo" />
+                <button ng-click="change()" class="save_btn photo-link-btn">Change</button>
+              </div>
+
+           </div>
       </div>
 
+<!--       <div class="col-md-2 subscribe ">
+          <div class="save_btn subscribe-btn">Subscribe</div>
+      </div>
+ -->
       <div class="author-area">
         <img src="src/assets/nick.jpg" alt="Event creator" class="event_author">
         <p class="author-name">Author: Nick Burn</p>
       </div>
-      
+
         <div class="row info-event">
 
             <textarea class="custom-description col-lg-4 col-md-4 col-sm-11 col-xs-11" placeholder="Enter event description here ..." rows="9" cols="10" maxlength="150" ng-model="event.description" name="description">{{event.description}}</textarea>
@@ -27,57 +37,46 @@
             <div class="p_user-info event-properties col-lg-4 col-md-4 col-sm-11 col-xs-11">
 
               <span>
-                <input readonly type="text"  placeholder="Place" value="{{event.place}}">
-                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+                <input readonly type="text" id="place"  placeholder="Place" ng-model="event.place">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('place')" alt="" class="edit-btn">
               </span>
 
               <span>
-                <input readonly type="text" placeholder="Time" value="{{event.time}}">
-                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+                <input readonly type="text" id="time" placeholder="Time" ng-model="event.time">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn" ng-click="deleteReadonlyState('time')">
               </span>
 
               <span>
-                <input readonly type="text" placeholder="Date" value="{{event.date}}">
-                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+                <input readonly type="text" id="date" placeholder="Date" vng-model="event.date">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn" ng-click="deleteReadonlyState('date')">
               </span>
 
               <span>
-                <input readonly type="text" placeholder="Type" value="{{event.type}}">
-                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+                <input readonly type="text" id="type" placeholder="Type" ng-model="event.type">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn" ng-click="deleteReadonlyState('type')">
               </span>
 
               <span>
-                <input readonly type="phone" placeholder="Phone" value="{{event.payment}}">
-                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn">
+                <input readonly type="phone" id="payment" placeholder="Phone" ng-model="event.payment">
+                <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" alt="" class="edit-btn" ng-click="deleteReadonlyState('payment')">
               </span>
             </div>
-          
+
             <div class="weather col-lg-3 col-md-3 col-sm-3 col-xs-11">
               <h2>Check weather:</h2>
             </div>
 
         </div>
-        
+
         <div class="row">
           <h4 class="event-members">Members:</h4>
           <hr class="separator">
 
-          <div class="candidat">
-            <img src="src/assets/gloria.jpg" alt="" class="candidat-photo">
+          <div class="candidat" ng-repeat="member in members">
+            <img src="{{member.userPhoto}}" alt="" class="candidat-photo">
+            <h4>{{member.username}}</h4>
           </div>
         </div>
-        
-        <div class="row">
-          <h4 class="candidats">Users want to be approved:</h4>
-          <hr class="separator">
-
-          <div class="candidat">
-            <div class="reject"><span class="glyphicon glyphicon-remove symb"></span></div>
-            <img src="src/assets/gloria.jpg" alt="" class="candidat-photo">
-            <div class="approve"><span class="glyphicon glyphicon-ok symb"></div>
-          </div>
-        </div>
-
 
 
         <div class="row">
@@ -108,7 +107,7 @@
                 </figcaption>
                 <a href="#"></a>
               </figure>
-              
+
               <figure class="snip middle">
                 <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
                 <figcaption>
@@ -120,7 +119,7 @@
                 </figcaption>
                 <a href="#"></a>
               </figure>
-    
+
               <figure class="snip last">
                 <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
                 <figcaption>

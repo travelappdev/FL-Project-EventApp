@@ -22,23 +22,37 @@ angular.module('mainApp')
 
     $scope.evs = events;
 
-    $scope.currentPage = 1; 
+    $scope.currentPage = 1;
     $scope.pageSize = 6;
     $scope.itemsPerPage = $scope.pageSize;
 
-
+    $scope.start;
+    $scope.end;
 
     $scope.setItemsPerPage = function(num) {
-      $scope.itemsPerPage = num;
-      $scope.currentPage = 1;
-    };
+        $scope.itemsPerPage = num;
+        $scope.currentPage = 1;
+      };
 
       $scope.q = '';
-      
+
       $scope.getData = function () {
 
         return $filter('filter')($scope.evs, $scope.q);
 
+      };
+
+      $scope.dateRangeFilter = function (property, startDate, endDate) {
+      return function (item) {
+          if (item[property] === null) return false;
+
+          var itemDate = moment(item[property]);
+          var s = moment(startDate, "DD-MM-YYYY");
+          var e = moment(endDate, "DD-MM-YYYY");
+
+          if (itemDate >= s && itemDate <= e) return true;
+          return false;
+        };
       };
 
 
@@ -46,9 +60,8 @@ angular.module('mainApp')
   angular.module('mainApp').filter('start', function () {
     return function (input, start) {
         if (!input || !input.length) { return; }
- 
+
         start = +start;
         return input.slice(start);
     };
 });
-

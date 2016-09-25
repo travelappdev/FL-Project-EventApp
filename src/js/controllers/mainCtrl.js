@@ -18,13 +18,29 @@ angular.module('mainApp')
        $location.url('/home');
      };
 
+     sc.visitAbout = function() {
+       $location.url('/about');
+     };
+
+
+
      sc.logout = function() {
+
        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "age=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "fullname=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
        document.cookie = "homeTown=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "gender=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "subscribed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "createdEvents=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "userPhoto=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "fblo_211283292620723=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       document.cookie = "G_AUTHUSER_H=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
        loginType === 'fb' ? fbLogout() : 1;
        gSignout();
        $location.url('/');
@@ -43,14 +59,19 @@ angular.module('mainApp')
   // get user data from server
 
     sc.getUser = function() {
-      $http.get(`/api/users/${sc.email}/${sc.password}`)
+      $http.get(`/api/users/${sc.email}`)
         .then(function(response) {
+
           document.cookie = `email=${response.data.email}`;
           document.cookie = `password=${response.data.password}`;
           document.cookie = `username=${response.data.username}`;
           document.cookie = `age=${response.data.age}`;
           document.cookie = `phone=${response.data.phone}`;
           document.cookie = `homeTown=${response.data.homeTown}`;
+          document.cookie = `gender=${response.data.gender}`;
+          document.cookie = `subscribed=${response.data.subscribed}`;
+          document.cookie = `createdEvents=${response.data.createdEvents}`;
+
 
         });
       $location.url('/home');
@@ -71,18 +92,19 @@ angular.module('mainApp')
           controller: controller,
           sc: sc,
           size: size
+
         });
 
         sc.openComponentModal = function () {
+
           var modalInstance = uibModal.open({
           animation: this.animationsEnabled,
           component: 'modalComponent'
           });
+
         };
 
 
       };
-
-
 
   }]);

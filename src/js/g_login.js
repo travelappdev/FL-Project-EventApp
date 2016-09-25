@@ -5,7 +5,7 @@ var googleUser = {};
 function initClient() {
 
 	gapi.load('auth2', function() {
-	
+
 		auth2 = gapi.auth2.init({
 			client_id: '828555280883-gnki4fgfl5p1lss9froaa6u8n77bld8j.apps.googleusercontent.com',
 			cookiepolicy: 'single_host_origin'
@@ -13,7 +13,7 @@ function initClient() {
 
 		// Attach the click handler to the sign-in button
 		attachSignin(document.getElementById('g_l'));
-	
+
 	});
 };
 
