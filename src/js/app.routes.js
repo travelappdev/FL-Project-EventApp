@@ -44,6 +44,16 @@ angular.module('router', ['ngRoute']) // ui-router allow to maintain old browser
       templateUrl: 'profile.html',
       controller: 'profileCtrl'
     })
+    
+    .when('/faq', {
+      templateUrl : 'faq.html',
+      controller: 'faqFindCtrl'
+    })
+
+    .when('/findus', {
+      templateUrl : 'find.html',
+      controller: 'faqFindCtrl'
+    })
 
     .when('/event_manage', {
       templateUrl: 'event_manage.html',
