@@ -77,6 +77,13 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
+ .get('/faq', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
+
+  .get('/findus', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
 
   .get('/profile', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
