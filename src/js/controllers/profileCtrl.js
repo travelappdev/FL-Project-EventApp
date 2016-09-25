@@ -77,6 +77,7 @@ angular.module('mainApp')
 
               $http.get(`api/events/${arr[z]}`)
                 .then(function(response) {
+                  response.data.date = (new Date(response.data.date)).toDateString();
                   outputArr[k]['events'].push(angular.fromJson(response.data));
                 });
 

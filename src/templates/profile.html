@@ -49,7 +49,7 @@
                     <figure class="snip middle" ng-repeat="event in gallery_cell.events">
                         <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>
                         <figcaption>
-                            <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                            <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
                             <h3>{{event.name}}</h3>
                             <p>
                             {{event.description}}
@@ -72,7 +72,7 @@
                   <figure class="snip middle" ng-repeat="event in gallery_cell.events">
                       <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>
                       <figcaption>
-                        <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
+                        <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
                         <a ng-href='/event_manage/{{cr._id}}'><h3>{{event.name}}</h3></a>
                         <p>{{event.description}}</p>
                       </figcaption>

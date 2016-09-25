@@ -5,10 +5,15 @@ angular.module('mainApp')
 
 
     sc.gallery_cells = [];
+    var empty_arr = [];
 
   $http.get('/api/topevents')
     .then(function(response) {
-      sc.gallery_cells = generalService.modifyArr(response.data);
+      response.data.forEach(elem => {
+        elem.date = (new Date(elem.date)).toDateString();
+        empty_arr.push(elem)
+      });
+      sc.gallery_cells = generalService.modifyArr(empty_arr);
     });
 
 

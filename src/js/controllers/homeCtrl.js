@@ -11,6 +11,7 @@ angular.module('mainApp')
       .then(function(response) {
         let line = '';
         response.data.forEach(elem => {
+          elem.date = (new Date(elem.date)).toDateString();
           if(elem.creator === user_email) {
             line += `,${elem._id}`;
           }
@@ -19,7 +20,7 @@ angular.module('mainApp')
         document.cookie = `createdEvents=${line}`;
       });
 
-
+    console.log('events:',events);
     $scope.evs = events;
 
     $scope.currentPage = 1;

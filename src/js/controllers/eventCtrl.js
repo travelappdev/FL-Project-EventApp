@@ -70,6 +70,7 @@ angular.module('mainApp')
     $http.get('/api/events')
       .then(function(response) {
         response.data.forEach(elem => {
+          elem.date = (new Date(elem.date)).toDateString();
           if($scope.event.type === elem.type && $scope.event._id !== elem._id) $scope.similar.push(elem);
         });
         $scope.similar = $scope.similar.slice(0,4);
