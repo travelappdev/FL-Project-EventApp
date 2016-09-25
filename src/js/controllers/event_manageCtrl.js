@@ -48,9 +48,11 @@ angular.module('mainApp')
           clearInterval(interval);
         }
 
+        else if(weather === null) clearInterval(interval);
 
 
-      }, 200);
+
+      }, 500);
     });
 
 

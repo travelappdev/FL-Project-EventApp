@@ -73,10 +73,21 @@ app
     res.sendFile(path.join(__dirname + "/public/index.html"));
   })
 
+  .get('/congratulations', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
+
+ .get('/faq', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
+
+  .get('/findus', function(req, res) {
+    res.sendFile(path.join(__dirname + "/public/index.html"));
+  })
+
   .get('/profile', function(req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
   });
-
 
 //   .get('*', function(req, res) {
 //   res.sendFile(path.join(__dirname + "/public/index.html"));

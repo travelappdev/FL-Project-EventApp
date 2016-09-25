@@ -46,10 +46,10 @@ angular.module('mainApp')
             console.log(dt);
             clearInterval(interval);
           }
+          else if(weather === null) clearInterval(interval);
 
 
-
-        }, 200);
+        }, 500);
       });
 
 

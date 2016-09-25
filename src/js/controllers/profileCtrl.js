@@ -17,12 +17,8 @@ angular.module('mainApp')
       if(cookie === 'undefined' || cookie === 'null') return '';
       return cookie;
     }
-    // function get user photo
-    $http.get(`api/users/${$scope.email}`)
-      .then(function(response) {
-        $scope.userPhoto = response.data.userPhoto;
-        document.cookie = `userPhoto=${scope.userPhoto}`;
-      })
+
+
 
 
 
@@ -34,6 +30,8 @@ angular.module('mainApp')
       $scope.phone = $scope.getCookie('phone');
       $scope.homeTown = $scope.getCookie('homeTown');
       $scope.subscribed = $scope.getCookie('subscribed');
+      $scope.userPhoto = $scope.getCookie('userPhoto');
+      console.log('pht',$scope.userPhoto);
       //$scope.createdEvents = $scope.getCookie('createdEvents');
 
       $http.get('api/events')
