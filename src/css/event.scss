@@ -37,6 +37,11 @@ $lightgreen: #2ecc71;
 
 }
 
+
+#event_manage{
+  margin-top: 150px;
+}
+
 .event-heading{
   text-align: center;
   font-family: Oswald;
@@ -118,9 +123,11 @@ $lightgreen: #2ecc71;
   }
 }
 
+.share-title{
+  display: inline-block;
+}
 
-
-.events_similar, .event-members, .candidats {
+.share-title, .events_similar, .event-members, .candidats {
 
   color:$darkblue;
   font-family: Oswald;
@@ -130,6 +137,15 @@ $lightgreen: #2ecc71;
 .event_info_name {
   text-align: center;
  }
+
+#repost-btn{
+  margin-left: 10px;
+  cursor: pointer;
+
+  &:hover {
+    
+  }
+}
 
 .event_chr {
   border-bottom: 1px solid black;
@@ -146,6 +162,8 @@ i {
   padding: 15px 20px;
   color: white;
 }
+
+
 
 .icon-zoom .fa:hover, .social-icons.icon-zoom .fa:active {
   -webkit-transform: scale(1.1);
@@ -206,7 +224,7 @@ i {
   border: 1px solid $darkblue;
   border-top:none;
   border-bottom: none;
-  color: white;
+  color: $darkblue;
   margin-right: 25px;
   margin-bottom: 25px;
 }

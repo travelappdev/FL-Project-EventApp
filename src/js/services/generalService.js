@@ -20,4 +20,7 @@ angular.module('mainApp').service('generalService', ['$http', function ($http) {
         return outputArr;
       }
 
+
+
+
 }]);

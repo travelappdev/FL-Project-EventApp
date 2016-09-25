@@ -7,10 +7,13 @@ const EventSchema = new Schema({
   name: String,
   place: String,
   date: String,
-  time: Number,
+  time: String,
   type: String,
   payment: String,
-  description: String
+  description: String,
+  photoURL: String,
+  creator: String,
+  members: String
 });
 
 

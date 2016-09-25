@@ -38,6 +38,7 @@
 
 
 .ftr-links .links {
+  cursor: pointer;
 	border-collapse: collapse;
   color: #fff;
   text-transform: uppercase;

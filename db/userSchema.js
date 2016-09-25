@@ -7,12 +7,14 @@ const UserSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: {type: String, required: true },
   username: {type: String, required: true },
-  age: Number,
+  age: String,
   gender: String,
-  phone: Number,
+  phone: String,
   homeTown: String,
   interests: String,
-  subscribed: Array
+  subscribed: String,
+  photoURL: String,
+  createdEvents: String
 });
 
 

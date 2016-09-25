@@ -14,12 +14,20 @@ $search_block: #999;
 
 
 
-.search_container {
+.search-container {
   display: flex;
+  justify-content: center;
   padding: 50px;
-  .form-control {
-    color: black;
-    max-width: 700px;
+  font-family: 'SegoeUIRegular';
+  font-size: 18px;
+
+  .search-by-name{
+  	margin-right: 15px;
+  	height: 50px;
+  	padding-left: 10px;
+  	color: $darkblue;
+  	width: 40%;
+  	border: none;
   }
 }
 
@@ -30,16 +38,10 @@ $search_block: #999;
 
 
 
-/* Form wrapper styling */
-.search-wrapper {
-width: 600px;
-margin: 45px auto 50px auto;
-}
-
 /* Form text input */
 
 .search-wrapper input {
-min-width: 500px;
+//min-width: 500px;
 height: 40px;
 padding: 10px;
 }

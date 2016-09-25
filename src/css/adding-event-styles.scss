@@ -74,7 +74,7 @@ $lightgreen: #2de1a8;
 
 .custom-title{
 	margin: 0 auto;
-	color: #252539;
+	color: $darkblue;
 	font-family: SegoeUIBold;
 	display: inline-block;
 	width: auto;
@@ -88,8 +88,10 @@ $lightgreen: #2de1a8;
 .add-image{
 	border-radius: 10px;
 	display:inline-block;
-	max-width: 265px!important;
-	max-height:295px !important;
+	width: 265px!important;
+	height:295px !important;
+	position: relative;
+	z-index: 5;
 
 }
 
@@ -111,7 +113,7 @@ $lightgreen: #2de1a8;
 .file-upload {
 	cursor: pointer;
 	font-family: SegoeUIRegular;
-	background-color: #252539;
+	background-color: $darkblue;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	color: white;
@@ -119,27 +121,24 @@ $lightgreen: #2de1a8;
 	width: 190px;
 	padding: 5px 0;
 	position: absolute;
-	bottom: 0;
+	bottom: 20px;
+	z-index: 8;
 	left: 0;
 	right:0;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-.file-upload input.file-input {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  padding: 0;
-  font-size: 20px;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  cursor:pointer;
-}
 .upload_title{
 	font-family: SegoeUIRegular;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1;
+
 	margin-top: 50%;
 }
 
@@ -294,3 +293,18 @@ input[type=radio].radio:checked + label.radio-label{
 	border: 2px solid $lightgreen;
 }
 
+.url-div{
+	padding: 15px 15px;
+	margin-top: -10px;
+
+	.url-field{
+		width: 100%;
+	}
+
+	.photo-link-btn{
+		display: block;
+		width: 100%;
+		padding: 5px 0;
+		font-size: 16px;
+	}
+}
