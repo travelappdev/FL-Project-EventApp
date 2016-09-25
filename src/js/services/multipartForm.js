@@ -22,7 +22,7 @@ angular.module('mainApp').service('multipartForm', ['$http','cookieService','$lo
 			photoURL: fd.photoURL
 		});
 
-		$location.url('/congratulations');
+		$location.url('/home');
 
 	}
 }]);

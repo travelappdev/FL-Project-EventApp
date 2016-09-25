@@ -71,7 +71,7 @@ angular.module('mainApp')
           document.cookie = `gender=${response.data.gender}`;
           document.cookie = `subscribed=${response.data.subscribed}`;
           document.cookie = `createdEvents=${response.data.createdEvents}`;
-
+          document.cookie = `userPhoto=${response.data.userPhoto}`;
 
         });
       $location.url('/home');

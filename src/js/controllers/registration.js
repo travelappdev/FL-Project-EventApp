@@ -20,7 +20,8 @@ angular.module('mainApp')
 	      $http.post('http://localhost:8000/api/users/', {
 	        "email": sc.user_email,
 	        "username": sc.user_name,
-	        "password": sc.user_password
+	        "password": sc.user_password,
+					"userPhoto": ''
 	      });
 
 	    } else {

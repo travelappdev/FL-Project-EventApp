@@ -13,7 +13,7 @@ const UserSchema = new Schema({
   homeTown: String,
   interests: String,
   subscribed: String,
-  photoURL: String,
+  userPhoto: String,
   createdEvents: String
 });
 

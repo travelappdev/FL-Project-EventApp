@@ -6,6 +6,8 @@ angular.module('mainApp')
     $scope.members      = [];
     let arr             = [];
     let ev              = location.pathname.slice(7);
+    $scope.author = cookieService.getCookie('username');
+    $scope.pht = cookieService.getCookie('userPhoto');
 
 
 

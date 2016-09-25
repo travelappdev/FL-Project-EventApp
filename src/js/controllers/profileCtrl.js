@@ -148,7 +148,7 @@ angular.module('mainApp')
         document.cookie = `phone=${$scope.phone}`;
         document.cookie = `homeTown=${$scope.homeTown}`;
         document.cookie = `gender=${$scope.gender}`;
-        document.cookie = `userPhoto=${$scope.userPhoto}`;
+        // document.cookie = `userPhoto=${$scope.userPhoto}`;
         //document.cookie = `subscribed=${$scope.subscribed}`;
 
 

@@ -81,57 +81,22 @@
         <div class="row">
           <h3 class="events_similar">Similar events:</h3>
           <hr class="separator">
-
             <div class="figures">
-              <figure class="snip">
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="ls-sample1" /></div>
+              <figure class="snip" ng-repeat="sim in similar">
+                <div class="image"><img src="{{sim.photoURL}}" alt="ls-sample2" /></div>
                 <figcaption>
                 <div class="date"><span class="day">28</span><span class="month">Oct</span><i class="ion-checkmark"> </i></div>
-                <h3>The World Ended Yesterday</h3>
-                <p>
-                  You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-                </p>
+                <h3>{{sim.name}}</h3></a>
+
+                <p>{{sim.description}}</p>
                 </figcaption>
-                <a href="#"></a>
+                <a href='/event/{{sim._id}}'></a>
               </figure>
 
-              <figure class="snip middle">
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                <figcaption>
-                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                <h3>An Abstract Post Heading</h3>
-                <p>
-                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                </p>
-                </figcaption>
-                <a href="#"></a>
-              </figure>
 
-              <figure class="snip middle">
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg" alt="ls-sample2" /></div>
-                <figcaption>
-                <div class="date"><span class="day">17</span><span class="month">Nov</span><i class="ion-checkmark"> </i></div>
-                <h3>An Abstract Post Heading</h3>
-                <p>
-                  Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
-                </p>
-                </figcaption>
-                <a href="#"></a>
-              </figure>
-
-              <figure class="snip last">
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg" alt="ls-sample3" /></div>
-                <figcaption>
-                <div class="date"><span class="day">01</span><span class="month">Dec</span><i class="ion-checkmark"> </i></div>
-                <h3>Down with this sort of thing</h3>
-                <p>
-                  I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
-                </p>
-                </figcaption>
-                <a href="#"></a>
-              </figure>
             </div>
-          </div>
+
+
 
         </div>
 

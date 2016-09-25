@@ -227,6 +227,7 @@ apiRouter.route('/users')
     user.email = req.body.email;
     user.password = req.body.password;
     user.username = req.body.username;
+    user.userPhoto = req.body.userPhoto;
 
 
 

@@ -4,6 +4,7 @@ angular.module('mainApp')
     let ev = location.pathname.slice(14);
     $scope.members = [];
     $scope.place = '';
+    $scope.similar = [];
     $scope.author = cookieService.getCookie('username');
     $scope.pht = cookieService.getCookie('userPhoto');
 
@@ -55,6 +56,14 @@ angular.module('mainApp')
       }, 500);
     });
 
+
+    $http.get('/api/events')
+      .then(function(response) {
+        response.data.forEach(elem => {
+          if($scope.event.type === elem.type && $scope.event._id !== elem._id) $scope.similar.push(elem);
+        });
+        $scope.similar = $scope.similar.slice(0,4);
+      });
 
 
     // TODO put this func into service
