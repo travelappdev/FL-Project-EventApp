@@ -98,23 +98,3 @@ function fbLogout() {
     })
 
 }
-
-// shares smth to facebook client page
-function shareFB(name, picture, caption, description) {
-
-    FB.ui({
-        
-        method: 'feed',
-        name: name,
-        link: "https://www.google.com.ua/",
-        picture: picture,
-        caption: caption,
-        description: description
-        
-    }, function(error) {
-
-        console.log(JSON.stringify(error, undefined, 2));
-
-    });
-
-}
