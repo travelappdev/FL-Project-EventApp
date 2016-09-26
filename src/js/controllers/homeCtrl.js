@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-  .controller('homeCtrl', function($scope, $http, cookieService, $filter) {
+  .controller('homeCtrl', ['$scope', '$http', 'cookieService', '$filter', function($scope, $http, cookieService, $filter) {
 
     let arr = [];
     let events = [];
@@ -56,7 +56,7 @@ angular.module('mainApp')
       };
 
 
-  });
+  }]);
   angular.module('mainApp').filter('start', function () {
     return function (input, start) {
         if (!input || !input.length) { return; }

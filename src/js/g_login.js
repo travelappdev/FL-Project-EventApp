@@ -27,13 +27,27 @@ function onSuccess(googleUser) {
 	loginType = 'g';
 	var profile = googleUser.getBasicProfile();
 
-/*	$http.post('http://localhost:8000/api/users/', {
-        "email": profile.getEmail(),
-        "username": profile.getName()
-        //"photoUrl": profile.getImageUrl()
-      });*/
+	$.post('http://localhost:8000/api/users/', {
+		"email": `${profile.getEmail()}aa`,
+		"username": `${profile.getName()}`,
+		"userPhoto": `${profile.getImageUrl()}`,
+		"password": 'somePassword'
+	});
 
-	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	$.get(`http://localhost:8000/api/users/${profile.getEmail()}aa`, function(response) {
+		document.cookie = `email=${response.email}`;
+		document.cookie = `password=${response.password}`;
+		document.cookie = `username=${response.username}`;
+		document.cookie = `age=${response.age}`;
+		document.cookie = `phone=${response.phone}`;
+		document.cookie = `homeTown=${response.homeTown}`;
+		document.cookie = `gender=${response.gender}`;
+		document.cookie = `subscribed=${response.subscribed}`;
+		document.cookie = `createdEvents=${response.createdEvents}`;
+		document.cookie = `userPhoto=${response.userPhoto}`;
+	});
+
+	console.log('ID: ' + profile.getId());
 	console.log('Name: ' + profile.getName());
 	console.log('Image URL: ' + profile.getImageUrl());
 	console.log('Email: ' + profile.getEmail());
