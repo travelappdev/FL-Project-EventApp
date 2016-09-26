@@ -1,3 +1,4 @@
+// initializes facebook client
 window.fbAsyncInit = function() {
 
     FB.init({
@@ -26,7 +27,7 @@ window.fbAsyncInit = function() {
 
 }(document, 'script', 'facebook-jssdk'));
 
-
+// logges facebook client, posts data to dataBase, sets cookie
 function fbLogin() {
 
     loginType = 'fb';
@@ -85,7 +86,7 @@ function fbLogin() {
 }
 
 
-
+// logges out facebook client
 function fbLogout() {
 
     FB.logout(function(response) {
@@ -98,23 +99,22 @@ function fbLogout() {
 
 }
 
-
+// shares smth to facebook client page
 function shareFB(name, picture, caption, description) {
 
     FB.ui({
+        
         method: 'feed',
         name: name,
         link: "https://www.google.com.ua/",
         picture: picture,
         caption: caption,
         description: description
+        
     }, function(error) {
 
         console.log(JSON.stringify(error, undefined, 2));
 
     });
 
-
 }
-
-
