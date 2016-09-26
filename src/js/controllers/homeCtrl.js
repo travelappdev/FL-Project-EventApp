@@ -20,7 +20,6 @@ angular.module('mainApp')
         document.cookie = `createdEvents=${line}`;
       });
 
-    console.log('events:',events);
     $scope.evs = events;
 
     $scope.currentPage = 1;

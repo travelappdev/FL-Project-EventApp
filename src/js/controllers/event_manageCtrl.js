@@ -22,7 +22,6 @@ angular.module('mainApp')
 
       eventService.getMembers($scope);
       var interval = setInterval(function(){
-        console.log(weather);
         if(weather != undefined) {
           console.log(weather);
 
@@ -34,23 +33,34 @@ angular.module('mainApp')
 
           for(let i = 0; i < 10; i++) {
             let api_dt = new Date(weather.item.forecast[i].date);
-            console.log(api_dt);
 
             if( dt.toString().substring(0,15) == api_dt.toString().substring(0,15)) {
               // transform F into C
               let temp = ((+weather.item.forecast[i].high - 32) / 1.8).toFixed(0);
               document.getElementById('weather_temp').innerHTML = temp + ' <sup>o</sup>C';
+              var weather_code = weather.item.forecast[i].code;
               document.getElementById('weather_status').innerHTML = weather.item.forecast[i].text;
+
               val = 1;
             }
           }
+
+
+          // show gif image
+          for(var key in weather_img) {
+            for(let i = 0; i < weather_img[key].length; i++) {
+              if(weather_img[key][i] == weather_code) {
+                document.getElementById('cloudy').style.display = 'block';
+              }
+            }
+          }
+
+
+
           if(val === 0) document.getElementById('weather_temp').innerHTML = 'Cannot find weather.';
-          console.log(dt);
           clearInterval(interval);
         }
-
         else if(weather === null) clearInterval(interval);
-
 
 
       }, 500);

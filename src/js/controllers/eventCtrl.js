@@ -6,23 +6,37 @@ angular.module('mainApp')
     $scope.members      = [];
     let arr             = [];
     let ev              = location.pathname.slice(7);
-    $scope.author = cookieService.getCookie('username');
-    $scope.pht = cookieService.getCookie('userPhoto');
+    $scope.author       = '';
+    $scope.pht          = '';
+
+    //.sunny-rainy, .lightning, .cloudy, .snow, .sunny, .rainy
+
 
 
 
     $http.get(`/api/events/${ev}`)
       .then(function(response) {
         changeImage(response.data.photoURL);
+        console.log(response.data);
         response.data.time = response.data.time.substring(11,16);
         response.data.date = response.data.date.substring(0,10);
         $scope.event = angular.fromJson(response.data);
         injectWeather($scope.event.place);
 
+        /////////////////////////////////////////////////////
+
+
+        $http.get(`/api/users/${$scope.event.creator}`)
+          .then(function(response) {
+            $scope.author = response.data.username;
+            $scope.pht = response.data.userPhoto;
+          });
+
+        /////////////////////////////////////////////////////
+
 
         eventService.getMembers($scope);
         var interval = setInterval(function(){
-          console.log(weather);
           if(weather != undefined) {
             console.log(weather);
 
@@ -34,18 +48,31 @@ angular.module('mainApp')
 
             for(let i = 0; i < 10; i++) {
               let api_dt = new Date(weather.item.forecast[i].date);
-              console.log(api_dt);
 
               if( dt.toString().substring(0,15) == api_dt.toString().substring(0,15)) {
                 // transform F into C
                 let temp = ((+weather.item.forecast[i].high - 32) / 1.8).toFixed(0);
                 document.getElementById('weather_temp').innerHTML = temp + ' <sup>o</sup>C';
+                var weather_code = weather.item.forecast[i].code;
                 document.getElementById('weather_status').innerHTML = weather.item.forecast[i].text;
+
                 val = 1;
               }
             }
+
+
+            // show gif image
+            for(var key in weather_img) {
+              for(let i = 0; i < weather_img[key].length; i++) {
+                if(weather_img[key][i] == weather_code) {
+                  document.getElementById(key).style.display = 'block';
+                }
+              }
+            }
+
+
+
             if(val === 0) document.getElementById('weather_temp').innerHTML = 'Cannot find weather.';
-            console.log(dt);
             clearInterval(interval);
           }
           else if(weather === null) clearInterval(interval);
