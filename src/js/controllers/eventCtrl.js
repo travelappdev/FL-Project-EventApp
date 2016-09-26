@@ -11,7 +11,22 @@ angular.module('mainApp')
 
     //.sunny-rainy, .lightning, .cloudy, .snow, .sunny, .rainy
 
+    $scope.shareFB = function(name, picture, caption, description) {
+      
+        FB.ui({
+            method: 'feed',
+            name: name,
+            link: "https://www.google.com.ua/",
+            picture: picture,
+            caption: caption,
+            description: description
+        }, function(error) {
 
+        console.log(JSON.stringify(error, undefined, 2));
+
+        });
+      
+    }
 
 
     $http.get(`/api/events/${ev}`)
