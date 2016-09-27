@@ -7,7 +7,7 @@
       <h1 class="main-header">Dive in with us and JoinE</h1>
       <p class="sub-header">Finding your best time</p>
 
-      <div class="g_get-started" ng-click="open('../src/templates/registration.html', 'md', 'generalCtrl')">
+      <div class="g_get-started" ng-click="open('../src/templates/registration.html', 'md', 'registController')">
         <a class="btn btn-hover">Get Started</a>
       </div>
 
@@ -35,9 +35,9 @@
       <div carousel interval="3000">
         <div slide ng-repeat="gallery_cell in gallery_cells" active="gallery_cell.active">
 
-            <figure class="snip middle" ng-repeat="event in gallery_cell.events">
+            <figure class="snip middle g_event smaller" ng-repeat="event in gallery_cell.events">
 
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg" alt="event picture"></div>
+                <div class="image"><img src="{{event.photoURL}}"></div>
 
                 <figcaption>
 

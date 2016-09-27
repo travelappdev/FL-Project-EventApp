@@ -18,7 +18,7 @@
 					<img class="add-image" src="{{event.photoURL}}" />
 					<h2 class="upload_title">Choose photo</h2>
 					<div class="dropdown url-div">
-					    <button class=" dropdown-toggle file-upload" type="button" data-toggle="dropdown">Dropdown Example
+					    <button class=" dropdown-toggle file-upload sm-upload" type="button" data-toggle="dropdown">Upload photo
 					    <span class="caret"></span></button>
 					    <div class="dropdown-menu url-div">
 					    	<label for="url">Enter photo url</label>
@@ -67,7 +67,7 @@
 
 							<input type="radio" class="radio" id="conference" ng-model="event.type" value="Conference">
 							<label for="conference" class="radio-label"><span class="radio-text">Conference</span></label>
-
+							
 							<input type="radio" class="radio" id="festival" ng-model="event.type" value="Festival">
 							<label for="festival" class="radio-label"><span class="radio-text">Festival</span></label>
 
@@ -82,14 +82,14 @@
 
 							<input type="radio" class="radio" id="sport" ng-model="event.type" value="Sports &amp; Wellness">
 							<label for="sport" class="radio-label"><span class="radio-text">Sports</span></label>
-
+							
 							<input type="radio" class="radio" id="trip" ng-model="event.type" value="Trip">
 							<label for="trip" class="radio-label"><span class="radio-text">Trip</span></label>
 
 						</div>
 					</div>
 					<div>
-	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" ng-model="event.dt" required/>
+	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" ng-model="{{event.dt| date='medium'}}" required/>
 
 						<div class="collapse" id="date">
 							<div uib-datepicker ng-model="event.dt" class="datepick" datepicker-options="options" show-weeks="false"></div>

@@ -121,10 +121,9 @@ $lightgreen: #2de1a8;
 	width: 190px;
 	padding: 5px 0;
 	position: absolute;
+	right: 25px;
 	bottom: 20px;
 	z-index: 8;
-	left: 0;
-	right:0;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -296,9 +295,11 @@ input[type=radio].radio:checked + label.radio-label{
 .url-div{
 	padding: 15px 15px;
 	margin-top: -10px;
+	width: 270px;
 
 	.url-field{
 		width: 100%;
+		border: 1px solid $darkblue;
 	}
 
 	.photo-link-btn{

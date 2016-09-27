@@ -49,8 +49,33 @@ $darkblue: #373746;
 
   .navbar-nav{
     margin-top: 35px;
+    margin-right: 25px;
   }
 
+}
+
+@media screen and (max-width: 1000px) {
+  .smaller{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .topEvents, .event-header-wrap{
+    display: none;
+  }
+}
+
+.cust{
+  margin: 15px 25px;
+  width: 200px;
+}
+
+.truncate {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 a:-webkit-any-link {
@@ -136,7 +161,6 @@ a:-webkit-any-link {
 
 .g_event {
   background-color: #fff;
-  width: 80%;
   margin-left: 2rem;
   padding: 5px;
   height: 28rem;
@@ -190,6 +214,7 @@ a:-webkit-any-link {
 
 .main-block{
     min-height: calc(100vh - 70px);
+    overflow: hidden;
 }
 
 .main-header{
@@ -246,7 +271,7 @@ h1, h2{
   text-align:center;
   color:$darkblue;
   font-family: "SegoeUIBold";
-  font-size: 54px;
+  font-size: 40px;
 }
 
 .nav-it-right{
