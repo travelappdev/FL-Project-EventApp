@@ -89,7 +89,7 @@
 						</div>
 					</div>
 					<div>
-	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" ng-model="event.dt" required/>
+	 				 	<input type="text" name="date" placeholder="Choose date ..." class="date-wrap" data-toggle="collapse" data-target="#date" value="{{event.dt | date:'fullDate'}}" required/>
 
 						<div class="collapse" id="date">
 							<div uib-datepicker ng-model="event.dt" class="datepick" datepicker-options="options" show-weeks="false"></div>

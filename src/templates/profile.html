@@ -44,7 +44,7 @@
                 <div class="created col-md-12 col-xs-12">
                     <h2 class="p-title">Created events:</h2>
                     <hr>
-          <div carousel interval="3000">
+          <div carousel interval="3000" id="created">
                 <div slide ng-repeat="gallery_cell in created" active="gallery_cell.active">
                     <figure class="snip middle" ng-repeat="event in gallery_cell.events">
                         <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>
@@ -66,8 +66,9 @@
                 </div>
                 <div class="subscribed col-md-12 col-xs-12">
                     <h2 class="p-title">Subscribed events:</h2>
+                    <hr>
 
-      <div carousel interval="3000">
+      <div carousel interval="3000" id="subscr">
               <div slide ng-repeat="gallery_cell in subscr" active="gallery_cell.active">
                   <figure class="snip middle" ng-repeat="event in gallery_cell.events">
                       <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>

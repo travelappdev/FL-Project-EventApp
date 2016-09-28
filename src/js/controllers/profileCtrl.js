@@ -45,10 +45,22 @@ angular.module('mainApp')
           document.cookie = `createdEvents=${line}`;
           $scope.createdEvents = $scope.getCookie('createdEvents');
 
-          $scope.created = eventsArr('created');
+
+          if(eventsArr('created') === 0) {
+            document.getElementById('created').innerHTML = '<p>Your created list is empty now!</p>';
+          } else {
+            $scope.created = eventsArr('created');
+          }
+
+          if(eventsArr('subscribed') === 0) {
+            document.getElementById('subscr').innerHTML = '<p>Your subscrbed list is empty now!</p>';
+          } else {
+            $scope.subscr = eventsArr('subscribed');
+          }
+
         });
 
-        $scope.subscr = eventsArr('subscribed');
+
 
 
 
@@ -62,6 +74,7 @@ angular.module('mainApp')
 
         str = str.slice(1);
         arr = str.split(',');
+        if(arr[0] == '') return 0;
 
         let outputArr = new Array(Math.ceil(arr.length / 3));
         for(let i = 0; i < outputArr.length; i++) {
@@ -89,9 +102,6 @@ angular.module('mainApp')
 
         return outputArr;
       }
-
-
-
 
 
 
