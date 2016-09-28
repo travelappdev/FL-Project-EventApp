@@ -1,5 +1,3 @@
-
-
 <div id="home" ng-controller="generalCtrl">
   <div class="g_photo-wrapper">
     <div class="g_main-photo"></div>
@@ -16,16 +14,24 @@
   </div>
 
 
+<div class="row cf">
+      <div  class="search-container">
+        <input type="text" id="search" placeholder="Search for event" ng-model="eventFilterBy.name" required="" class="search-by-name"/>
 
-    <div class="row">
-      <div  class="search-wrapper">
-        <input type="text" id="search" placeholder="Search for event" ng-model="q" required="">
-        <input type="date" id="start-date" placeholder="start" ng-model="start">
-        <input type="date" id="end-date" placeholder="end">
-        <button type="submit" ng-model="end">Search</button>
+        <select name="" id="" ng-model="eventFilterBy.type" class="type-filter">
+          <option selected="selected">Arts</option>
+          <option>Classes</option>
+          <option>Concert</option>
+          <option>Conference</option>
+          <option>Festival</option>
+          <option>Food</option>
+          <option>Music</option>
+          <option>Party</option>
+          <option>Sports</option>
+          <option>Trip</option>
+        </select>
       </div>
     </div>
-
 
   <div class="results-wrap">
 
@@ -33,23 +39,23 @@
 
       <div class="">
 
-
+            
      <div class="container h_block">
-
+       
        <div class="selection-item">
-          View <select ng-model="pageSize" ng-change="setItemsPerPage(pageSize)" class="amount-select"><option>3</option><option selected>6</option><option>9</option><option>18</option><option>30</option></select> records at a time.
+          View <select ng-model="pageSize" ng-change="setItemsPerPage(pageSize)" class="amount-select"><option selected>6</option><option>9</option><option>18</option><option>30</option></select> records at a time.
        </div>
-
+       
         <div  class="results-block">
-          <div ng-repeat="event in evs | filter:q | start: (currentPage - 1) * pageSize | limitTo: pageSize">
+          <div ng-repeat="event in evs | filter:eventFilterBy | start: (currentPage - 1) * pageSize | limitTo: pageSize">
 
             <figure class="snip result-it">
               <div class="image">
                 <img src="{{event.photoURL}}" alt="event picture">
               <figcaption>
               <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
-              <h3 ng-bind="event.name">{{event.name}}</h3>
-              <p>
+              <h3 ng-bind="event.name" class="truncate">{{event.name}}</h3>
+              <p class="truncate">
                 {{event.description}}
               </p>
               </figcaption>
@@ -57,28 +63,24 @@
             </figure>
 
         </div>
-
+        
 
         </div>
-
+        
           <div class="page-control">
-
-            <uib-pagination total-items="evs.length" items-per-page="pageSize" ng-model="currentPage" max-size="5"
+            
+            <uib-pagination total-items="evs.length" items-per-page="pageSize" ng-model="currentPage" max-size="5" 
                         class="uib-pagination-sm"></uib-pagination>
           </div>
         </div>
     </div>
-
-
-
+        
+        
+        
         </div>
     </div>
-
+           
       </div>
 
 
   </div>
-
-
-<!--   </div>
-</div> -->

@@ -1,5 +1,7 @@
 body{
   background-color: #83D6DE;
+  background-image: url('../img/pattern.png');
+  background-repeat: repeat-x;
 
 	width: 100%;
 	height: 100%;
@@ -18,6 +20,10 @@ body{
   .arrow-left{
     margin-right: -5px;
   }
+
+  .p_user-info{
+    padding-right: 30px;
+  }
 }
 
 
@@ -35,18 +41,35 @@ body{
   }
 }
 
+@media screen and (max-width: 835px){
+  .p_wrapper{
+    width: 95%;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 840px){
+  .p_wrapper{
+    width: 60%;
+  }
+}
+
+
 #profile {
 	margin-top: 150px;
+  background-image: url('../img/pattern.png');
+  background-repeat: repeat;
+  background-position-y: -150px;
 }
 
 .p_wrapper{
-	margin: 1%;
+	margin: 0 auto;
   display:block;
 	background: white;
-	width: 98%;
 	height: auto;
 	border-radius: 10px;
   padding-bottom: 25px;
+
 }
 
 #p_main-photo{
@@ -65,7 +88,7 @@ body{
   display: inline-block;
 }
 .user-picture{
-  margin-left: 25px;
+  margin-left: 15px;
   margin-top: 10px;
 }
 
@@ -86,12 +109,19 @@ body{
 	border-bottom: 1px solid #373746;;
   font-family: 'SegoeUIRegular';
 	margin-bottom: 15px;
-	width: 94%;
+	width: 65%;
+  padding: 0;
 }
+
+
 
 /*.p_user-info span::after{
     content: url('../img/pencil.png');
 }*/
+
+.prop-explain{
+  display: inline-block;
+}
 
 .p_user-info img, .p_interests img, .p_description img {
 	cursor: pointer;
@@ -137,19 +167,20 @@ body{
 }*/
 
 .snip {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'SegoeUIRegular';
+  border: none;
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin: 10px 1%;
+  /*margin: 10px 1%;*/
   min-width: 150px;
-  max-width: 310px;
-  width: 80%;
+  max-width: 250px;
   background-color: #ffffff;
   color: #000000;
   text-align: left;
   font-size: 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  padding: 0;
 }
 
 .snip * {
@@ -172,14 +203,34 @@ body{
 
 .snip img {
   margin: 0;
-  max-width: 100%;
+  width: 310px;
   vertical-align: top;
   position: relative;
+  height: 170px;
 }
 
 .snip figcaption {
   padding: 20px 20px 20px;
   background-color: #ffffff;
+  height: 150px;
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
+    top: 40%;
+    margin: 15px;
+  }
+
+.carousel-control .glyphicon-chevron-right:hover , .carousel-control .glyphicon-chevron-left:hover {
+  opacity: .8;
+}
+
+.sm-caption{
+  width: 250px;
+  height: 170px;
+}
+
+.small{
+  width: 30%;
 }
 
 .snip .date {
@@ -269,18 +320,6 @@ figure.snip.hover button {
   justify-content: center
 }
 
-/*.arrow-left{
-  margin-right: 50px;
-}*/
-
-/*.arrow-right{
-  margin-left: 50px;
-}*/
-
-.info{
-  padding: 25px;
-}
-
 .arrow{
   vertical-align: middle;
 	display: inline-block;
@@ -365,9 +404,9 @@ figure.snip.hover button {
 }
 
 @media screen and (max-width: 768px) {
-  .middle, .last{
+/*  .middle, .last{
     display: none;
-  }
+  }*/
 
   .arrow{
     font-size: 36px;
@@ -388,9 +427,17 @@ figure.snip.hover button {
     left: 10%;
   }
 }
-/*  .p_user-info{
-    margin: 75% 0 0 -30%;
-    width: 95%;
-  }*/
-/*}*/
 
+.empty-place{
+  padding: 25px 100px;
+  border-radius: 10px;
+  border: 2px dashed #373746; 
+  text-align: center;
+  font-family: 'SegoeUIRegular';
+  font-size: 16px;
+}
+
+.sm-upload{
+    right: 0;
+    left: 0;
+}

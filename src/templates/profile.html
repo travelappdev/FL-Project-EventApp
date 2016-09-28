@@ -1,43 +1,53 @@
-
-
 <div id="profile">
   <div class="p_wrapper container-fluid ">
             <div class="info row">
                 <div class="picture img-responsive col-md-3 col-xs-9 col-sm-3 user-picture">
-                        <img class="add-image picture-area" src="{{userPhoto}}">
-                        <h2 class="upload_title">Choose photo</h2>
-            <div class="dropdown url-div">
-              <button class=" dropdown-toggle file-upload" type="button" data-toggle="dropdown">Upload photo
-              <span class="caret"></span></button>
-              <div class="dropdown-menu url-div">
-                <label for="url">Enter photo url:</label>
-                <input type="text" class="url-field" id="userPhoto" ng-model="userPhoto" />
-                <button ng-click="putUserPhoto()" class="save_btn photo-link-btn">Upload</button>
-              </div>
-           </div>
+                  <img class="add-image picture-area" src="{{userPhoto}}">
+                              <h2 class="upload_title">Choose photo</h2>
+
+                  <div class="dropdown url-div">
+                    <button class=" dropdown-toggle file-upload sm-upload" type="button" data-toggle="dropdown">Upload photo
+                    <span class="caret"></span></button>
+                    <div class="dropdown-menu url-div">
+                      <label for="url">Enter photo url:</label>
+                      <input type="text" class="url-field" id="userPhoto" ng-model="userPhoto" />
+                      <button ng-click="putUserPhoto()" class="save_btn photo-link-btn">Upload</button>
+                    </div>
+                 </div>
                 </div>
-                <div class="p_user-info col-md-7 col-sm-12 col-xs-12  ">
+                <div class="p_user-info col-lg-5 col-md-5 col-sm-12 col-xs-12  ">
                     <p id="p_name">{{getCookie("username")}}</p>
-          <span>
-            <input readonly type="text" id="gender" placeholder="Gender:" ng-model="gender">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('gender')" alt="" >
-          </span>
-                    <span>
-            <input readonly type="text" id="age" placeholder="Age:" ng-model="age">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('age')" alt="">
-          </span>
-          <span>
-            <input readonly type="text" id="town" placeholder="Hometown:" ng-model="homeTown">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('town')" alt="">
-          </span>
-          <span>
-            <input readonly type="mail" id="email" placeholder="Email:" >
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('email')" alt="">
-          </span>
-          <span>
-            <input readonly type="phone" id="phone" placeholder="Phone:" ng-model="phone">
-            <img src="http://findicons.com/files/icons/2226/matte_basic/16/edit.png" ng-click="deleteReadonlyState('phone')" alt="">
-          </span>
+
+                      <div class="edit-prop-area">
+                        <label for="email" class="prop-explain">Email:</label>
+                        <input readonly type="mail" id="email" placeholder="Email:" ng-model="email" class="prop-it">
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="gender" class="prop-explain">Gender:</label>
+                        <input readonly type="text" id="gender" placeholder="Gender:" ng-model="gender" class="prop-it">
+                        <label for="gender"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('gender')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="age" class="prop-explain">Age:</label>
+                        <input readonly type="text" id="age" placeholder="Age:" ng-model="age" class="prop-it">
+                        <label for="age"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('age')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="town" class="prop-explain">City:</label>
+                        <input readonly type="text" id="town" placeholder="Hometown:" ng-model="homeTown" class="prop-it">
+                        <label for="town"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('town')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="phone" class="prop-explain">Phone:</label>
+                        <input readonly type="phone" id="phone" placeholder="Phone:" ng-model="phone" class="prop-it">
+                        <label for="phone"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('phone')" alt="" class="prop-it"></label>
+                      </div>
+
+
                 </div>
             </div>
             <div class="p_events-info">
@@ -46,12 +56,12 @@
                     <hr>
           <div carousel interval="3000" id="created">
                 <div slide ng-repeat="gallery_cell in created" active="gallery_cell.active">
-                    <figure class="snip middle" ng-repeat="event in gallery_cell.events">
-                        <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>
-                        <figcaption>
+                    <figure class="snip middle smaller cust" ng-repeat="event in gallery_cell.events">
+                        <div class="image"><img src="{{event.photoURL}}" alt="event picture" class="img-sm"></div>
+                        <figcaption class="sm-caption">
                             <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
-                            <h3>{{event.name}}</h3>
-                            <p>
+                            <h3 class="truncate">{{event.name}}</h3>
+                            <p class="truncate">
                             {{event.description}}
                             </p>
                         </figcaption>
@@ -70,12 +80,12 @@
 
       <div carousel interval="3000" id="subscr">
               <div slide ng-repeat="gallery_cell in subscr" active="gallery_cell.active">
-                  <figure class="snip middle" ng-repeat="event in gallery_cell.events">
-                      <div class="image"><img src="{{event.photoURL}}" alt="event picture"></div>
-                      <figcaption>
+                  <figure class="snip middle smaller cust" ng-repeat="event in gallery_cell.events">
+                      <div class="image"><img src="{{event.photoURL}}" alt="event picture" class="img-sm"></div>
+                      <figcaption class="sm-caption">
                         <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
-                        <a ng-href='/event_manage/{{cr._id}}'><h3>{{event.name}}</h3></a>
-                        <p>{{event.description}}</p>
+                       <h3 class="truncate">{{event.name}}</h3>
+                        <p class="truncate">{{event.description}}</p>
                       </figcaption>
                       <a ng-href='/event/{{event._id}}'></a>
                   </figure>

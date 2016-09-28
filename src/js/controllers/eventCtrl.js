@@ -17,7 +17,6 @@ angular.module('mainApp')
     $http.get(`/api/events/${ev}`)
       .then(function(response) {
         changeImage(response.data.photoURL);
-        console.log(response.data);
         response.data.time = response.data.time.substring(11,16);
         response.data.date = response.data.date.substring(0,10);
         $scope.event = angular.fromJson(response.data);
@@ -65,7 +64,7 @@ angular.module('mainApp')
             for(var key in weather_img) {
               for(let i = 0; i < weather_img[key].length; i++) {
                 if(weather_img[key][i] == weather_code) {
-                  document.getElementById(key).style.display = 'block';
+                  document.getElementById(key).style.display = 'inline-block';
                 }
               }
             }
@@ -91,10 +90,14 @@ angular.module('mainApp')
           'width': '100%',
           'height': '400px'
         });
+
+        $('.upload_title').css({
+          'display':'none'
+        });
       }
 
 
-    $http.get('/api/events')
+      $http.get('/api/events')
       .then(function(response) {
         response.data.forEach(elem => {
           elem.date = (new Date(elem.date)).toDateString();
@@ -159,7 +162,7 @@ angular.module('mainApp')
 
 
 
-    }
+    };
 
 
   }]);

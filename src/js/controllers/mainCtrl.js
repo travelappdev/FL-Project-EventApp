@@ -7,7 +7,7 @@ angular.module('mainApp')
 
      sc.showLogin = function() {
        return location.pathname === '/';
-     }
+     };
 
 
 
@@ -20,6 +20,14 @@ angular.module('mainApp')
 
      sc.visitAbout = function() {
        $location.url('/about');
+     };
+
+     sc.visitFAQ = function() {
+       $location.url('/faq');
+     };
+
+    sc.visitFindUs = function() {
+       $location.url('/findus');
      };
 
 
