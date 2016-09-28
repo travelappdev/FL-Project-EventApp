@@ -1,0 +1,166 @@
+<div id="event_manage">
+<div class="p_wrapper">
+    <h1 class="event-heading">{{event.name}}</h1>
+
+      <div class="picture-wrap">
+        <div class="event-picture"></div>
+
+            <h2 class="upload_title">Choose photo</h2>
+
+            <div class="dropdown url-div-manage">
+
+              <button class=" dropdown-toggle file-upload " type="button" data-toggle="dropdown">Upload photo
+              <span class="caret"></span></button>
+
+              <div class="dropdown-menu manage-menu">
+                <label for="url">Enter photo url:</label>
+                <input type="text" class="url-field" ng-model="new_photo" />
+                <button ng-click="change()" class="save_btn photo-link-btn">Upload</button>
+              </div>
+
+           </div>
+      </div>
+
+      <div class="author-area">
+        <img src="{{pht}}" alt="Event creator" class="event_author">
+        <div class="author-name">
+          <span>Author:{{author}}</span>
+        </div>
+      </div>
+
+        <div class="row info-event">
+
+            <div class="p_user-info event-properties col-lg-4 col-md-4 col-sm-11 col-xs-11">
+              
+              <div class="edit-prop-area">
+                        <label for="place" class="prop-explain">Place:</label>
+                        <input readonly type="mail" id="place"  placeholder="Place" ng-model="event.place" class="prop-it">
+                        <label for="place"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('place')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="time" class="prop-explain">Time:</label>
+                        <input readonly type="text" id="time" placeholder="Time" ng-model="event.time" class="prop-it">
+                        <label for="time"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('time')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="date" class="prop-explain">Date:</label>
+                        <input readonly type="text"  id="date" placeholder="Date" ng-model="event.date" class="prop-it">
+                        <label for="date"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('date')" alt="" class="prop-it"></label>
+                      </div>
+                        
+                      <div class="edit-prop-area">
+                        <label for="type" class="prop-explain">Type:</label>
+                        <input readonly type="text" id="type" placeholder="Type" ng-model="event.type"  class="prop-it">
+                        <label for="type"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('type')" alt="" class="prop-it"></label>
+                      </div>
+
+                      <div class="edit-prop-area">
+                        <label for="payment" class="prop-explain">Payment:</label>
+                        <input readonly type="phone" id="payment" placeholder="Phone" ng-model="event.payment" class="prop-it">
+                        <label for="payment"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('payment')" alt="" class="prop-it"></label>
+                      </div>
+             
+            </div>
+
+            <ul class="description-wrap">
+              
+              <li class="desc-it"><img src="./src/assets/pencil.png" ng-click="deleteReadonlyState('description')" alt="" class="edit-desc"></li>
+              <li><textarea class="custom-description col-lg-6 col-md-6 col-sm-11 col-xs-10" placeholder="Enter event description here ..." rows="9" cols="10" maxlength="150" ng-model="event.description" name="description" id="description">{{event.description}}</textarea></li>
+              
+            </ul>
+
+            <div class="weather col-lg-3 col-md-3 col-sm-3 col-xs-11">
+                          <h2>Check weather:</h2>
+                          <span id="weather"></span>
+                          <p id="weather_temp"></p>
+                          <p id="weather_status"></p>
+
+                          <div class="icon sun-shower">
+
+
+
+                          <div class="weather-body lightning" id="lightning">
+                            <div class="icon thunder-storm">
+                              <div class="cloud"></div>
+                              <div class="lightning">
+                                <div class="bolt"></div>
+                                <div class="bolt"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body cloudy" id="cloudy">
+                            <div class="icon cloudy">
+                              <div class="cloud"></div>
+                              <div class="cloud"></div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body snow" id="snow">
+                            <div class="icon flurries">
+                              <div class="cloud"></div>
+                              <div class="snow">
+                                <div class="flake"></div>
+                                <div class="flake"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body sunny" id="sunny">
+                            <div class="icon sunny">
+                              <div class="sun">
+                                <div class="rays"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body rainy" id="rainy">
+                            <div class="icon rainy">
+                              <div class="cloud"></div>
+                              <div class="rain"></div>
+                            </div>
+                          </div>
+
+                      </div>
+
+                    </div>
+
+        </div>
+
+        <div class="row">
+          <h4 class="event-members">Members:</h4>
+          <hr class="separator">
+
+          <div class="candidat" ng-repeat="member in members |limitTo: 4">
+            <img src="{{member.userPhoto}}" alt="" class="candidat-photo">
+            <h4>{{member.username}}</h4>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <h3 class="events_similar">Similar events:</h3>
+          <hr class="separator">
+
+          <div class="figures similar">
+              <figure class="snip sim-it cust" ng-repeat="sim in similar | limitTo: 4">
+                <div class="image"><img src="{{sim.photoURL}}" alt="ls-sample2"/></div>
+                <figcaption>
+                <div class="date"><span class="day">{{sim.date.substring(8,10)}}</span><span class="month">{{sim.date.substring(4,7)}}</span></div>
+                <h3 class="truncate">{{sim.name}}</h3></a>
+
+                <p class="truncate">{{sim.description}}</p>
+                </figcaption>
+                <a href='/event/{{sim._id}}'></a>
+              </figure>
+
+
+            </div>
+          </div>
+
+        </div>
+
+  </div>
+</div>

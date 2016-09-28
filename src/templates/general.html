@@ -1,0 +1,158 @@
+<div id="general">
+
+  <div class="g_photo-wrapper">
+    <div class="g_main-photo ">
+    <div class="g_main-content">
+
+      <h1 class="main-header">Dive in with us and JoinE</h1>
+      <p class="sub-header">Finding your best time</p>
+
+      <div class="g_get-started" ng-click="open('../src/templates/registration.html', 'md', 'registController')">
+        <a class="btn btn-hover">Get Started</a>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+
+
+     <!-- OUR CONTAINER FOR TOP EVENTS -->
+      <!-- should be fixed and updated -->
+
+
+      <section class="g_event-wrapper">
+
+            <div class="event-header-wrap">
+              <h1 class="events-header">Top Events</h1>
+              <p class="top-sub-header">Check most popular events</p>
+            </div>
+
+
+    <div class="topEvents">
+
+
+      <div carousel interval="3000">
+        <div slide ng-repeat="gallery_cell in gallery_cells" active="gallery_cell.active">
+
+            <figure class="snip middle g_event smaller" ng-repeat="event in gallery_cell.events">
+
+                <div class="image"><img src="{{event.photoURL}}"></div>
+
+                <figcaption>
+
+                    <div class="date"><span class="day">{{event.date.substring(8,10)}}</span><span class="month">{{event.date.substring(4,7)}}</span></div>
+
+                    <h3>{{event.name}}</h3>
+
+                    <p>
+                    {{event.description}}
+                    </p>
+
+                </figcaption>
+                <a ng-href='/event/{{event._id}}'></a>
+
+            </figure>
+
+        </div>
+    </div>
+
+      </section>
+
+      <div class="g_block">
+
+      </div>
+
+      <div class="parallax-how parallax"></div>
+
+      <section class="how-it-works">
+        <h1 class="how-header">How it works</h1>
+
+        <div class="g_block">
+          <div>
+            <div class="how-it-pictures">
+              <div class="icon-wrap">
+                <img class="how-icons" src="./src/assets/plus.png" alt="">
+              </div>
+            </div>
+            <h2 class="feature-title">Create</h2>
+            <p class="feature-description">Fill in your event details,<br/> choose your event type, and <br/>voila - your page is ready for action!</p>
+          </div>
+
+          <div>
+            <div class="how-it-pictures">
+              <div class="icon-wrap">
+                <img class="how-icons" src="./src/assets/promotion.png" alt="">
+              </div>
+            </div>
+
+            <h2 class="feature-title">Promote</h2>
+            <p class="feature-description">Reach people with social<br/> promotion tools and connect<br/> with our community.</p>
+          </div>
+
+          <div>
+            <div class="how-it-pictures">
+              <div class="icon-wrap">
+                <img class="how-icons" src="./src/assets/success.png" alt="">
+              </div>
+            </div>
+            <h2 class="feature-title">Host</h2>
+            <p class="feature-description">Check guest lists and<br/> throw a great event without<br/> a hitch.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="parallax-community parallax"></div>
+
+      <section class="community">
+          <h1 class="community-header">Join our community</h1>
+          <p class="community-description">Join our colorful community of people hosting unique events.</p>
+
+        <div class="g_block">
+
+
+          <div class="user-event">
+            <div class="single-user">
+              <div class="user-event-pic conference">
+                <img class="com-user-photo" src="src/assets/nick.jpg" alt="">
+              </div>
+              <h3>John Allsopp</h3>
+              <p>"JoinE allows us to `spin <br/> up` new events quickly, freeing<br/> up time to focus on the quality <br/>of our events, not managing<br/> attendees. We love it!"</p>
+            </div>
+          </div>
+
+          <div class="user-event">
+            <div class="single-user">
+              <div class="user-event-pic classes">
+                <img class="com-user-photo" src="src/assets/nick.jpg" alt="">
+              </div>
+              <h3>Laine Thomas</h3>
+              <p>"I didn`t expect our classes to<br/> take off as fast as they did.<br/> JoinE allowed us to turn <br/>our passion into a business<br/> overnight."</p>
+            </div>
+          </div>
+
+          <div class="user-event">
+            <div class="single-user">
+              <div class="user-event-pic party">
+                <img class="com-user-photo" src="src/assets/such.jpg" alt="">
+              </div>
+              <h3>Nick Such</h3>
+              <p>"It`s so easy to create the<br/> event, put in a lovely image.<br/> We really couldn`t live without<br/> JoinE!"</p>
+            </div>
+          </div>
+
+          <div class="user-event">
+            <div class="single-user">
+              <div class="user-event-pic concert">
+                <img class="com-user-photo" src="src/assets/nick.jpg" alt="">
+              </div>
+              <h3>John Allsopp</h3>
+              <p>"JoinE allows us to `spin <br/> up` new events quickly, freeing<br/> up time to focus on the quality <br/>of our events, not managing<br/> attendees. We love it!"</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="parallax-end parallax"></div>
+</div>

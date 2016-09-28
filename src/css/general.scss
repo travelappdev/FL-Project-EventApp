@@ -1,0 +1,700 @@
+@font-face{
+  font-family:"Segoe UI Light";
+  src:url("http://www.myfontfree.com/data/541/s/segoeuilight/segoeuil.ttf");
+}
+
+@font-face {
+    font-family: "SegoeUIBold";
+    src: url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot");
+    src: url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+    url("./fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+$darkblue: #373746;
+
+@media (min-width: 768px)
+{
+ .modal-dialog {
+      margin: 100px auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo-text{
+    display:none;
+  }
+
+  .logo{
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .menu-btn{
+    display: none;
+  }
+
+  .navbar-nav{
+    display:none;
+  }
+
+}
+
+@media screen and (min-width: 767px) {
+  .cd-stretchy-nav{
+    display: none;
+  }
+
+  .navbar-nav{
+    margin-top: 35px;
+    margin-right: 25px;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .smaller{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .topEvents, .event-header-wrap{
+    display: none;
+  }
+}
+
+.cust{
+  margin: 15px 25px;
+  width: 200px;
+}
+
+.truncate {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.navbar-toggle .icon-bar {
+  width:35px;
+  height:5px;
+}
+
+.hamburger{
+  margin-top: 30px;
+  background-color: white!important;
+}
+
+.menu-it, .logo {
+  margin-top: 15px;
+  margin-right: 25px;
+}
+
+.logo-block {
+  overflow-y: hidden;
+}
+
+.g_photo-wrapper {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+
+}
+
+.g_main-photo {
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+
+  background-image: url('http://localhost:8000/src/assets/nature.jpg');
+  background-size: cover;
+  background-position: center center;
+  -webkit-box-shadow: inset 1px -3px 4px 0px rgba(0,0,0,0.38);
+  -moz-box-shadow: inset 1px -3px 4px 0px rgba(0,0,0,0.38);
+  box-shadow: inset 1px -3px 4px 0px rgba(0,0,0,0.38);
+}
+
+.g_get-started .btn {
+  background-color: transparent;
+}
+
+.g_main-content {
+  text-align: center;
+  color: #fff;
+  width: 50%;
+  height: auto;
+  left: 25%;
+  bottom: 8rem;
+  position: absolute;
+  z-index: 1;
+
+  p {
+    margin-bottom: 12rem;
+  }
+}
+
+.g_event-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+
+.g_block {
+   width: 100%;
+   background-color: white;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   padding-top: 2rem;
+   padding-bottom: 25px;
+}
+
+.g_event {
+  background-color: #fff;
+  margin-left: 2rem;
+  padding: 5px;
+  height: 28rem;
+  border: 1px solid #999;
+  margin-bottom: 2rem;
+}
+
+.g_event:nth-child(1+2n) {
+  margin-left: 0;
+}
+
+.g_event-image {
+  width: 100%;
+  height: 16rem;
+}
+
+.g_event-content {
+  padding: 5px;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.g_resp-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.g_resp-img {
+  height: 76vh;
+
+}
+
+.logo-text{
+  color:white;
+  font-size: 36px;
+  font-family: Oswald, sans-serif;
+  margin-left: -35px;
+}
+
+.logo-text :focus, .logo-text :hover {
+  text-decoration:none !important;
+}
+
+.logo{
+  margin-left: 25px;
+  width: 150px;
+  height: 150px;
+}
+
+.main-block{
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+.main-header{
+  font-family: Oswald, sans-serif;
+  font-size: 500%;
+  text-shadow: 1px 1px 2px #043136;
+}
+
+.sub-header{
+  color: white;
+  text-shadow: 1px 1px 2px #043136;
+}
+
+.sub-header, .top-sub-header{
+  font-family: "Segoe UI Light";
+  font-size: 24px;
+  text-align: center;
+}
+
+.top-sub-header{
+  color: $darkblue;
+}
+
+.login-btn{
+  font-family: Oswald, sans-serif;
+  font-size: 16px;
+}
+
+.event-header-wrap{
+
+  background-color: white;
+  padding: 15px 0;
+ 
+  .events-header{
+    color: $darkblue;
+    font-family: "SegoeUIBold";
+    font-size: 54px;
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+
+.sub-menu{
+  font-family: Oswald;
+  display: inline-block;
+}
+
+h1, h2{
+    overflow-y: hidden;
+}
+
+.big-header{
+  text-align:center;
+  color:$darkblue;
+  font-family: "SegoeUIBold";
+  font-size: 40px;
+}
+
+.nav-it-right{
+  float:right;
+}
+
+///////////////////Hamburger menu////////////////////
+.cd-stretchy-nav {
+  position: fixed;
+  z-index: 50;
+  top: 30px;
+  right: 5%;
+
+  .stretchy-nav-bg {
+    /* this is the stretching navigation background */
+    position: absolute;
+    z-index: 49;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: $darkblue;
+    box-shadow: 0 1px 4px rgba(#000, .2);
+    transition: height .2s, box-shadow .2s;
+  }
+
+  &.nav-is-visible .stretchy-nav-bg {
+    height: 100%;
+    -webkit-box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
+    box-shadow: -4px 3px 3px 0px rgba(0,0,0,0.38);
+  }
+}
+
+.cd-nav-trigger {
+  position: absolute;
+  z-index: 51;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  /* replace text with image */
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+
+  .cd-nav-trigger-icon,
+  .cd-nav-trigger-icon::after,
+  .cd-nav-trigger-icon::before {
+    /* this is the hamburger icon */
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  .cd-nav-trigger-icon {
+    /* middle line of the hamburger icon */
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    transition: background-color .2s;
+  }
+
+  .cd-nav-trigger-icon::after,
+  .cd-nav-trigger-icon::before {
+    /* top and bottom lines of the hamburger icon */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform .2s;
+  }
+
+  .cd-nav-trigger-icon::before {
+    transform: translateY(-6px);
+  }
+
+  .cd-nav-trigger-icon::after {
+    transform: translateY(6px);
+  }
+
+  .no-touch &:hover ~ .stretchy-nav-bg {
+    box-shadow: 0 6px 30px rgba(#000, .2);
+  }
+
+  .nav-is-visible & {
+
+    .cd-nav-trigger-icon {
+      background-color: transparent;
+    }
+
+    .cd-nav-trigger-icon::before {
+      transform: rotate(-45deg);
+    }
+
+    .cd-nav-trigger-icon::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.cd-stretchy-nav ul {
+  position: relative;
+  z-index: 50;
+  padding: 60px 0 0;
+  visibility: hidden;
+  transition: visibility .3s;
+  text-align: right;
+  list-style: none;
+
+  a {
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 calc(1em + 60px) 0 1em;
+    color: rgba(#fff, .7);
+    font-size: 1.4rem;
+    transition: color .2s;
+  }
+
+  .cd-stretchy-nav-icon {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: .6;
+  }
+
+  .cd-stretchy-nav-label {
+    display: inline;
+    opacity: 0;
+    transform: translateX(-25px);
+    background-color: rgba(0,0,0,.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+
+.cd-stretchy-nav.nav-is-visible ul {
+  visibility: visible;
+
+  .cd-stretchy-nav-icon {
+    transform: translateY(-50%) scale(1);
+    animation: scaleIn .15s backwards;
+    transition: opacity .2s;
+  }
+
+  .cd-stretchy-nav-label {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideIn .15s backwards;
+    transition: transform .2s;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+
+    .cd-stretchy-nav-icon {
+      opacity: 1;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    li:nth-of-type(#{$i}) .cd-stretchy-nav-icon,
+    li:nth-of-type(#{$i}) .cd-stretchy-nav-label {
+      animation-delay: (.05s * ($i + 1));
+    }
+  }
+
+}
+
+@keyframes scaleIn {
+  from { transform: translateY(-50%) scale(0); }
+  to { transform: translateY(-50%) scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-25px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+.how-it-works{
+  position:relative;
+  background-color: white;
+  width: 100%;
+
+  .how-header{
+    font-family: 'SegoeUIBold';
+    font-size: 300%;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 0;
+  }
+
+  .how-it-pictures{
+    vertical-align: middle;
+    position: relative;
+    text-align:center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #D1C4E9;
+    margin-bottom: 15px;
+
+    .how-icons{
+      position: absolute;
+      right:0; left:0; top:0; bottom:0;
+      margin: auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .icon-wrap{
+      border: 5px double white;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      margin: auto;
+      display: block;
+      top: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+  }
+
+  .feature-title{
+    text-align: center;
+    font-family: Oswald;
+  }
+
+  .feature-description{
+    font-family: 'SegoeUIRegular';
+    text-align: center;
+   }
+}
+
+.community{
+    text-align: center;
+    background-color: white;
+
+    .community-header{
+      font-family: 'SegoeUIBold';
+      font-size: 300%;
+      padding-top: 15px;
+      margin-top: 0;
+    }
+
+    .community-description{
+      font-family: 'SegoeUIRegular';
+      display: block;
+
+    }
+
+    .user-event{
+
+      display: inline-block;
+
+      .single-user{
+
+        .user-event-pic{
+          
+          width: 225px;
+          height: 125px;
+          margin-bottom: 70px;
+
+          .com-user-photo{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-top: 75px;
+          }
+        }
+
+        .conference{
+          background-image: url('../img/people-coffee-meeting.jpg');
+        }
+
+        .party{
+          background-image: url('../img/ded.jpg');
+        }
+
+        .concert{
+          background-image: url('../img/concert.jpg');
+        }
+
+        .classes{
+          background-image: url('../img/meeting.jpg');
+        }
+      }
+    }
+}
+
+.parallax-how{
+
+    background-image: url("../img/startup.jpg");
+
+}
+
+.parallax-community{
+
+    background-image: url("../img/sports.jpg");
+
+}
+
+.parallax-end{
+
+    background-image: url("../img/rest.jpg");
+
+    
+}
+
+.parallax{
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41), inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
+    -moz-box-shadow:    inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
+    box-shadow:         inset 0px 5px 3px 0px rgba(50, 50, 50, 0.41),  inset 0px -5px 3px 0px rgba(50, 50, 50, 0.41);
+}
+
+
+// External logging 
+
+.signin-menu{
+
+    .signin-btn{
+      background-color: transparent;
+      position: absolute!important;
+      top: 25px;
+      right: 25px;
+      display: block;
+      color:  white;
+      font-family: Oswald;
+  }
+  
+  .options{
+      position: absolute;
+      width: 15%;
+      padding: 15px;
+      opacity: .9;
+      margin-top: -50px;
+      margin-right: 30px;
+
+      #fb_l, #g_l{
+        display: inline-block;
+        width: 24px;
+      }
+
+
+      .g-log{
+        background-color: #EA4335;
+        margin-bottom: 10px;
+        margin-left: -5px;
+
+        .sign-text{
+          color: white;
+          margin-left: -15px;
+          margin-left: 15px;
+        }
+
+          &:hover {
+            transform: scale(1.025);
+          }
+      }
+
+      .fb-log{
+        background-color: #3B5998;
+        margin-left: -5px;
+
+        .sign-text{
+          color: white;
+          margin-left: 15px;
+
+        }
+
+          &:hover {
+            transform: scale(1.025);
+          }
+      }
+
+
+      #s_log{
+        text-align: center;
+        font-family: 'SegoeUIBold';
+        color: $darkblue;
+        font-size: 16px;
+        padding-top: 5px;
+        height: 35px;
+      }
+    }
+}
+
+//Top Events
+
+.carousel-indicators{
+bottom: -31px;
+
+  li{
+    margin: 0 4px;
+  }
+  .active{
+    position: relative;
+    top: 1px;
+  }
+}
+

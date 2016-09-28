@@ -1,0 +1,344 @@
+// Variables
+
+
+
+$darkblue: #373746;
+$search_block: #999;
+
+
+@media screen and (max-width: 425px) {
+  .search-by-name{
+    display: block;
+  }
+
+  .type-filter{
+    display: block;
+  }
+
+  .result-it{
+    width: 80%;
+    margin: 25px 5px;
+  }
+}
+
+@media screen and (min-width: 426px) {
+
+    .result-it{
+    margin: 25px 50px;
+  }
+}
+
+.home_explore {
+  padding-bottom:  50px;
+}
+
+
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  font-family: 'SegoeUIRegular';
+  font-size: 18px;
+  margin-right: 0;
+
+  .search-by-name{
+    margin-right:0!important;
+    border-right: 1px solid $darkblue;
+  	height: 50px;
+  	padding-left: 10px;
+  	color: $darkblue;
+  	width: 300px;
+  	border: none;
+    display: inline-block;
+  }
+
+  .type-filter{
+    margin-top: 15px;
+    width: 300px;
+    height: 50px;
+    display: inline-block;
+  }
+}
+
+.fa-search {
+  padding: 0 20px;
+  padding-top: 5px;
+}
+
+
+
+/* Form text input */
+
+.search-wrapper input {
+//min-width: 500px;
+//height: 40px;
+//padding: 10px;
+}
+
+.cf{
+  margin-right: 0!important;
+}
+
+.search-wrapper input:focus {
+background: #fff;
+box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.search-wrapper input::-webkit-input-placeholder {
+color: #999;
+}
+
+.search-wrapper input:-moz-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+}
+
+.search-wrapper input:-ms-input-placeholder {
+color: #999;
+}
+
+/* Form submit button */
+.search-wrapper button {
+border: 0;
+margin-left: -5px !important;
+padding: 0;
+cursor: pointer;
+height: 40px;
+width: 83px;
+color: white;
+text-transform: uppercase;
+background: #D83C3C;
+}
+
+.search-wrapper button:hover{
+background: #e54040;
+}
+
+.search-wrapper button:active,
+.search-wrapper button:focus{
+background: #c42f2f;
+outline: 0;
+}
+
+
+.h_block{
+
+	width: 100%;
+    background-color: white;
+
+	.page-control{
+		text-align: center;
+	}
+
+	.selection-item{
+		display: block;
+		float: right;
+		margin-top: 15px;
+		color: $darkblue;
+		font-family: 'SegoeUIRegular';
+		font-size: 16px;
+
+		.amount-select{
+			margin: 0 10px;
+		}
+	}
+
+	.results-block{
+
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			width: 100%;
+	}
+
+	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>	span:hover {
+		background-color: $darkblue;
+	}
+
+
+}
+
+$green: #50c56c ;
+$blue: #4ec4ce ;
+
+.home_explore {
+ padding-bottom:  50px;
+}
+
+.search-section {
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ height: 30vh;
+ background: white;
+}
+
+.search_container {
+ display: flex;
+ padding: 50px;
+ .form-control {
+   color: black;
+   max-width: 700px;
+ }
+}
+
+.fa-search {
+ padding: 0 20px;
+ padding-top: 5px;
+}
+
+.search-wrapper {
+ font-size: 1.55rem !important;
+ display: flex;
+ justify-content: center;
+ margin: 45px auto 50px auto;
+}
+
+
+.search-wrapper input {
+height: 40px;
+padding: 10px;
+}
+
+.search-wrapper input:focus {
+background: #fff;
+box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.search-wrapper input::-webkit-input-placeholder {
+color: #999;
+}
+
+.search-wrapper input:-moz-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+}
+
+.search-wrapper input:-ms-input-placeholder {
+color: #999;
+}
+
+/* Form submit button */
+.search-wrapper button {
+border: 0;
+margin-left: -19px !important;
+padding: 0;
+cursor: pointer;
+height: 40px;
+width: 83px;
+color: white;
+text-transform: uppercase;
+background: #D83C3C ;
+}
+
+.search-wrapper button:hover{
+background: #e54040 ;
+}
+
+.search-wrapper button:active,
+.search-wrapper button:focus{
+background: #c42f2f ;
+outline: 0;
+}
+
+.pageWrapper {
+    background-color: transparent;;
+    form {
+        display: flex;
+        margin-top:1rem;
+        font-size:1rem;
+    }
+
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+ position: relative;
+ display: inline-block;
+ vertical-align: middle;
+}
+
+.custom-dropdown select {
+ height: 40px;
+ background: white;
+ padding: 7px;
+ font-size: inherit;
+ border: 0;
+ margin: 0;
+ width: 115px;
+ border-radius: 3px;
+ text-indent: 0.01px;
+ text-overflow: '';
+ -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+ content: "";
+ position: absolute;
+ pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+ content: "\25BC";
+ height: 1em;
+ font-size: .625em;
+ line-height: 1;
+ right: 1.2em;
+ top: 50%;
+ margin-top: -.5em;
+}
+
+.custom-dropdown::before {
+ width: 2em;
+ right: 0;
+ top: 0;
+ bottom: 0;
+}
+
+.custom-dropdown::before {
+ background-color: white;
+ color: white;
+}
+
+
+@mixin gradient-border($color1, $color2, $border-width, $direction) {
+ border: none;
+ background-repeat: no-repeat;
+ background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%), linear-gradient(#{$direction}, $color1 0%, $color2 100%);
+ @if $direction == 'to right' or $direction == 'to left' {
+   @if $direction == 'to right' {
+     border-left: $border-width solid $color1;
+     border-right: $border-width solid $color2;
+   } @else {
+     border-left: $border-width solid $color2;
+     border-right: $border-width solid $color1;
+   }
+   background-position: 0 0, 0 100%;
+   background-size: 100% $border-width;
+ }
+
+}
+
+.grad {
+ line-height: 1.4;
+ -webkit-appearance: none;
+ @include gradient-border($green, $blue, 2px, 'to right');
+ background-color: transparent;
+ &::-webkit-input-placeholder {
+   color: #eee;
+   transition: color 0.2s ease-out;
+ }
+ &:focus {
+   outline: none;
+   &::-webkit-input-placeholder {
+     color: white;
+   }
+ }
+}

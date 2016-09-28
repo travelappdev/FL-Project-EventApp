@@ -1,0 +1,147 @@
+<div id="event">
+  <div class="p_wrapper">
+    <h1 class="event-heading">{{event.name}}</h1>
+
+      <div class="picture-wrap" id="picture-wrap">
+        <div class="event-picture" id="event-picture"></div>
+
+
+      </div>
+
+      <div class="col-md-3 subscribe ">
+          <div ng-click="subscribe()" class="save_btn subscribe-btn subscribe-btn-effect"><span>Subscribe</span></div>
+      </div>
+
+      <div class="author-area">
+        <img src="{{pht}}" alt="Event creator" class="event_author">
+        <div class="author-name">
+          <span>Author:{{author}}</span>
+        </div>
+      </div>
+
+        <div class="row info-event">
+
+            
+
+            <div class="p_user-info event-properties col-lg-4 col-md-4 col-sm-4 col-xs-11">
+
+              <span>
+                <input readonly type="text" class="ev-param"  placeholder="Place" value="{{event.place}}">
+              </span>
+
+              <span>
+                <input readonly type="text" class="ev-param" placeholder="Time" value="{{event.time}}">
+              </span>
+
+              <span>
+                <input readonly type="text" class="ev-param" placeholder="Date" value="{{event.date}}">
+              </span>
+
+              <span>
+                <input readonly type="text" class="ev-param" placeholder="Type" value="{{event.type}}">
+              </span>
+
+              <span>
+                <input readonly type="text" class="ev-param" placeholder="Payment" value="{{event.payment}}">
+              </span>
+            </div>
+
+            <textarea class="custom-description col-lg-6 col-md-4 col-sm-6 col-xs-10" placeholder="Enter event description here ..." rows="9" cols="10" maxlength="150" ng-model="event.description" name="description">{{event.description}}</textarea>
+
+                        <div class="weather col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <h2>Check weather:</h2>
+                          <span id="weather"></span>
+                          <p id="weather_temp"></p>
+                          <p id="weather_status"></p>
+
+                          <div class="icon sun-shower">
+
+
+
+                          <div class="weather-body lightning" id="lightning">
+                            <div class="icon thunder-storm">
+                              <div class="cloud"></div>
+                              <div class="lightning">
+                                <div class="bolt"></div>
+                                <div class="bolt"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body cloudy" id="cloudy">
+                            <div class="icon cloudy">
+                              <div class="cloud"></div>
+                              <div class="cloud"></div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body snow" id="snow">
+                            <div class="icon flurries">
+                              <div class="cloud"></div>
+                              <div class="snow">
+                                <div class="flake"></div>
+                                <div class="flake"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body sunny" id="sunny">
+                            <div class="icon sunny">
+                              <div class="sun">
+                                <div class="rays"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="weather-body rainy" id="rainy">
+                            <div class="icon rainy">
+                              <div class="cloud"></div>
+                              <div class="rain"></div>
+                            </div>
+                          </div>
+
+                      </div>
+
+                    </div>
+
+        </div>
+
+        <div class="row">
+          <h4 class="share-title">Share:</h4>
+          <img src="./src/assets/facebook.png" alt="" id="repost-btn" onclick="shareFB('name','http://online-azbuka.ru/image/bukvap.jpg','kjkh','jkj')">
+        </div>
+
+        <div class="row">
+          <h4 class="event-members">Members:</h4>
+          <hr class="separator">
+
+          <div class="candidat" ng-repeat="member in members |limitTo: 4">
+            <img src="{{member.userPhoto}}" alt="" class="candidat-photo">
+            <h4>{{member.username}}</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3 class="events_similar">Similar events:</h3>
+          <hr class="separator">
+
+            <div class="figures similar">
+              <figure class="snip cust" ng-repeat="sim in similar | limitTo: 4">
+                <div class="image"><img src="{{sim.photoURL}}" alt="ls-sample2" /></div>
+                <figcaption>
+                <div class="date"><span class="day">{{sim.date.substring(8,10)}}</span><span class="month">{{sim.date.substring(4,7)}}</span></div>
+                <h3 class="truncate">{{sim.name}}</h3></a>
+
+                <p class="truncate">{{sim.description}}</p>
+                </figcaption>
+                <a href='/event/{{sim._id}}'></a>
+              </figure>
+
+
+            </div>
+          </div>
+
+        </div>
+
+  </div>
+</div>
